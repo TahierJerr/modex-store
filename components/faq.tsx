@@ -20,7 +20,7 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
             {data.map((item, index) => (
                 <div key={index} className="mb-4 border border-primary rounded-md group sm:hover:bg-black200" onClick={() => handleClick(index)}>
                    <div className="font-medium text-lg px-4 py-3 flex text-gray-800 flex-row mt-2 cursor-pointer text-whiterounded-lg" >
-                       <div className="flex-auto">
+                       <div className="flex-auto cursor-text">
                            {item.question}
                        </div>
                        <div className="px-2 ">
@@ -30,7 +30,7 @@ const Faq: React.FC<FaqProps> = ({ data }) => {
                        </div>
                    </div>
                    {activeIndex === index && (
-                       <div className="p-4 text-left text-white mb-5 rounded-lg cursor-pointer">
+                       <div className="p-4 text-left text-white mb-5 rounded-lg cursor-text">
                            {item.answers}
                        </div>
                    )}
