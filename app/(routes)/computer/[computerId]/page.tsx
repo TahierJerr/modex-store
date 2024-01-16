@@ -25,7 +25,7 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
     });
 
     const filteredComputers = otherComputers.filter(
-        (item) => item.id > computer.id && item.id < computer.id && item.id !== computer.id
+        (item) => item.id !== computer.id
     );
 
     return (
@@ -41,7 +41,7 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
                     <hr className="my-10 text-black200" />
                     <ComputerSpec data={computer} />
                     <hr className="my-10 text-black200" />
-                    <ComputerList title="Andere Computers" description="" items={filteredComputers} />
+                    <ComputerList title="Andere Computers" description="Check onze andere pre-builds" items={filteredComputers} />
                 </div>
             </Container>
         </div>
