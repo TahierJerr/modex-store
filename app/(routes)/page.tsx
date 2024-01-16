@@ -3,8 +3,13 @@ import getBillboard from "@/actions/get-billboard";
 import Container from "@/components/ui/container";
 import getComputers from "@/actions/get-computers";
 import ComputerList from "@/components/computer-list";
+import type { Metadata } from 'next'
 
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+    title: 'MODEX | Home',
+  }
 
 const HomePage = async () => {
     const computers = await getComputers({ isFeatured: true });

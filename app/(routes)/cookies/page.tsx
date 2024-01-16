@@ -1,3 +1,10 @@
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: 'MODEX | Cookies',
+  }
+
 export default function Cookies() { 
     return (
     <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-20">

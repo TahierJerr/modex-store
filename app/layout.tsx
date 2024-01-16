@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import MobileNavbar from '@/components/mobile-navbar'
@@ -12,11 +11,6 @@ import ToastProvider from '@/providers/toast-provider'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const font = Montserrat({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'MODEX',
-  description: 'MODEX',
-}
 
 export default function RootLayout({
   children,

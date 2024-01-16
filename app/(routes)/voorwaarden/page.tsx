@@ -1,4 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: 'MODEX | Voorwaarden',
+  }
 
 export default function Voorwaarden() {
     return (

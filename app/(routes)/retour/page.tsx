@@ -1,4 +1,10 @@
 import Container from "@/components/ui/container";
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: 'MODEX | Retour',
+  }
 
 const RetourPage = () => {
     return (

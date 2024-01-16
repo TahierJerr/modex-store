@@ -5,6 +5,12 @@ import ComputerList from "@/components/computer-list";
 import Gallery from "@/components/gallery";
 import ComputerInfo from "@/components/computer-info";
 import ComputerSpec from "@/components/computer-spec";
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: 'MODEX',
+  }
 
 interface ComputerPageProps {
     params: {
@@ -21,6 +27,8 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
     const filteredComputers = otherComputers.filter(
         (item) => item.id !== computer.id
     );
+
+    
  
     return (
         <div className="bg-black text-white mt-16 md:mt-0">

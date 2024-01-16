@@ -12,6 +12,12 @@ import MobileFilters from "./components/mobile-filters";
 import Filter from "./components/filter";
 import NoResults from "@/components/ui/no-results";
 import ComputerCard from "@/components/ui/computer-card";
+import type { Metadata } from 'next'
+
+
+export const metadata: Metadata = {
+    title: 'MODEX',
+  }
 
 export const revalidate = 0;
 
