@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import CookieConsent from 'react-cookie-consent';
 
-const CookieConsentComponent = () => {
+const CookieConsentComponent = ({ onConsentChange }: { onConsentChange: (value: boolean) => void }) => {
    const [consentAccepted, setConsentAccepted] = useState(false);
+
+   useEffect(() => {
+     onConsentChange(consentAccepted);
+   }, [consentAccepted]);
 
    const handleAcceptCookies = () => {
        Cookies.set('cookie_consent_is_true', 'true', { expires: 365 });
