@@ -4,24 +4,27 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import CookieConsent from 'react-cookie-consent';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react'
 
-const CookieConsentComponent = ({ onConsentChange }: { onConsentChange: (value: boolean) => void }) => {
-   const [consentAccepted, setConsentAccepted] = useState(false);
 
-   useEffect(() => {
-     onConsentChange(consentAccepted);
-   }, [consentAccepted]);
+const CookieConsentComponent = () => {
+  const [consentAccepted, setConsentAccepted] = useState(false);
 
-   const handleAcceptCookies = () => {
-       Cookies.set('cookie_consent_is_true', 'true', { expires: 365 });
-       setConsentAccepted(true);
-   };
+  useEffect(() => {
+    const cookieConsent = Cookies.get('cookie_consent_is_true');
+    setConsentAccepted(cookieConsent === 'true');
+  }, []);
 
-   const handleRejectCookies = () => {
-       Cookies.remove('cookie_consent_is_true');
-       setConsentAccepted(false);
-   };
+  const handleAcceptCookies = () => {
+    Cookies.set('cookie_consent_is_true', 'true', { expires: 365 });
+    setConsentAccepted(true);
+  };
 
+  const handleRejectCookies = () => {
+    Cookies.remove('cookie_consent_is_true');
+    setConsentAccepted(false);
+  };
    return (
     <div>
     <CookieConsent
@@ -50,6 +53,8 @@ const CookieConsentComponent = ({ onConsentChange }: { onConsentChange: (value: 
     Deze website maakt gebruik van cookies om uw ervaring te verbeteren.{' '}
     <Link href="/cookies" className='text-primary underline'>Meer informatie</Link> over ons cookiebeleid.
   </CookieConsent>
+  {consentAccepted && <SpeedInsights />}
+    {consentAccepted && <Analytics />}
   </div>
    );
 };
