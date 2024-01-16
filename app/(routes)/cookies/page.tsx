@@ -1,15 +1,4 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
 export default function Cookies() { 
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
-
-    if (!isMounted) return null;
     return (
     <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-20">
         <h1 className="text-4xl font-bold mb-8 text-center">Cookiebeleid van MODEX</h1>
