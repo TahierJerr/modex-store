@@ -9,6 +9,7 @@ import { CategoryProvider } from '@/context/category-provider'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const font = Montserrat({ subsets: ['latin'] })
 
@@ -40,6 +41,7 @@ export default function RootLayout({
             <Footer />
           </CategoryProvider>
         </NavProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
