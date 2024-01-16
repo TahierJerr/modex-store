@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
             </div>
             <p className="text-center mt-8">
-                © {currentYear} MODEX. Alle prijzen zijn inclusief BTW.
+                © {currentYear} MODEX. Alle prijzen zijn inclusief BTW
             </p>
             </Container>
         </footer>
