@@ -1,6 +1,16 @@
+"use client"
 
+import { useState, useEffect } from "react";
 
 const TextComponent2 = () => {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) return null;
+
     return (
         <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-20">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8">Cookies, of vergelijkbare technieken, die wij gebruiken</h2>

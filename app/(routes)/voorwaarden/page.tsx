@@ -1,6 +1,18 @@
+"use client"
+
+import { useState, useEffect } from "react";
+
 import Link from "next/link";
 
 export default function Voorwaarden() {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) return null;
+
     return (
         <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-20 mb-16">
   <h1 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-12 mt-12">Algemene Voorwaarden</h1>
