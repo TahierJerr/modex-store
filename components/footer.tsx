@@ -22,7 +22,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="mb-4 bg-black p-4 md:w-1/2 lg:w-1/4">
-                    <h3 className="text-lg font-bold mb-2">Legal</h3>
+                    <h3 className="text-lg font-bold mb-2">Voorwaarden</h3>
                     <Link key="/privacy" href="/privacy">
                         <p className='text-white hover:text-primary transition-all mb-2'>Privacy</p>
                     </Link>
