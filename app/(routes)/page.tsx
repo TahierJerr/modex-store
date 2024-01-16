@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 export const revalidate = 0;
 
 export const metadata: Metadata = {
-    title: 'MODEX | Home',
+    title: 'MODEX Prebuilt Gaming PCs | MODEX',
   }
 
 const HomePage = async () => {
