@@ -8,10 +8,10 @@ interface FaqProps {
 }
 
 const Faq: React.FC<FaqProps> = ({ data }) => {
-    const [activeIndex, setActiveIndex] = useState(-1);
+    const [activeIndex, setActiveIndex] = useState(0);
  
     const handleClick = (index: number) => {
-        setActiveIndex(index === activeIndex ? -1 : index);
+        setActiveIndex(index === activeIndex ? 0 : index);
     };
  
     return (
