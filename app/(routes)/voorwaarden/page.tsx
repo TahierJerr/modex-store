@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX | Voorwaarden',
+    title: 'MODEX Voorwaarden | MODEX',
   }
 
 export default function Voorwaarden() {

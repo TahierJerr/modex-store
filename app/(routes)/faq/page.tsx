@@ -1,11 +1,10 @@
 import Faq from "@/components/faq";
 import getAnswers from "@/actions/get-answers";
-import Head from "next/head";
 import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX | Veelgestelde Vragen',
+    title: 'MODEX FAQ | MODEX',
   }
 
 const FaqPage = async () => {

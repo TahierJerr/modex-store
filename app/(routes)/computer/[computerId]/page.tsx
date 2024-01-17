@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX',
+    title: 'MODEX Prebuilt Gaming PCs | MODEX',
 }
 
 interface ComputerPageProps {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX | Privacy',
+    title: 'MODEX Privacy | MODEX',
   }
 
 const TextComponent2 = () => {

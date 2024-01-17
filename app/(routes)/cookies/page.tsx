@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX | Cookies',
+    title: 'MODEX Cookies | MODEX',
   }
 
 export default function Cookies() { 
