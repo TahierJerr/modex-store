@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Button from "@/components/ui/button";
 
-import { Graphics, Memory, Storage, Processor } from "@/types";
+import { Graphics, Memory, Processor } from "@/types";
 import { Plus, X } from "lucide-react";
 import { Dialog } from "@headlessui/react";
 import IconButton from "@/components/ui/icon-button";
@@ -13,14 +13,12 @@ interface mobileFiltersProps {
     graphics: Graphics[];
     processors: Processor[];
     memory: Memory[];
-    storage: Storage[];
 }
 
 const MobileFilters: React.FC<mobileFiltersProps> = ({
     graphics,
     processors,
     memory,
-    storage
 }) => {
     const [open, setOpen] = useState(false);
 
@@ -44,7 +42,6 @@ const MobileFilters: React.FC<mobileFiltersProps> = ({
                     <Filter valueKey="graphicsId" name="Grafische kaart" data={graphics} />
                     <Filter valueKey="processorId" name="Processor" data={processors} />
                     <Filter valueKey="memoryId" name="Geheugen" data={memory} />
-                    <Filter valueKey="storageId" name="Opslag" data={storage} />
                 </div>
             </Dialog.Panel>
         </div>

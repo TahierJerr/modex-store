@@ -6,11 +6,11 @@ import { X } from 'lucide-react';
 import { useCallback } from 'react';
 
 import Button from "@/components/ui/button"
-import { Processor, Memory, Graphics, Storage } from "@/types";
+import { Processor, Memory, Graphics } from "@/types";
 import { useSearchParams, useRouter } from "next/navigation";
 
 interface FilterProps {
-    data: (Processor | Memory | Graphics | Storage)[];
+    data: (Processor | Memory | Graphics )[];
     name: string;
     valueKey: string;
 }
