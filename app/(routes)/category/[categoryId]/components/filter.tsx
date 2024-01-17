@@ -3,7 +3,7 @@
 import qs from "query-string";
 import { cn } from "@/lib/utils"
 import { X } from 'lucide-react';
-import { useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 import Button from "@/components/ui/button"
 import { Processor, Memory, Graphics } from "@/types";
@@ -20,20 +20,24 @@ const Filter: React.FC<FilterProps> = ({
     name, 
     valueKey 
     }) => {
+        const [selectedValue, setSelectedValue] = useState<string | null>(null);
         const searchParams = useSearchParams();
         const router = useRouter();
 
-        const selectedValue = searchParams.get(valueKey);
         const current = qs.parse(searchParams.toString());
 
-        const onClick = useCallback((id: string) => {
+        const onClick = (id: string) => {
+            if (selectedValue === id) {
+                setSelectedValue(null);
+            } else {
+                setSelectedValue(id);
+            }
+        };
+
+        useEffect(() => {
             const query = {
                 ...current,
-                [valueKey]: id,
-            }
-
-            if (current[valueKey] === id) {
-                query[valueKey] = null;
+                [valueKey]: selectedValue,
             }
 
             const url = qs.stringifyUrl({
@@ -42,7 +46,7 @@ const Filter: React.FC<FilterProps> = ({
             }, { skipNull: true });
 
             router.push(url, {scroll: false})
-        }, [current, valueKey, router]);
+        }, [selectedValue]);
 
     return (
         <div className="mb-8 mt-16">
