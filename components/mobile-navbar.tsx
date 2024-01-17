@@ -18,7 +18,7 @@ const MobileNavbar = () => {
   };
 
   return (
-    <div className="border-b bg-black border-primary fixed top-0 left-0 w-full z-50">
+    <div className="border-b bg-black border-primary fixed top-0 left-0 w-full z-40">
       <Container>
         <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
           <Link href="/" className="flex gap-x-2 " onClick={handleLinkClick}>
