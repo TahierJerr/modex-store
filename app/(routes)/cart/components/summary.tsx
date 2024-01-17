@@ -16,12 +16,12 @@ const Summary = () => {
 
     useEffect(() => {
         if (searchParams.get("success")) {
-            toast.success("Bestelling geplaatst!");
+            toast.success("Bestelling geplaatst!", {style: {background: "#000000", color: "#fff", border: "3px solid #cfb968"}});
             removeAll();
         }
 
         if (searchParams.get("canceled")) {
-            toast.error("Betaling geannuleerd.");
+            toast.error("Betaling geannuleerd.", {style: {background: "#000000", color: "#fff", border: "3px solid #cfb968"}});
         }
     }, [searchParams, removeAll]);
 
