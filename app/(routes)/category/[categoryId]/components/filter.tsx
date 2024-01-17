@@ -23,22 +23,22 @@ const Filter: React.FC<FilterProps> = ({
 
         const selectedValue = searchParams.get(valueKey);
         const current = qs.parse(searchParams.toString());
-
+        
         const onClick = useCallback((id: string) => {
             const query = {
                 ...current,
                 [valueKey]: id,
             }
-
+        
             if (current[valueKey] === id) {
                 query[valueKey] = null;
             }
-
+        
             const url = qs.stringifyUrl({
                 url: window.location.href,
                 query,
             }, { skipNull: true });
-
+        
             router.push(url, {scroll: false})
         }, [current, valueKey, router]);
 
