@@ -3,7 +3,6 @@ import Container from "@/components/ui/container";
 import type { Metadata } from 'next'
 import dynamic from "next/dynamic";
 import Billboard from "@/components/billboard";
-import getComputers from "@/actions/get-computers";
 
 export const revalidate = 0;
 
@@ -21,14 +20,13 @@ const ComputerList = dynamic(
 
 const HomePage = async () => {
     const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
-    const computers = await getComputers({ isFeatured: true });
 
     return (
         <div className="space-y-10 pb-10">
             <Container>
                 <Billboard data={billboard} />
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
-                    <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} />
+                    <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" />
                 </div>
             </Container>
         </div>

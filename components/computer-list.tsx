@@ -1,20 +1,22 @@
 import { Computer } from "@/types"
 import NoResults from "@/components/ui/no-results";
 import ComputerCard from "./ui/computer-card";
+import getComputers from "@/actions/get-computers";
 
 interface ComputerListProps {
     title: string;
     description: string;
-    items: Computer[];
 };
 
 
 
-const ComputerList: React.FC<ComputerListProps> = ({
+
+const ComputerList: React.FC<ComputerListProps> = async ({
     title,
     description,
-    items
 }) => {
+    const items = await getComputers({ isFeatured: true });
+    
     return (
         <div className="space-y-4">
             <h1 className="text-white font-bold text-3xl mx-auto">{title}</h1>
