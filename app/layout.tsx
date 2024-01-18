@@ -1,6 +1,5 @@
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import MobileNavbar from '@/components/mobile-navbar'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
 import { NavProvider } from '@/context/nav-provider'
@@ -14,6 +13,12 @@ const font = Montserrat({ subsets: ['latin'] })
 
 const ModalProvider = dynamic(
   () => import('@/providers/modal-provider'), {
+  loading: () => <p>Loading...</p>
+  }
+);
+
+const MobileNavbar = dynamic(
+  () => import('@/components/mobile-navbar'), {
   loading: () => <p>Loading...</p>
   }
 );

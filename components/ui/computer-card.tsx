@@ -70,7 +70,7 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
     return (
      <div onClick={handleClick} className="bg-black200 hover:bg-black100 group cursor-pointer p-3 space-y-2 rounded-md transform transition-all duration-300 h-full">
        <div className="aspect-square rounded-xl bg-black relative">
-         <Image alt={data.name} src={data?.images?.[0]?.url} fill className="aspect-square object-cover rounded-md" quality={100} fetchPriority="high" priority={true} />
+         <Image alt={data.name} src={data?.images?.[0]?.url} fill className="aspect-square object-cover rounded-md" quality={100} fetchPriority="low" priority={false} />
          <div className="sm:opacity-0 group-hover:opacity-100 transistion absolute w-full px-6 bottom-5 ">
            <div className="flex gap-x-6 justify-center">
              <IconButton title="Expand button" className="hover:bg-primary hover:border-primary" onClick={onPreview} icon={<Expand size={20} className="text-black"/> } />
