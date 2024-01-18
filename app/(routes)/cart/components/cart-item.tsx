@@ -37,20 +37,20 @@ data
                 <div className='absolute z-10 right-0 -top-2'>
                     <IconButton onClick={onRemove} title='Remove from cart' className='shadow-none border-none bg-transparent hover:scale-100' icon={<X className='text-primary' size={32} />} />
                 </div>
-                <div className='relative pr-9 sm:grid sm:grid-cols- sm:gap-x-2 sm:pr-0 text-white'>
-                    <div className='flex justify-between'>
+                <div className='relative pr-9 sm:grid sm:pr-0 text-white'>
+                    <div className='flex justify-between -mb-1 sm:-mb-1 '>
                         <p onClick={handleClick} className='text-primary text-lg font-semibold cursor-pointer'>
                             {data.name}
                         </p>
                     </div>
-                    <div className='mb-1 sm:mb-2'>
-                        <DeliveryTime deliveryTime={data.deliveryTime} />
-                    </div>
-                    <div className='mt-1 flex text-sm text-white overflow-hidden mr-0 sm:mr-9'>
+                    <div className='flex text-sm text-white overflow-hidden mr-0 sm:mr-9 my-1'>
                         <p className=''>{data.graphics.name}</p>
                         <p className='ml-4 border-l border-black100 pl-4'>{data.processor.name}</p>
                     </div>
-                    <Currency value={data.price} /> 
+                    <div className='mb-2 sm:mb-5'>
+                        <DeliveryTime deliveryTime={data.deliveryTime} />
+                    </div>
+                    <Currency value={data.price}/> 
                 </div>
             </div>
         </li>
