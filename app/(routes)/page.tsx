@@ -1,9 +1,9 @@
 import getBillboard from "@/actions/get-billboard";
 import Container from "@/components/ui/container";
-import getComputers from "@/actions/get-computers";
 import type { Metadata } from 'next'
 import dynamic from "next/dynamic";
 import Billboard from "@/components/billboard";
+import getComputers from "@/actions/get-computers";
 
 export const revalidate = 0;
 
@@ -20,10 +20,8 @@ const ComputerList = dynamic(
 
 
 const HomePage = async () => {
-    const [computers, billboard] = await Promise.all([
-        getComputers({ isFeatured: true }),
-        getBillboard("5854fd05-b077-4185-b72e-16539570c641")
-    ]);
+    const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
+    const computers = await getComputers({ isFeatured: true });
 
     return (
         <div className="space-y-10 pb-10">
