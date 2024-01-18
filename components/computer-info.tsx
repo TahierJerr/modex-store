@@ -46,7 +46,7 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
             <hr className="my-4 text-black200"/>
             <div className="mt-6 flex gap-x-3 flex-col">
             <DeliveryTime deliveryTime={data.deliveryTime} />
-                <Button title="Add to cart" onClick={onAddToCart} className="bg-white text-black hover:bg-primary flex items-center w-full justify-center gap-x-2">
+                <Button title="Add to cart" onClick={onAddToCart} className="bg-white text-black hover:bg-primary flex items-center w-full justify-center gap-x-2 mt-2 sm:mt-4">
                     Toevoegen aan winkelwagen
                     <ShoppingCart size={20} className="ml-2" />
                 </Button>
