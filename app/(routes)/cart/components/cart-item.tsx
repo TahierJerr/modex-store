@@ -43,7 +43,7 @@ data
                             {data.name}
                         </p>
                     </div>
-                    <div>
+                    <div className='mb-1 sm:mb-2'>
                         <DeliveryTime deliveryTime={data.deliveryTime} />
                     </div>
                     <div className='mt-1 flex text-sm text-white overflow-hidden mr-0 sm:mr-9'>
