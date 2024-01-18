@@ -322,7 +322,7 @@ export default function Voorwaarden() {
         Aanvullende dan wel van deze algemene voorwaarden afwijkende bepalingen mogen niet ten nadele van de consument zijn en dienen schriftelijk te worden vastgelegd dan wel op zodanige wijze dat deze door de consument op een toegankelijke manier kunnen worden opgeslagen op een duurzame gegevensdrager.
         </p>
 
-        <a href="@/public/algemene-voorwaarden-modex.pdf"><p className="mt-8 text-xl underline text-primary">Link voor algemene voorwaarden PDF</p></a>
+        <a href=" ../../../public/algemene-voorwaarden-modex.pdf"><p className="mt-8 text-xl underline text-primary">Link voor algemene voorwaarden PDF</p></a>
         </div>
         </div>
         
