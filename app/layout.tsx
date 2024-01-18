@@ -7,6 +7,7 @@ import { CategoryProvider } from '@/context/category-provider'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
 import dynamic from 'next/dynamic'
+import MobileNavbar from '@/components/mobile-navbar'
 
 
 const font = Montserrat({ subsets: ['latin'] })
@@ -17,11 +18,6 @@ const ModalProvider = dynamic(
   }
 );
 
-const MobileNavbar = dynamic(
-  () => import('@/components/mobile-navbar'), {
-  loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
-  }
-);
 
 export default function RootLayout({
   children,

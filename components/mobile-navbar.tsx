@@ -7,13 +7,7 @@ import NavbarToggle from "@/components/mobile-navbar-toggle";
 import Link from "next/link";
 import Image from "next/image";
 import { useNavContext } from "@/context/nav-provider";
-import dynamic from "next/dynamic";
-
-const MobileMenuPage = dynamic(
-  () => import("@/components/mobile-menu-page"), {
-  loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
-  }
-);
+import MobileMenuPage from "./mobile-menu-page";
 
 
 const MobileNavbar = () => {
