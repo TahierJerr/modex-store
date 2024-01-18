@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
+import DeliveryTime from "./delivery-time";
 
 interface ComputerCard {
     data: Computer;
@@ -22,38 +23,6 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
     const handleClick = () => {
      router.push(`/computer/${data?.id}`);
     };
-   
-    function getDeliveryTimeDetails(deliveryTime: string) {
-      let number = '';
-      if (deliveryTime) {
-        number = deliveryTime.replace(/[^0-9]/g, '');
-      }
-      const deliveryTimeNumber = Number(number);
-      let colorClass: string;
-      let text: string;
-      
-      if (deliveryTimeNumber === 1) {
-         colorClass = 'text-success';
-         text = `Voor 17:00 besteld, morgen in huis!`;
-      } else if (deliveryTimeNumber > 1 && deliveryTimeNumber < 5) {
-         colorClass = 'text-success';
-         text = `Wordt binnen ${deliveryTimeNumber} werkdagen bezorgd!`;
-      } else if (deliveryTimeNumber >= 5 && deliveryTimeNumber < 7) {
-         colorClass = 'text-warning';
-         text = `Wordt binnen ${deliveryTimeNumber} werkdagen bezorgd!`;
-      } else if (deliveryTimeNumber >= 7) {
-         colorClass = 'text-danger';
-         text = `Tussen 7-14 werkdagen bezorgd.`;
-      } else {
-         colorClass = 'text-danger';
-         text = 'Onbekende leverdatum';
-      }
-    
-      return { colorClass, text };
-    }
-      
-   
-    const { colorClass, text } = getDeliveryTimeDetails(data.deliveryTime);
 
     const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
       event.stopPropagation();
@@ -78,28 +47,34 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
            </div>
          </div>
        </div>
-       <div className="-mt-4">
-       <p className={`${colorClass} font-semibold`}>
-           {text}
-         </p>
+       <div>
+       <DeliveryTime deliveryTime={data.deliveryTime} />
        </div>
        <div className="border-b py-2 border-gray">
-         <p className="font-semibold text-lg overflow-auto h-16 md:h-auto">
+         <p className="font-semibold text-lg overflow-auto md:h-auto">
            {data.name}
          </p>
-         <p className="text-sm text-gray">
-           {data.pccase.name} {data.graphics.name}
-         </p>
+         <div className="text-sm text-gray block sm:hidden">
+           <p>
+              {data.graphics.name}
+           </p>
+            <p>
+                {data.processor.name}
+            </p>
+            <p>
+                {data.memory.name}
+            </p>
+         </div>
        </div>
-       <div className="border-b py-2 border-gray">
+       <div className="border-b py-2 border-gray hidden sm:block">
          <h3 className="font-semibold pb-2">Specificaties</h3>
-         <p className="text-md text-white">{data.processor.name}</p>
-         <p className="text-md text-white">{data.graphics.name}</p>
-         <p className="text-md text-white">{data.memory.name}</p>
+         <p className="text-md text-white">- {data.processor.name}</p>
+         <p className="text-md text-white">- {data.graphics.name}</p>
+         <p className="text-md text-white">- {data.memory.name}</p>
        </div>
-       <div className="flex items-center justify-between">
+       <div className="sm:flex items-center justify-between ">
          <Currency value={data?.price} />
-         <IconButton title="Add to cart" className="rounded-md px-6 hover:bg-primary border-0 transition-all" onClick={onAddToCart} icon={<ShoppingCart size={20} className="text-black"/> } />
+         <IconButton title="Add to cart" className="rounded-md px-6 hover:bg-primary border-0 transition-all w-full sm:w-auto mt-2 sm:mt-0" onClick={onAddToCart} icon={<ShoppingCart size={20} className="text-black"/> } />
        </div>
      </div>
     );

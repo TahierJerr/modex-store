@@ -8,6 +8,7 @@ import useCart from '@/hooks/use-cart';
 import Currency from '@/components/ui/currency';
 import { Computer } from '@/types';
 import { useRouter } from 'next/navigation';
+import DeliveryTime from '@/components/ui/delivery-time';
 
 interface CartItemProps {
     data: Computer;
@@ -36,11 +37,14 @@ data
                 <div className='absolute z-10 right-0 -top-2'>
                     <IconButton onClick={onRemove} title='Remove from cart' className='shadow-none border-none bg-transparent hover:scale-100' icon={<X className='text-primary' size={32} />} />
                 </div>
-                <div className='relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-2 sm:pr-0 text-white'>
+                <div className='relative pr-9 sm:grid sm:grid-cols- sm:gap-x-2 sm:pr-0 text-white'>
                     <div className='flex justify-between'>
                         <p onClick={handleClick} className='text-primary text-lg font-semibold cursor-pointer'>
                             {data.name}
                         </p>
+                    </div>
+                    <div>
+                        <DeliveryTime deliveryTime={data.deliveryTime} />
                     </div>
                     <div className='mt-1 flex text-sm text-white overflow-hidden mr-0 sm:mr-9'>
                         <p className=''>{data.graphics.name}</p>
