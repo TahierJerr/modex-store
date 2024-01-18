@@ -31,7 +31,7 @@ const DeliveryTime: React.FC<DeliveryTimeProps> = ({ deliveryTime }) => {
 
   return (
     <div className="flex items-center">
-  <p className={`${colorClass} overflow-hidden font-semibold text-sm sm:text-md -mb-2 sm:-mb-4`}>{text}</p>
+  <p className={`${colorClass} overflow-hidden font-semibold text-sm sm:text-lg -mb-2 sm:-mb-4`}>{text}</p>
   </div>
   );
 };
