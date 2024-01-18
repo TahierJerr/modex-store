@@ -5,12 +5,9 @@ import getMemory from "@/actions/get-memory";
 import getProcessors from "@/actions/get-processors";
 
 import Container from "@/components/ui/container";
-import Billboard from "@/components/billboard";
 
-import MobileFilters from "./components/mobile-filters";
-import Filter from "./components/filter";
 import NoResults from "@/components/ui/no-results";
-import ComputerCard from "@/components/ui/computer-card";
+import dynamic from "next/dynamic";
 import type { Metadata } from 'next'
 
 
@@ -18,7 +15,34 @@ export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
   }
 
+
+
 export const revalidate = 0;
+
+const Billboard = dynamic(
+    () => import("@/components/billboard"), {
+    loading: () => <p>Loading...</p>
+    }
+);
+
+const ComputerCard = dynamic(
+    () => import("@/components/ui/computer-card"), {
+    loading: () => <p>Loading...</p>
+    }
+);
+
+const Filter = dynamic(
+    () => import("./components/filter"), {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+    }
+);
+
+const MobileFilters = dynamic(
+    () => import("./components/mobile-filters"), {
+    loading: () => <p>Loading...</p>
+    }
+);
 
 interface CategoryPageProps {
     params: {

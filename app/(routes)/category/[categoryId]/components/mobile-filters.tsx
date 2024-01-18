@@ -7,13 +7,20 @@ import { Graphics, Memory, Processor } from "@/types";
 import { Plus, X } from "lucide-react";
 import { Dialog } from "@headlessui/react";
 import IconButton from "@/components/ui/icon-button";
-import Filter from "./filter";
+import dynamic from "next/dynamic";
 
 interface mobileFiltersProps {
     graphics: Graphics[];
     processors: Processor[];
     memory: Memory[];
 }
+
+const Filter = dynamic(
+    () => import("./filter"), {
+    loading: () => <p>Loading...</p>,
+    ssr: false,
+    }
+);
 
 const MobileFilters: React.FC<mobileFiltersProps> = ({
     graphics,

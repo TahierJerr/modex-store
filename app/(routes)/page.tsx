@@ -1,4 +1,3 @@
-import Billboard from "@/components/billboard";
 import getBillboard from "@/actions/get-billboard";
 import Container from "@/components/ui/container";
 import getComputers from "@/actions/get-computers";
@@ -12,7 +11,15 @@ export const metadata: Metadata = {
 }
 
 const ComputerList = dynamic(
-    () => import("@/components/computer-list"),
+    () => import("@/components/computer-list"), {
+    loading: () => <p>Loading...</p>
+    }
+);
+
+const Billboard = dynamic(
+    () => import("@/components/billboard"), {
+    loading: () => <p>Loading...</p>
+    }
 );
 
 const HomePage = async () => {

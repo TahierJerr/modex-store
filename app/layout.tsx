@@ -6,11 +6,17 @@ import './globals.css'
 import { NavProvider } from '@/context/nav-provider'
 import { CategoryProvider } from '@/context/category-provider'
 import CookieConsentComponent from '@/components/cookie-consent'
-import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
+import dynamic from 'next/dynamic'
 
 
 const font = Montserrat({ subsets: ['latin'] })
+
+const ModalProvider = dynamic(
+  () => import('@/providers/modal-provider'), {
+  loading: () => <p>Loading...</p>
+  }
+);
 
 export default function RootLayout({
   children,
