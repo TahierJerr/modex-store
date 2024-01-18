@@ -1,22 +1,13 @@
 import getBillboard from "@/actions/get-billboard";
 import Container from "@/components/ui/container";
 import type { Metadata } from 'next'
-import dynamic from "next/dynamic";
 import Billboard from "@/components/billboard";
-
-export const revalidate = 0;
+import ComputerList from "@/components/computer-list";
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
     description: 'MODEX is de beste plek om je nieuwe gaming pc te kopen. Wij hebben computers voor elk budget.'
 }
-
-const ComputerList = dynamic(
-    () => import("@/components/computer-list"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
-    }
-);
-
 
 const HomePage = async () => {
     const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
