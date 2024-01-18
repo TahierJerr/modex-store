@@ -69,7 +69,7 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
        <div className="border-b py-2 border-gray hidden sm:block">
          <h3 className="font-semibold pb-2">Specificaties</h3>
          <p className="text-md text-white">- {data.processor.name}</p>
-         <p className="text-md text-white">- {data.graphics.name}</p>
+         <p className="text-md text-white">- {data.graphics.model}</p>
          <p className="text-md text-white">- {data.memory.name}</p>
        </div>
        <div className="sm:flex items-center justify-between ">

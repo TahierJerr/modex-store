@@ -3,6 +3,7 @@ import Container from "@/components/ui/container";
 import getComputers from "@/actions/get-computers";
 import type { Metadata } from 'next'
 import dynamic from "next/dynamic";
+import Billboard from "@/components/billboard";
 
 export const revalidate = 0;
 
@@ -16,11 +17,6 @@ const ComputerList = dynamic(
     }
 );
 
-const Billboard = dynamic(
-    () => import("@/components/billboard"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
-    }
-);
 
 const HomePage = async () => {
     const [computers, billboard] = await Promise.all([

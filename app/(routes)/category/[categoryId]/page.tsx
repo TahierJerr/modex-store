@@ -5,6 +5,7 @@ import getMemory from "@/actions/get-memory";
 import getProcessors from "@/actions/get-processors";
 
 import Container from "@/components/ui/container";
+import Billboard from "@/components/billboard";
 
 import NoResults from "@/components/ui/no-results";
 import dynamic from "next/dynamic";
@@ -18,12 +19,6 @@ export const metadata: Metadata = {
 
 
 export const revalidate = 0;
-
-const Billboard = dynamic(
-    () => import("@/components/billboard"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
-    }
-);
 
 const ComputerCard = dynamic(
     () => import("@/components/ui/computer-card"), {
