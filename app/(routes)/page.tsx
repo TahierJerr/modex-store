@@ -23,8 +23,11 @@ const Billboard = dynamic(
 );
 
 const HomePage = async () => {
-    const computers = await getComputers({ isFeatured: true });
-    const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
+    const [computers, billboard] = await Promise.all([
+        getComputers({ isFeatured: true }),
+        getBillboard("5854fd05-b077-4185-b72e-16539570c641")
+    ]);
+
     return (
         <div className="space-y-10 pb-10">
             <Container>
