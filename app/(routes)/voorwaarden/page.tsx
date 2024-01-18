@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX Voorwaarden | MODEX',
+    description: 'Dit zijn de algemene voorwaarden van MODEX.'
   }
 
 export default function Voorwaarden() {
