@@ -21,26 +21,26 @@ export const revalidate = 0;
 
 const Billboard = dynamic(
     () => import("@/components/billboard"), {
-    loading: () => <p>Loading...</p>
+    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
     }
 );
 
 const ComputerCard = dynamic(
     () => import("@/components/ui/computer-card"), {
-    loading: () => <p>Loading...</p>
+    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
     }
 );
 
 const Filter = dynamic(
     () => import("./components/filter"), {
-    loading: () => <p>Loading...</p>,
+    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>,
     ssr: false,
     }
 );
 
 const MobileFilters = dynamic(
     () => import("./components/mobile-filters"), {
-    loading: () => <p>Loading...</p>
+    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
     }
 );
 

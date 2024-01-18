@@ -17,7 +17,7 @@ interface mobileFiltersProps {
 
 const Filter = dynamic(
     () => import("./filter"), {
-    loading: () => <p>Loading...</p>,
+    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>,
     ssr: false,
     }
 );

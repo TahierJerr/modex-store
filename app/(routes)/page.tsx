@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 
 const ComputerList = dynamic(
     () => import("@/components/computer-list"), {
-    loading: () => <p>Loading...</p>
+    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
     }
 );
 
 const Billboard = dynamic(
     () => import("@/components/billboard"), {
-    loading: () => <p>Loading...</p>
+    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
     }
 );
 

@@ -4,8 +4,8 @@ import Container from "@/components/ui/container";
 import ComputerList from "@/components/computer-list";
 import Gallery from "@/components/gallery";
 import ComputerInfo from "@/components/computer-info";
-import ComputerSpec from "@/components/computer-spec";
 import type { Metadata } from 'next'
+import dynamic from "next/dynamic";
 
 
 export const metadata: Metadata = {
@@ -18,6 +18,8 @@ interface ComputerPageProps {
     }
 }
 
+
+
 const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
     const computer = await getComputer(params.computerId);
     const otherComputers = await getComputers({
@@ -26,6 +28,18 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
 
     const filteredComputers = otherComputers.filter(
         (item) => item.id !== computer.id
+    );
+
+    const ComputerSpec = dynamic(
+        () => import("@/components/computer-spec"), {
+        loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
+        }
+    );
+
+    const ComputerList = dynamic(
+        () => import("@/components/computer-list"), {
+        loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
+        }
     );
 
     return (

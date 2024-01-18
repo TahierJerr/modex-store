@@ -13,13 +13,13 @@ const font = Montserrat({ subsets: ['latin'] })
 
 const ModalProvider = dynamic(
   () => import('@/providers/modal-provider'), {
-  loading: () => <p>Loading...</p>
+  loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
   }
 );
 
 const MobileNavbar = dynamic(
   () => import('@/components/mobile-navbar'), {
-  loading: () => <p>Loading...</p>
+  loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
   }
 );
 
