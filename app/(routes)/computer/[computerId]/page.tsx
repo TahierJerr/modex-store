@@ -1,5 +1,4 @@
 import getComputer from "@/actions/get-computer";
-import getComputers from "@/actions/get-computers";
 import Container from "@/components/ui/container";
 import Gallery from "@/components/gallery";
 import ComputerInfo from "@/components/computer-info";
@@ -22,9 +21,6 @@ interface ComputerPageProps {
 
 const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
     const computer = await getComputer(params.computerId);
-    const otherComputers = await getComputers({
-        categoryId: computer?.category?.id
-    });
 
     const ComputerSpec = dynamic(
         () => import("@/components/computer-spec"), {
@@ -51,7 +47,7 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
                     <hr className="my-10 text-black200" />
                     <ComputerSpec data={computer} />
                     <hr className="my-10 text-black200" />
-                    <ComputerList title="Andere Computers" description="Check onze andere pre-builds" />
+                    <ComputerList title="Andere Computers" description="Check onze andere pre-builds" id={params.computerId} />
                 </div>
             </Container>
         </div>
