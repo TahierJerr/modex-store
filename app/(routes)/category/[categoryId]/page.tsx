@@ -36,18 +36,18 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     params,
     searchParams
 }) => {
-    const computers = await getComputers({
-        categoryId: params.categoryId,
-        processorId: searchParams.processorId,
-        graphicsId: searchParams.graphicsId,
-        memoryId: searchParams.memoryId,
-    });
-    
-
-    const processors = await getProcessors();
-    const graphics = await getGraphics();
-    const memory = await getMemory();
-    const category = await getCategory(params.categoryId);
+    const [computers, processors, graphics, memory, category] = await Promise.all([
+        getComputers({
+            categoryId: params.categoryId,
+            processorId: searchParams.processorId,
+            graphicsId: searchParams.graphicsId,
+            memoryId: searchParams.memoryId,
+        }),
+        getProcessors(),
+        getGraphics(),
+        getMemory(),
+        getCategory(params.categoryId)
+    ]);
 
     return (
         <div className="bg-black">

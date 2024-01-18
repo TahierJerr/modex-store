@@ -8,11 +8,15 @@ import { useCallback } from 'react';
 import Button from "@/components/ui/button"
 import { Processor, Memory, Graphics } from "@/types";
 import { useSearchParams, useRouter } from "next/navigation";
+
+
 interface FilterProps {
     data: (Processor | Memory | Graphics )[];
     name: string;
     valueKey: string;
 }
+
+
 const Filter: React.FC<FilterProps> = ({
     data, 
     name, 
