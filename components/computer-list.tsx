@@ -13,7 +13,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     description,
     id,
 }) => {
-    const items = await getComputers({ isFeatured: true });
+    const items = await getComputers({ isFeatured: true, isArchived: false });
 
     const filteredItems = id ? items.filter(item => item.id !== id) : items;
 
