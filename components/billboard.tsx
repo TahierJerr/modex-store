@@ -14,7 +14,7 @@ const Billboard: React.FC<BillboardProps> = async ({ data, buttonTitle, onClick 
         <section
             className="relative flex flex-col md:flex-row items-center justify-center py-28 sm:py-72 px-6 mb-4 md:mb-8"
         >
-            <Image src={data?.imageUrl} alt="billboard" layout="fill" objectFit="cover" fetchPriority="high" quality={100} priority={true} />
+            <Image loading="eager" src={data?.imageUrl} alt="billboard" layout="fill" objectFit="cover" fetchPriority="high" quality={100} priority={true} />
             {data?.label && data?.description ? (
                 <div className="container flex flex-col md:flex-row justify-between">
                     <div className="md:w-1/2 max-w-3xl  md:mr-10 md:order-none">

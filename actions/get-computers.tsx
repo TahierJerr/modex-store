@@ -10,6 +10,7 @@ interface Query {
     memoryId?: string
     pccaseId?: string
     isFeatured?: boolean
+    isArchived?: boolean
 }
 
 const getComputers = async (query: Query): Promise<Computer[]> => {
@@ -22,6 +23,7 @@ const getComputers = async (query: Query): Promise<Computer[]> => {
             pccaseId: query.pccaseId,
             categoryId: query.categoryId,
             isFeatured: query.isFeatured,
+            isArchived: query.isArchived,
         },
     });
 

@@ -12,11 +12,11 @@ const ComputerGalleryTab: React.FC<ComputerGalleryTabProps> = ({
     image
 }) => {
     return (
-        <Tab className="relative flex aspect-square cursor-pointer items-center justify-center rounded-lg bg-black">
+        <Tab className="relative flex aspect-square cursor-pointer items-center justify-center rounded-lg bg-white">
             {({ selected }) => (
                 <div>
                     <span className="absolute h-full w-full aspect-square inset-0 overflow-hidden rounded-lg">
-                        <Image fill src={image.url} alt="" className="object-cover object-center " quality={100} fetchPriority="low"/>
+                        <Image fill src={image.url} alt="computer image" className="object-cover object-center " quality={100} fetchPriority="high" priority={true} />
                     </span>
                     <span className={cn("absolute inset-0 rounded-md ring-2 ring-offset-2 ",
                     selected ? "ring-primary" : "")} />

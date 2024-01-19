@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'MODEX Retour | MODEX',
+  description: 'Dit is de retour pagina van MODEX.'
 }
 
 const RetourPage = () => {

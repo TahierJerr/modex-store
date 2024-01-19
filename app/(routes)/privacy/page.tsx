@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX Privacy | MODEX',
+    description: 'Dit is de privacy pagina van MODEX.'
   }
 
 const TextComponent2 = () => {

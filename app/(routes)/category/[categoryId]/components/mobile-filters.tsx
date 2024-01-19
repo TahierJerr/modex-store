@@ -7,13 +7,21 @@ import { Graphics, Memory, Processor } from "@/types";
 import { Plus, X } from "lucide-react";
 import { Dialog } from "@headlessui/react";
 import IconButton from "@/components/ui/icon-button";
-import Filter from "./filter";
+import dynamic from "next/dynamic";
+import LoadingNow from "@/components/loading";
 
 interface mobileFiltersProps {
     graphics: Graphics[];
     processors: Processor[];
     memory: Memory[];
 }
+
+const Filter = dynamic(
+    () => import("./filter"), {
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>,
+    ssr: false,
+    }
+);
 
 const MobileFilters: React.FC<mobileFiltersProps> = ({
     graphics,

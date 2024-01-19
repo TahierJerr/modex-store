@@ -7,18 +7,40 @@ import getProcessors from "@/actions/get-processors";
 import Container from "@/components/ui/container";
 import Billboard from "@/components/billboard";
 
-import MobileFilters from "./components/mobile-filters";
-import Filter from "./components/filter";
 import NoResults from "@/components/ui/no-results";
-import ComputerCard from "@/components/ui/computer-card";
+import dynamic from "next/dynamic";
 import type { Metadata } from 'next'
+
+import LoadingNow from "@/components/loading";
 
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
+    description: 'MODEX is de beste plek om je nieuwe gaming pc te kopen. Wij hebben computers voor elk budget.'
   }
 
+
+
 export const revalidate = 0;
+
+const ComputerCard = dynamic(
+    () => import("@/components/ui/computer-card"), {
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
+    }
+);
+
+const Filter = dynamic(
+    () => import("./components/filter"), {
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>,
+    ssr: false,
+    }
+);
+
+const MobileFilters = dynamic(
+    () => import("./components/mobile-filters"), {
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
+    }
+);
 
 interface CategoryPageProps {
     params: {
