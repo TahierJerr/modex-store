@@ -27,7 +27,7 @@ const Gallery: React.FC<GalleryProps> = ({
                 {images.map((image) => (
                     <Tab.Panel key={image.id}>
                         <div className="aspect-square relative h-full w-full sm:rounded-lg overflow-hidden bg-black200">
-                            <Image fill src={image.url} alt="Image" className="object-cover object-center" quality={50} loading="lazy" fetchPriority="low" priority={false} />
+                            <Image fill src={image.url} alt="Image" className="object-cover object-center" quality={100} loading="lazy" fetchPriority="low" priority={false} />
                         </div>
                     </Tab.Panel>
                 ))}
