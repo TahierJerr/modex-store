@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from 'react';
 import getCategory from "@/actions/get-category";
 import getComputers from "@/actions/get-computers";
