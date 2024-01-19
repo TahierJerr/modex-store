@@ -19,6 +19,13 @@ const ComputerSpecData: React.FC<ComputerSpecDataProps> = ({ data }) => {
                 <p className="mb-2">Base Clock: {data.processor.baseSpeed}</p>
               </div>
               <div>
+                <h2 className="font-semibold text-primary text-2xl mb-4">Processor Koeler</h2>
+                <p className="mb-2">Koeler: {data.cooler.name}</p>
+                <p className="mb-2">Model: {data.cooler.model}</p>
+                <p className="mb-2">Type: {data.cooler.type}</p>
+                <p className="mb-2">RGB: {data.cooler.rgb}</p>
+              </div>
+              <div>
                 <h2 className="font-semibold text-primary text-2xl mb-4">Graphics</h2>
                 <p className="mb-2">GPU: {data.graphics.name}</p>
                 <p className="mb-2">Merk: {data.graphics.brand}</p>

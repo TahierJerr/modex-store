@@ -8,6 +8,7 @@ import { Plus, X } from "lucide-react";
 import { Dialog } from "@headlessui/react";
 import IconButton from "@/components/ui/icon-button";
 import dynamic from "next/dynamic";
+import LoadingNow from "@/components/loading";
 
 interface mobileFiltersProps {
     graphics: Graphics[];
@@ -17,7 +18,7 @@ interface mobileFiltersProps {
 
 const Filter = dynamic(
     () => import("./filter"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>,
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>,
     ssr: false,
     }
 );

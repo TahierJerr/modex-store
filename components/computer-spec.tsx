@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Computer } from "@/types";
 import { ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
+import LoadingNow from "./loading";
 
 interface ComputerSpecProps {
     data: Computer;
@@ -11,7 +12,7 @@ interface ComputerSpecProps {
 
 const ComputerSpecData = dynamic(
     () => import("./computer-spec-data"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>,
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>,
     ssr: false,
     }
 );

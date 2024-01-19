@@ -11,6 +11,8 @@ import NoResults from "@/components/ui/no-results";
 import dynamic from "next/dynamic";
 import type { Metadata } from 'next'
 
+import LoadingNow from "@/components/loading";
+
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
@@ -23,20 +25,20 @@ export const revalidate = 0;
 
 const ComputerCard = dynamic(
     () => import("@/components/ui/computer-card"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
     }
 );
 
 const Filter = dynamic(
     () => import("./components/filter"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>,
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>,
     ssr: false,
     }
 );
 
 const MobileFilters = dynamic(
     () => import("./components/mobile-filters"), {
-    loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
+    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
     }
 );
 

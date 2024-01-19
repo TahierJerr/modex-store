@@ -4,6 +4,7 @@ import Gallery from "@/components/gallery";
 import ComputerInfo from "@/components/computer-info";
 import type { Metadata } from 'next'
 import dynamic from "next/dynamic";
+import LoadingNow from "@/components/loading";
 
 
 export const metadata: Metadata = {
@@ -24,13 +25,13 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
 
     const ComputerSpec = dynamic(
         () => import("@/components/computer-spec"), {
-        loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
+        loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
         }
     );
 
     const ComputerList = dynamic(
         () => import("@/components/computer-list"), {
-        loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
+        loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
         }
     );
 
