@@ -37,7 +37,9 @@ export default function RootLayout({
             <div className="sm:hidden mb-16">
               <MobileNavbar />
             </div>
+            <div className='min-h-screen'>
             {children}
+            </div>
             <Footer />
           </CategoryProvider>
         </NavProvider >
