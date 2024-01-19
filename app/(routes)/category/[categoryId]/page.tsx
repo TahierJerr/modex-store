@@ -11,14 +11,10 @@ import Container from "@/components/ui/container";
 import Billboard from "@/components/billboard";
 
 import dynamic from "next/dynamic";
-import type { Metadata } from 'next'
 
 import LoadingNow from "@/components/loading";
 
-export const metadata: Metadata = {
-    title: 'MODEX Prebuilt Gaming PCs | MODEX',
-    description: 'MODEX is de beste plek om je nieuwe gaming pc te kopen. Wij hebben computers voor elk budget.'
-}
+
 
 export const revalidate = 0;
 
