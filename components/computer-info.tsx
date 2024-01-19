@@ -36,6 +36,7 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
             <div className="flex gap-x-4 flex-col">
                 <h2 className="font-semibold text-primary text-lg mb-4">Belangrijkste specificaties:</h2>                
                 <p className="mb-2">Processor: {data.processor.name}</p>
+                <p className="mb-2">Processor Koeler: {data.cooler.name}</p>
                 <p className="mb-2">Grafische kaart: {data.graphics.name}</p>
                 <p className="mb-2">Geheugen: {data.memory.name}</p>
                 <p className="mb-2">Moederbord: {data.motherboard.name}</p>
