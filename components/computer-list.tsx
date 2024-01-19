@@ -1,21 +1,29 @@
 import NoResults from "@/components/ui/no-results";
 import ComputerCard from "./ui/computer-card";
 import getComputers from "@/actions/get-computers";
+import { Computer } from "@/types";
 
 interface ComputerListProps {
     title: string;
     description: string;
     id?: string;
+    items?: Computer[];
 }
 
 const ComputerList: React.FC<ComputerListProps> = async ({
     title,
     description,
     id,
+    items,
 }) => {
-    const items = await getComputers({ isFeatured: true, });
+    let filteredItems: Computer[] = [];
 
-    const filteredItems = id ? items.filter(item => item.id !== id) : items;
+    if (items) {
+        filteredItems = id ? items.filter(item => item.id !== id) : items;
+    } else {
+        const fetchedItems = await getComputers({ isFeatured: true });
+        filteredItems = id ? fetchedItems.filter(item => item.id !== id) : fetchedItems;
+    }
 
     return (
         <div className="space-y-4">
