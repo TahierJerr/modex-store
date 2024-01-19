@@ -14,13 +14,6 @@ interface mobileFiltersProps {
     graphics: Graphics[];
     processors: Processor[];
     memory: Memory[];
-    selectedFilters: {
-        processorId?: string;
-        graphicsId?: string;
-        memoryId?: string;
-    };
-    onFilterChange: (filterKey: string, filterValue: string) => void;
-    isNoResults: boolean;
 }
 
 const Filter = dynamic(
@@ -34,9 +27,6 @@ const MobileFilters: React.FC<mobileFiltersProps> = ({
     graphics,
     processors,
     memory,
-    selectedFilters,
-    onFilterChange,
-    isNoResults
 }) => {
     const [open, setOpen] = useState(false);
 
@@ -57,30 +47,9 @@ const MobileFilters: React.FC<mobileFiltersProps> = ({
                     <IconButton className="bg-black hover:scale-100" icon={<X size={32} className="text-primary" />} onClick={onClose}></IconButton>
                 </div>
                 <div className="p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 200px)' }}>
-                    <Filter 
-                        valueKey="graphicsId" 
-                        name="Grafische kaart" 
-                        data={graphics} 
-                        selectedFilter={selectedFilters.graphicsId}
-                        onFilterChange={onFilterChange}
-                        isDisabled={isNoResults}
-                    />
-                    <Filter 
-                        valueKey="processorId" 
-                        name="Processor" 
-                        data={processors} 
-                        selectedFilter={selectedFilters.processorId}
-                        onFilterChange={onFilterChange}
-                        isDisabled={isNoResults}
-                    />
-                    <Filter 
-                        valueKey="memoryId" 
-                        name="Geheugen" 
-                        data={memory} 
-                        selectedFilter={selectedFilters.memoryId}
-                        onFilterChange={onFilterChange}
-                        isDisabled={isNoResults}
-                    />
+                    <Filter valueKey="graphicsId" name="Grafische kaart" data={graphics} />
+                    <Filter valueKey="processorId" name="Processor" data={processors} />
+                    <Filter valueKey="memoryId" name="Geheugen" data={memory} />
                 </div>
             </Dialog.Panel>
         </div>
