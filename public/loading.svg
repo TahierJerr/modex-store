@@ -16,35 +16,6 @@
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
      id="defs19" /><style
      id="style2">
-#logo-fade{
-opacity: 0;
-animation: fadeIn 4s ease-in forwards;
-}
-
-@keyframes fadeIn { 0% { opacity:0; } 50% { opacity:0; } 100% { opacity:1; } }
-@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
-
-#outline{
-opacity: 1;
-stroke-dasharray: 2000;
-stroke-dashoffset: 2000;
-animation: dash 4s ease-in-out forwards;
-}
-
-@keyframes dash {
-  0% {
-    opacity: 1;
-    stroke-dashoffset: 2000;
-  }
-  50% {
-    opacity: 1;
-    stroke-dashoffset: 1000;
-  }
-  100% {
-    opacity: 0;
-    stroke-dashoffset: 0;
-  }
-}
 </style><path
      stroke-linecap="round"
      stroke-linejoin="round"
