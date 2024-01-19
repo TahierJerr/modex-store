@@ -1,7 +1,12 @@
+import React from 'react';
+
 const LoadingNow = () => {
     return (
-        <p className="text-lg font-semibold text-primary md:text-xl">Loading...</p>
-    )
-}
+        <div className="flex items-center justify-center h-full">
+            <p className="text-2xl font-bold text-primary animate-pulse">Loading...</p>
+            <span className="inline-block w-6 h-6 border-4 border-primary border-t-transparent rounded-full animate-spin"></span>
+        </div>
+    );
+};
 
 export default LoadingNow;
