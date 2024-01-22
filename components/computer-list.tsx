@@ -8,6 +8,7 @@ interface ComputerListProps {
     description: string;
     id?: string;
     items?: Computer[];
+    sortOrder?: 'asc' | 'desc'; // Add this line
 }
 
 const ComputerList: React.FC<ComputerListProps> = async ({
@@ -15,6 +16,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     description,
     id,
     items,
+    sortOrder = 'asc', 
 }) => {
     let filteredItems: Computer[] = [];
 
@@ -24,6 +26,14 @@ const ComputerList: React.FC<ComputerListProps> = async ({
         const fetchedItems = await getComputers({ isFeatured: true });
         filteredItems = id ? fetchedItems.filter(item => item.id !== id) : fetchedItems;
     }
+
+    filteredItems.sort((a, b) => {
+        if (sortOrder === 'asc') {
+            return Number(a.price) - Number(b.price);
+        } else {
+            return Number(b.price) - Number(a.price);
+        }
+    });
 
     return (
         <div className="space-y-4">
