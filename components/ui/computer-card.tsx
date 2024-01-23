@@ -56,7 +56,7 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
          </p>
          <div className="text-sm text-gray block sm:hidden">
            <p>
-              {data.graphics.name}
+              {data.graphics.model}
            </p>
             <p>
                 {data.processor.name}
