@@ -18,7 +18,7 @@ const HomePage = async () => {
     return (
         <div className="space-y-10 pb-10">
             <Container>
-                <Billboard data={billboard} buttonLink="/category/ac6c2c0a-1a72-49f3-85eb-e5be863186de" buttonText="Check onze computers"/>
+                <Billboard data={billboard} buttonLink="/category/ac6c2c0a-1a72-49f3-85eb-e5be863186de" buttonText="Check onze gaming pcs"/>
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
                     <BulletSection />
                     <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} sortOrder="asc"/>
