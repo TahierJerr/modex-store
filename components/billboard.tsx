@@ -1,11 +1,16 @@
 import { Billboard as BillboardType } from "@/types";
 import Image from "next/image";
+import Button from "./ui/button";
+import { ArrowRight } from "lucide-react"; 
+import Link from "next/link";
 
 interface BillboardProps {
     data: BillboardType;
+    buttonText?: string;
+    buttonLink?: string;
 }
 
-const Billboard: React.FC<BillboardProps> = async ({ data }) => {
+const Billboard: React.FC<BillboardProps> = async ({ data, buttonText, buttonLink }) => {
     return (
         <section
             className="relative flex flex-col md:flex-row items-center justify-center py-28 sm:py-72 px-6 mb-4 md:mb-8"
@@ -20,6 +25,16 @@ const Billboard: React.FC<BillboardProps> = async ({ data }) => {
                         <p className="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-8 translate-y-4 break-words" data-animate>
                             {data?.description}
                         </p>
+                        {buttonText && buttonLink ? (
+                            <Link href={buttonLink} key={buttonLink}>
+                                <Button className="translate-y-4 bg-white text-black">
+                                    <span className="flex items-center hover:translate-x-2 transition-all">
+                                        <span className="mr-2 ">{buttonText}</span>
+                                        <ArrowRight className="" size={20} />
+                                    </span>
+                                </Button>
+                            </Link>
+                        ) : null}
                     </div>
                 </div>
             ) : null}
