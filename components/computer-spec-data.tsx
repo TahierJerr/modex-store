@@ -26,7 +26,7 @@ const ComputerSpecData: React.FC<ComputerSpecDataProps> = ({ data }) => {
                 <p className="mb-2">RGB: {data.cooler.rgb}</p>
               </div>
               <div>
-                <h2 className="font-semibold text-primary text-2xl mb-4">Graphics</h2>
+                <h2 className="font-semibold text-primary text-2xl mb-4">Grafische Kaart</h2>
                 <p className="mb-2">GPU: {data.graphics.name}</p>
                 <p className="mb-2">Merk: {data.graphics.brand}</p>
                 <p className="mb-2">Model: {data.graphics.model}</p>
