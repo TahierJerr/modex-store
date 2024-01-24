@@ -6,7 +6,7 @@ const BulletSection = () => {
     <div className="text-white space-y-4 my-12">
         <h1 className="text-primary font-bold text-3xl mx-auto">Waarom MODEX?</h1>
         <p className="text-white text-1xl mx-auto font-semibold">MODEX is een bedrijf dat gespecialiseerd is in het bouwen van hoogwaardige computers tegen een eerlijke prijs. We begrijpen de behoeften van gamers en streven ernaar om de beste prestaties per euro te bieden, zodat je het meeste uit je investering haalt.</p>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4 bg-black200 rounded-md py-4 px-2">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:gird-cols-3 gap-4 bg-black200 rounded-md py-4 px-2">
         <div className="px-4 py-2">
           <h1 className='text-primary font-semibold text-2xl mb-6 flex items-center'><PcCase className="mr-2 w-6 h-6"/>Gericht op prestaties</h1>
           <p className='font-medium text-lg'>Bij MODEX geven we prioriteit aan prestaties. Onze computers zijn gebouwd met eersteklas componenten om een soepele en meeslepende game-ervaring te garanderen. We begrijpen dat elke frame telt bij het gamen, en we streven ernaar om elke bit aan prestaties uit onze machines te halen.</p>
