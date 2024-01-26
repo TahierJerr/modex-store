@@ -5,7 +5,6 @@ import ComputerInfo from "@/components/computer-info";
 import type { Metadata, ResolvingMetadata } from 'next'
 import dynamic from "next/dynamic";
 import LoadingNow from "@/components/loading";
-import NoResults from "@/components/ui/no-results";
 import getComputers from "@/actions/get-computers";
 
 interface ComputerPageProps {
@@ -54,21 +53,31 @@ export async function generateMetadata(
     }
 }
 
-
-
-  const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
-    const computers = await getComputers({ isFeatured: true });
-
+export async function getStaticProps({ params }: ComputerPageProps) {
     let id;
     if (params.slug) {
       id = params.slug.split('*').pop();
     }
     
     if (!id) {
-      return <NoResults />;
+      return { props: {} };
     }
   
     const computer = await getComputer(id);
+    const computers = await getComputers({ isFeatured: true });
+
+    return {
+        props: {
+            computer,
+            computers
+        },
+        revalidate: 1, // In seconds
+    };
+}
+
+
+
+  const ComputerPage = ({ computer, computers }: { computer: any, computers: any }) => {
 
     const ComputerSpec = dynamic(
         () => import("@/components/computer-spec"), {
@@ -95,7 +104,7 @@ export async function generateMetadata(
                     <hr className="my-10 text-black200" />
                     <ComputerSpec data={computer} />
                     <hr className="my-10 text-black200" />
-                    <ComputerList maxItems={3} title="Andere Computers" description="Check onze andere pre-builds" id={id} items={computers}/>
+                    <ComputerList maxItems={3} title="Andere Computers" description="Check onze andere pre-builds" id={computer.id} items={computers}/>
                 </div>
             </Container>
         </div>
