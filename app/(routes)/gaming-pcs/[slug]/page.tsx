@@ -95,7 +95,7 @@ export async function generateMetadata(
                     <hr className="my-10 text-black200" />
                     <ComputerSpec data={computer} />
                     <hr className="my-10 text-black200" />
-                    <ComputerList maxItems={3} title="Andere Computers" description="Check onze andere pre-builds" id={params.slug} items={computers}/>
+                    <ComputerList maxItems={3} title="Andere Computers" description="Check onze andere pre-builds" id={id} items={computers}/>
                 </div>
             </Container>
         </div>
