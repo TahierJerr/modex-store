@@ -59,6 +59,8 @@ export async function generateMetadata(
   const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
     const computers = await getComputers({ isFeatured: true });
 
+    console.log(computers)
+
     let id;
     if (params.slug) {
       id = params.slug.split('*').pop();
