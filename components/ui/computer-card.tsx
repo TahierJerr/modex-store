@@ -21,7 +21,8 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
     const cart = useCart();
    
     const handleClick = () => {
-     router.push(`/computer/${data?.id}`);
+      const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
+      router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
     };
 
     const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {

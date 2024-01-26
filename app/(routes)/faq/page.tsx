@@ -5,7 +5,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX FAQ | MODEX',
-    description: 'Hier vind je de meest gestelde vragen over MODEX.'
+    description: 'Hier vind je de meest gestelde vragen over MODEX.',
+    keywords: ['MODEX vragen', 'MODEX FAQ', 'MODEX veelgestelde vragen',]
   }
 
 const FaqPage = async () => {

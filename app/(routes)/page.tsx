@@ -8,7 +8,15 @@ import BulletSection from "@/components/bulletsection";
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
-    description: 'MODEX is de beste plek om je nieuwe gaming pc te kopen. Wij hebben computers voor elk budget.'
+    description: 'MODEX is de beste plek om je nieuwe gaming pc te kopen. Wij hebben computers voor elk budget.',
+    keywords: ['Computer', 'Gaming PC', 'PC', 'Gaming', 'Gaming Computer', 'Gaming Computer Kopen',
+        'Gaming PC Kopen', 'Gaming PC Bestellen', 'Gaming Computer Bestellen', 'Gaming PC Kopen Nederland',
+        'Gaming Computer Kopen Nederland', 'Gaming PC Bestellen Nederland', 'Gaming Computer Bestellen Nederland',
+        'Budget Gaming PC', 'Budget Gaming Computer', 'Budget Gaming PC Kopen', 'Budget Gaming Computer Kopen',
+        'Budget Gaming PC Bestellen', 'Budget Gaming Computer Bestellen', 'Budget Gaming PC Kopen Nederland',
+        'MODEX', 'MODEX Gaming', 'MODEX Gaming PC', 'MODEX Gaming Computer', 'MODEX Gaming PC Kopen', 'MODEX Gaming Computer Kopen',
+        'MODEX Gaming PC Bestellen', 'MODEX Gaming Computer Bestellen', 'MODEX Gaming PC Kopen Nederland',
+    ]
 }
 
 const HomePage = async () => {
@@ -18,7 +26,7 @@ const HomePage = async () => {
     return (
         <div className="space-y-10 pb-10">
             <Container>
-                <Billboard data={billboard} buttonLink="/category/ac6c2c0a-1a72-49f3-85eb-e5be863186de" buttonText="Check onze gaming pcs"/>
+                <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs"/>
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
                     <BulletSection />
                     <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} sortOrder="asc"/>

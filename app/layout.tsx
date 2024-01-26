@@ -8,13 +8,6 @@ import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
 import dynamic from 'next/dynamic'
 import MobileNavbar from '@/components/mobile-navbar'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'MODEX Prebuilt Gaming PCs | MODEX',
-  description: 'MODEX is de beste plek om je nieuwe gaming pc te kopen. Wij hebben computers voor elk budget.'
-}
-
 
 const font = Montserrat({ subsets: ['latin'] })
 

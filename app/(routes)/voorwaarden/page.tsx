@@ -3,7 +3,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX Voorwaarden | MODEX',
-    description: 'Dit zijn de algemene voorwaarden van MODEX.'
+    description: 'Dit zijn de algemene voorwaarden van MODEX.',
+    keywords: ['MODEX voorwaarden', 'MODEX algemene voorwaarden', 'MODEX voorwaarden en condities', 'MODEX condities', 'MODEX algemene condities',
+    'MODEX voorwaarden en condities', 'MODEX voorwaarden en voorwaarden', 'MODEX condities en condities', 'MODEX voorwaarden en condities', 
+  ]
   }
 
 export default function Voorwaarden() {

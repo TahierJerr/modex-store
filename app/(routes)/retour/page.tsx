@@ -4,7 +4,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'MODEX Retour | MODEX',
-  description: 'Dit is de retour pagina van MODEX.'
+  description: 'Dit is de retour pagina van MODEX.',
+  keywords: ['MODEX retour', 'MODEX retourneren', 'MODEX Retourvoorwaarden', 'MODEX Retourvoorwaarden', 'MODEX Retourneren', 'MODEX Retourneren Nederland', 'MODEX Retour Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland',]
 }
 
 const RetourPage = () => {

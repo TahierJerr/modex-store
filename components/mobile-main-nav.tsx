@@ -18,9 +18,9 @@ const MainNavMobile: React.FC<MainNavProps> = ({
     const { isMenuOpen, setIsMenuOpen } = useNavContext();
 
     const routes = data.map((route) => ({
-        href: `/category/${route.id}`,
+        href: `gaming-pcs`,
         label: route.name,
-        active: pathname === `category/${route.id}`
+        active: pathname === `gaming-pcs`
     }));
 
 

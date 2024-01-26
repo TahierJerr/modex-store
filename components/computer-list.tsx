@@ -8,7 +8,8 @@ interface ComputerListProps {
     description: string;
     id?: string;
     items?: Computer[];
-    sortOrder?: 'asc' | 'desc'; // Add this line
+    sortOrder?: 'asc' | 'desc';
+    maxItems?: number;
 }
 
 const ComputerList: React.FC<ComputerListProps> = async ({
@@ -16,7 +17,8 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     description,
     id,
     items,
-    sortOrder = 'asc', 
+    sortOrder = 'asc',
+    maxItems,
 }) => {
     let filteredItems: Computer[] = [];
 
@@ -34,6 +36,10 @@ const ComputerList: React.FC<ComputerListProps> = async ({
             return Number(b.price) - Number(a.price);
         }
     });
+
+    if (maxItems && maxItems > 0) {
+        filteredItems = filteredItems.slice(0, maxItems);
+    }
 
     return (
         <div className="space-y-4">

@@ -72,29 +72,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     ]);
 
     return (
-        <div className="bg-black">
-            <Container>
-                <Billboard data={category.billboard} />
-                <div className="px-4 sm:px-6 lg:px-8 mb-24">
-                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-6 lg:mt-0">
-                        <MobileFilters  graphics={graphics} processors={processors} memory={memory} />
-                        <div className="hidden lg:block ">
-                            <Filter valueKey="graphicsId" name="Grafische kaart" data={graphics} />
-                            <Filter valueKey="processorId" name="Processor" data={processors} />
-                            <Filter valueKey="memoryId" name="Geheugen" data={memory} />
-                        </div>
-                        <div className="mt-6 lg:col-span-4">
-                            {computers.length === 0 && <NoResults />}
-                            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 text-white gap-2">
-                                {computers.map((item) => (
-                                    <ComputerCard key={item.id} data={item}/>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Container>
-        </div>
+        <NoResults />
     )
 }
 

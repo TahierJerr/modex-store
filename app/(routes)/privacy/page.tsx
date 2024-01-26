@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX Privacy | MODEX',
-    description: 'Dit is de privacy pagina van MODEX.'
+    description: 'Dit is de privacy pagina van MODEX.',
+    keywords: ['MODEX Privacy', 'MODEX Privacy Policy', 'MODEX Privacy Beleid', 'MODEX Privacy Verklaring', 'MODEX Privacy Statement', 'MODEX Privacy Pagina', 'MODEX Privacy Policy Pagina', 'MODEX Privacy Beleid Pagina', 'MODEX Privacy Verklaring Pagina', 'MODEX Privacy Statement Pagina',]
   }
 
 const TextComponent2 = () => {
