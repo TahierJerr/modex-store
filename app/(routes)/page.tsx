@@ -19,24 +19,14 @@ export const metadata: Metadata = {
     ]
 }
 
-export async function getStaticProps() {
+const HomePage = async () => {
+    
     const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
     const computers = await getComputers({ isFeatured: true });
 
-    return {
-        props: {
-            billboard,
-            computers
-        },
-        revalidate: 1,
-    };
-}
 
-const HomePage = ({ billboard, computers }: { billboard: any, computers: any }) => {
     return (
-        
         <div className="space-y-10 pb-10">
-            
             <Container>
                 <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs"/>
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
