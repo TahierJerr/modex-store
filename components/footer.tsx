@@ -10,7 +10,7 @@ const Footer = () => {
             <Container>
             <div className="container mx-auto flex flex-wrap justify-between md:pl-8">
                 <div className="mb-4 bg-black p-4  md:w-1/2 lg:w-1/4">
-                    <h3 className="text-lg font-bold mb-2">Volg Ons!</h3>
+                    <p className="text-lg font-bold mb-2">Volg Ons!</p>
                     <a href="https://www.instagram.com/modexpcs">
                         <p className='text-white hover:text-primary transition-all mb-2'>Instagram</p>
                     </a>
@@ -22,7 +22,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="mb-4 bg-black p-4 md:w-1/2 lg:w-1/4">
-                    <h3 className="text-lg font-bold mb-2">Voorwaarden</h3>
+                    <p className="text-lg font-bold mb-2">Voorwaarden</p>
                     <Link key="/privacy" href="/privacy">
                         <p className='text-white hover:text-primary transition-all mb-2'>Privacy</p>
                     </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
                     </Link>
                 </div>
                 <div className="mb-4 bg-black p-4 md:w-1/2 lg:w-1/4">
-                    <h3 className="text-lg font-bold mb-2">Contact Informatie</h3>
+                    <p className="text-lg font-bold mb-2">Contact Informatie</p>
                     <p className="mb-2">Telefoonnummer: <a title='phone number' href="tel:+31649146060" className='hover:text-primary transition-colors'>+31649146060</a></p>
                     <p className="mb-2">Email: <a title='email' href="mailto:info@modex-pc.nl" className='hover:text-primary transition-colors'>info@modex-pc.nl</a></p>
                     <Link title='frequently asked questions' key="/faq" href="/faq" ><p className='hover:text-primary transition-colors mb-2'>Veelgestelde Vragen</p></Link>
@@ -43,7 +43,7 @@ const Footer = () => {
                     <p title='BTW Nummer'>BTW: NL004752554B13</p>
                 </div>
                 <div className="mb-4 bg-black p-4 md:w-1/2 lg:w-1/4">
-                    <h3 className="text-lg font-bold mb-2">Service</h3>
+                    <p className="text-lg font-bold mb-2">Service</p>
                     <Link key="/retour" href="/retour" ><p className='mb-2 hover:text-primary transition-colors'>Retourneren</p></Link>
                 </div>
             </div>

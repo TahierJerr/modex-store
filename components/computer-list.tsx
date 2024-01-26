@@ -43,7 +43,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
 
     return (
         <div className="space-y-4">
-            <h1 className="text-white font-bold text-3xl mx-auto">{title}</h1>
+            <p className="text-white font-bold text-3xl mx-auto">{title}</p>
             <p className=" text-gray text-1xl mx-auto font-semibold ">{description}</p>
             {filteredItems.length === 0 && <NoResults />}
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4 text-white">

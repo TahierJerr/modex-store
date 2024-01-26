@@ -22,13 +22,13 @@ const ComputerSpec: React.FC<ComputerSpecProps> = ({ data }) => {
 
     return (
         <div className="container mx-auto">
-            <h1 
+            <h3
                 className="text-3xl font-bold text-primary mt-6 mb-8 cursor-pointer flex justify-between items-center"
                 onClick={() => setShowSpecs(!showSpecs)}
             >
                 Uitgebreide specificaties
                 <ChevronDown size={32} className={`transform transition-transform duration-300 ${showSpecs ? 'rotate-180' : ''}`} />
-            </h1>
+            </h3>
             {showSpecs && (
             <ComputerSpecData data={data} />
             )}

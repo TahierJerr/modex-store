@@ -22,9 +22,9 @@ const Billboard: React.FC<BillboardProps> = async ({ data, buttonText, buttonLin
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-primary mb-6 transform translate-y-4 transition-all duration-700 delay-200 break-words" data-animate>
                             {data?.label}
                         </h1>
-                        <p className="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-8 translate-y-4 break-words" data-animate>
+                        <h2 className="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-8 translate-y-4 break-words" data-animate>
                             {data?.description}
-                        </p>
+                        </h2>
                         {buttonText && buttonLink ? (
                             <Link href={buttonLink} key={buttonLink}>
                                 <Button className="translate-y-4 bg-white text-black">

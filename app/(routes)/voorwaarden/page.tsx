@@ -17,24 +17,24 @@ export default function Voorwaarden() {
         
         <h2 className="text-2xl mt-4">Inhoudsopgave</h2>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 1 - Definities</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 2 - Identiteit van de ondernemer</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 3 - Toepasselijkheid</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 4 - Het aanbod</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 5 - De overeenkomst</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 6 - Herroepingsrecht</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 7 - Kosten in geval van herroeping</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 8 - Uitsluiting herroepingsrecht</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 9 - De prijs</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 10 - Conformiteit en garantie</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 11 - Levering en uitvoering</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 12 - Duurtransacties: duur, opzegging en verlenging</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 13 - Betaling</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 14 - Klachtenregeling</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 15 - Geschillen</h2>
-        <h2 className="text-2xl font-bold mb-4">Artikel 16 - Aanvullende of afwijkende bepalingen</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 1 - Definities</p>
+        <p className="text-2xl font-bold mb-4">Artikel 2 - Identiteit van de ondernemer</p>
+        <p className="text-2xl font-bold mb-4">Artikel 3 - Toepasselijkheid</p>
+        <p className="text-2xl font-bold mb-4">Artikel 4 - Het aanbod</p>
+        <p className="text-2xl font-bold mb-4">Artikel 5 - De overeenkomst</p>
+        <p className="text-2xl font-bold mb-4">Artikel 6 - Herroepingsrecht</p>
+        <p className="text-2xl font-bold mb-4">Artikel 7 - Kosten in geval van herroeping</p>
+        <p className="text-2xl font-bold mb-4">Artikel 8 - Uitsluiting herroepingsrecht</p>
+        <p className="text-2xl font-bold mb-4">Artikel 9 - De prijs</p>
+        <p className="text-2xl font-bold mb-4">Artikel 10 - Conformiteit en garantie</p>
+        <p className="text-2xl font-bold mb-4">Artikel 11 - Levering en uitvoering</p>
+        <p className="text-2xl font-bold mb-4">Artikel 12 - Duurtransacties: duur, opzegging en verlenging</p>
+        <p className="text-2xl font-bold mb-4">Artikel 13 - Betaling</p>
+        <p className="text-2xl font-bold mb-4">Artikel 14 - Klachtenregeling</p>
+        <p className="text-2xl font-bold mb-4">Artikel 15 - Geschillen</p>
+        <p className="text-2xl font-bold mb-4">Artikel 16 - Aanvullende of afwijkende bepalingen</p>
 
-        <h2 className="text-2xl font-bold mb-4">Artikel 1 - Definities</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 1 - Definities</p>
         <p className="text-lg mb-4">
         In deze voorwaarden wordt verstaan onder:
         
@@ -61,7 +61,7 @@ export default function Voorwaarden() {
         Algemene Voorwaarden: de onderhavige Algemene Voorwaarden van de ondernemer.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 2 - Identiteit van de ondernemer</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 2 - Identiteit van de ondernemer</p>
         
         <p className="text-lg mb-4">MODEX </p>
         <p className="text-lg mb-4">Draakstraat 7</p>
@@ -74,7 +74,7 @@ export default function Voorwaarden() {
         <p className="text-lg mb-4">KVK: 89703685</p>
         <p className="text-lg mb-4">BTW nummer: NL004752554B13</p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 3 - Toepasselijkheid</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 3 - Toepasselijkheid</p>
         
         <p className="text-lg mb-4">
         Deze algemene voorwaarden zijn van toepassing op elk aanbod van de ondernemer en op elke tot stand gekomen overeenkomst op afstand en bestellingen tussen ondernemer en consument.
@@ -92,7 +92,7 @@ export default function Voorwaarden() {
         Onduidelijkheden over de uitleg of inhoud van één of meerdere bepalingen van onze voorwaarden, dienen uitgelegd te worden ‘naar de geest’ van deze algemene voorwaarden.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 4 - Het aanbod</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 4 - Het aanbod</p>
         
         <p className="text-lg mb-4">
         Indien een aanbod een beperkte geldigheidsduur heeft of onder voorwaarden geschiedt, wordt dit nadrukkelijk in het aanbod vermeld.
@@ -134,7 +134,7 @@ export default function Voorwaarden() {
         </p>
         
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 5 - De overeenkomst</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 5 - De overeenkomst</p>
         
         <p className="text-lg mb-4">
         De overeenkomst komt, onder voorbehoud van het bepaalde in lid 4, tot stand op het moment van aanvaarding door de consument van het aanbod en het voldoen aan de daarbij gestelde voorwaarden.
@@ -164,7 +164,7 @@ export default function Voorwaarden() {
         Iedere overeenkomst wordt aangegaan onder de opschortende voorwaarden van voldoende beschikbaarheid van de betreffende producten.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 6 - Herroepingsrecht</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 6 - Herroepingsrecht</p>
         <p className="text-lg mb-4">
         Bij levering van producten:
         
@@ -184,7 +184,7 @@ export default function Voorwaarden() {
         Om gebruik te maken van zijn herroepingsrecht, zal de consument zich richten naar de door de ondernemer bij het aanbod en/of uiterlijk bij de levering ter zake verstrekte redelijke en duidelijke instructies.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 7 - Kosten in geval van herroeping</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 7 - Kosten in geval van herroeping</p>
         
         <p className="text-lg mb-4">
         De kosten van terugzending zijn voor rekening van de consument. De consument heeft 30 dagen om kenbaar te maken dat hij gebruik wil maken van zijn herroepingsrecht. Als de klant na afloop van deze 30 dagen niet kenbaar heeft gemaakt gebruik te willen maken van zijn herroepingsrecht, of het product niet aan de ondernemer heeft teruggezonden, is de koop een feit.
@@ -194,7 +194,7 @@ export default function Voorwaarden() {
         De consument kan niet aansprakelijk worden gesteld voor waardevermindering van het product wanneer door de ondernemer niet alle wettelijk verplichte informatie over het herroepingsrecht is verstrekt. Deze informatie dient te worden verstrekt voordat de koopovereenkomst wordt gesloten.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 8 - Uitsluiting herroepingsrecht</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 8 - Uitsluiting herroepingsrecht</p>
         
         <p className="text-lg mb-4">
         De ondernemer kan het herroepingsrecht van de consument uitsluiten voor producten zoals omschreven in lid 2 en 3. De uitsluiting van het herroepingsrecht geldt slechts indien de ondernemer dit duidelijk in het aanbod, althans tijdig voor het sluiten van de overeenkomst, heeft vermeld.
@@ -210,7 +210,7 @@ export default function Voorwaarden() {
         
         
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 9 - De prijs</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 9 - De prijs</p>
         
         <p className="text-lg mb-4">
         De prijzen die je ziet op de website zijn de kloppende prijzen zolang deze er staan zijn ze geldig.
@@ -219,7 +219,7 @@ export default function Voorwaarden() {
         Alle prijzen zijn onder voorbehoud van druk – en zetfouten. Voor de gevolgen van druk – en zetfouten wordt geen aansprakelijkheid aanvaard. Bij druk – en zetfouten is de ondernemer niet verplicht het product volgens de foutieve prijs te leveren.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 10 - Conformiteit en garantie</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 10 - Conformiteit en garantie</p>
         
         <p className="text-lg mb-4">
         De ondernemer staat er voor in dat de producten en/of diensten voldoen aan de overeenkomst, de in het aanbod vermelde specificaties, aan de redelijke eisen van deugdelijkheid en/of bruikbaarheid en de op de datum van de totstandkoming van de overeenkomst bestaande wettelijke bepalingen en/of overheidsvoorschriften. Indien overeengekomen staat de ondernemer er tevens voor in dat het product geschikt is voor ander dan normaal gebruik.
@@ -230,7 +230,7 @@ export default function Voorwaarden() {
         
         
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 11 - Levering en uitvoering</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 11 - Levering en uitvoering</p>
         
         <p className="text-lg mb-4">
         De ondernemer zal de grootst mogelijke zorgvuldigheid in acht nemen bij het in ontvangst nemen en bij de uitvoering van bestellingen van producten en bij de beoordeling van aanvragen tot verlening van diensten.
@@ -248,7 +248,7 @@ export default function Voorwaarden() {
         Het risico van beschadiging en/of vermissing van producten berust bij de ondernemer tot het moment van bezorging aan de consument of een vooraf aangewezen en aan de ondernemer bekend gemaakte vertegenwoordiger, tenzij uitdrukkelijk anders is overeengekomen.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 12 - Duurtransacties: duur, opzegging en verlenging</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 12 - Duurtransacties: duur, opzegging en verlenging</p>
         <p className="text-lg mb-4">
         Opzegging
         
@@ -283,7 +283,7 @@ export default function Voorwaarden() {
         Als een overeenkomst een duur van meer dan een jaar heeft, mag de consument na een jaar de overeenkomst te allen tijde met een opzegtermijn van ten hoogste een maand opzeggen, tenzij de redelijkheid en billijkheid zich tegen opzegging vóór het einde van de overeengekomen duur verzetten.
         
         </p>
-        <h2 className="text-2xl font-bold mb-4">Artikel 13 - Betaling</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 13 - Betaling</p>
         
         <p className="text-lg mb-4">
         Voor zover niet anders is overeengekomen, dienen de door de consument verschuldigde bedragen te worden voldaan binnen 7 werkdagen na het ingaan van de bedenktermijn als bedoeld in artikel 6 lid 1. In geval van een overeenkomst tot het verlenen van een dienst, vangt deze termijn aan nadat de consument de bevestiging van de overeenkomst heeft ontvangen.
@@ -293,7 +293,7 @@ export default function Voorwaarden() {
         In geval van wanbetaling van de consument heeft de ondernemer behoudens wettelijke beperkingen, het recht om de vooraf aan de consument kenbaar gemaakte redelijke kosten in rekening te brengen.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 14 - Klachtenregeling</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 14 - Klachtenregeling</p>
         
         
         <p className="text-lg mb-4">De ondernemer beschikt over een voldoende bekend gemaakte klachtenprocedure en behandelt de klacht overeenkomstig deze klachtenprocedure.
@@ -311,7 +311,7 @@ export default function Voorwaarden() {
         Indien een klacht gegrond wordt bevonden door de ondernemer, zal de ondernemer naar haar keuze of de geleverde producten kosteloos vervangen of repareren.
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 15 - Geschillen</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 15 - Geschillen</p>
         
         
         <p className="text-lg mb-4">Op overeenkomsten tussen de ondernemer en de consument waarop deze algemene voorwaarden betrekking hebben, is uitsluitend Nederlands recht van toepassing. Ook indien de consument woonachtig is in het buitenland.
@@ -320,7 +320,7 @@ export default function Voorwaarden() {
         
         </p>
         
-        <h2 className="text-2xl font-bold mb-4">Artikel 16 - Aanvullende of afwijkende bepalingen</h2>
+        <p className="text-2xl font-bold mb-4">Artikel 16 - Aanvullende of afwijkende bepalingen</p>
         <p className="text-lg mb-4">
         Aanvullende dan wel van deze algemene voorwaarden afwijkende bepalingen mogen niet ten nadele van de consument zijn en dienen schriftelijk te worden vastgelegd dan wel op zodanige wijze dat deze door de consument op een toegankelijke manier kunnen worden opgeslagen op een duurzame gegevensdrager.
         </p>
