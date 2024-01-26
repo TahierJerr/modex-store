@@ -7,7 +7,7 @@ interface ComputerListProps {
     title: string;
     description: string;
     id?: string;
-    items?: Computer[];
+    items: Computer[];
     sortOrder?: 'asc' | 'desc';
     maxItems?: number;
 }
