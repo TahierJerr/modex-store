@@ -6,6 +6,7 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import dynamic from "next/dynamic";
 import LoadingNow from "@/components/loading";
 import NoResults from "@/components/ui/no-results";
+import getComputers from "@/actions/get-computers";
 
 interface ComputerPageProps {
     params: {
@@ -56,6 +57,8 @@ export async function generateMetadata(
 
 
   const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
+    const computers = await getComputers({ isFeatured: true });
+
     let id;
     if (params.slug) {
       id = params.slug.split('*').pop();
@@ -92,7 +95,7 @@ export async function generateMetadata(
                     <hr className="my-10 text-black200" />
                     <ComputerSpec data={computer} />
                     <hr className="my-10 text-black200" />
-                    <ComputerList maxItems={3} title="Andere Computers" description="Check onze andere pre-builds" id={params.slug} />
+                    <ComputerList maxItems={3} title="Andere Computers" description="Check onze andere pre-builds" id={params.slug} items={computers}/>
                 </div>
             </Container>
         </div>
