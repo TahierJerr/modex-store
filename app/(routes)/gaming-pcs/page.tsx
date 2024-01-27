@@ -12,6 +12,7 @@ import dynamic from "next/dynamic";
 import type { Metadata } from 'next'
 
 import LoadingNow from "@/components/loading";
+import KlarnaSection from "@/components/klarna-section";
 
 
 export const metadata: Metadata = {
@@ -77,7 +78,6 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     return (
         <div className="bg-black">
             <Container>
-                <Billboard data={category.billboard} />
                 <div className="px-4 sm:px-6 lg:px-8 mb-24">
                     <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-6 lg:mt-0">
                         <MobileFilters  graphics={graphics} processors={processors} memory={memory} />
