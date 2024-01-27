@@ -23,6 +23,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     sortOrder = 'asc',
     maxItems,
 }) => {
+
     let filteredItems: Computer[] = [];
 
     if (items) {
@@ -59,7 +60,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
                 ))}
             </div>
             {maxItems && maxItems > 0 && (
-                <Link href="/gaming-pcs" key="/gaming-pcs" >
+                <Link href="/gaming-pcs" key="/gaming-pcs" scroll={true} >
                 <Button className="translate-y-4 bg-white text-black">
                     <span className="flex items-center hover:translate-x-2 transition-all">
                         <span className="mr-2 ">Meer computers zien? Klik hier!</span>
