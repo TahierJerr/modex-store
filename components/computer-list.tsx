@@ -2,6 +2,9 @@ import NoResults from "@/components/ui/no-results";
 import ComputerCard from "./ui/computer-card";
 import getComputers from "@/actions/get-computers";
 import { Computer } from "@/types";
+import Link from "next/link";
+import Button from "./ui/button";
+import { ArrowRight } from "lucide-react";
 
 interface ComputerListProps {
     title: string;
@@ -46,11 +49,21 @@ const ComputerList: React.FC<ComputerListProps> = async ({
             <p className="text-white font-bold text-3xl mx-auto">{title}</p>
             <p className=" text-gray text-1xl mx-auto font-semibold ">{description}</p>
             {filteredItems.length === 0 && <NoResults />}
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4 text-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4 text-white">
                 {filteredItems.map(item => (
                     <ComputerCard key={item.id} data={item} />
                 ))}
             </div>
+            {maxItems && maxItems > 0 && (
+                <Link href="/gaming-pcs" key="/gaming-pcs" >
+                <Button className="translate-y-4 bg-white text-black">
+                    <span className="flex items-center hover:translate-x-2 transition-all">
+                        <span className="mr-2 ">Meer computers zien? Klik hier!</span>
+                        <ArrowRight className="" size={20} />
+                    </span>
+                </Button>
+            </Link>
+            )}
         </div>
     );
 };

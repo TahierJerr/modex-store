@@ -18,6 +18,7 @@ const config: Config = {
       danger: '#e03849',
       success: '#42FF91',
       warning: '#FFDD99',
+      klarna: '#FFB3C7',
     },
     extend: {
       backgroundImage: {

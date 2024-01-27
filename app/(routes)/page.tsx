@@ -5,6 +5,7 @@ import Billboard from "@/components/billboard";
 import ComputerList from "@/components/computer-list";
 import getComputers from "@/actions/get-computers";
 import BulletSection from "@/components/bulletsection";
+import KlarnaSection from "@/components/klarna-section";
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
@@ -31,7 +32,8 @@ const HomePage = async () => {
                 <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs"/>
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
                     <BulletSection />
-                    <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} sortOrder="asc"/>
+                    <KlarnaSection />
+                    <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} sortOrder="asc" maxItems={3}/>
                 </div>
             </Container>
         </div>
