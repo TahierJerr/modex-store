@@ -13,7 +13,7 @@ interface BillboardProps {
 const Billboard: React.FC<BillboardProps> = async ({ data, buttonText, buttonLink }) => {
     return (
         <section
-            className="relative flex flex-col md:flex-row items-center justify-center py-28 sm:py-72 px-6 mb-4 md:mb-8"
+            className="bg-black200 relative flex flex-col md:flex-row items-center justify-center py-28 sm:py-72 px-6 mb-4 md:mb-8"
         >
             <Image loading="eager" src={data?.imageUrl} alt="billboard" layout="fill" objectFit="cover" fetchPriority="high" quality={100} priority={true} />
             {data?.label && data?.description ? (

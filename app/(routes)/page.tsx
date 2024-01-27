@@ -28,8 +28,8 @@ const HomePage = async () => {
 
     return (
         <div className="space-y-10 pb-10">
-            <Container>
                 <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs"/>
+            <Container>
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
                     <BulletSection />
                     <KlarnaSection />
