@@ -11,7 +11,7 @@ interface ComputerListProps {
     description: string;
     id?: string;
     items: Computer[];
-    sortOrder?: 'asc' | 'desc';
+    sortOrder?: 'asc' | 'desc' | 'random';
     maxItems?: number;
 }
 
@@ -32,13 +32,17 @@ const ComputerList: React.FC<ComputerListProps> = async ({
         filteredItems = id ? fetchedItems.filter(item => item.id !== id) : fetchedItems;
     }
 
-    filteredItems.sort((a, b) => {
-        if (sortOrder === 'asc') {
-            return Number(a.price) - Number(b.price);
-        } else {
-            return Number(b.price) - Number(a.price);
-        }
-    });
+    if (sortOrder === 'random') {
+        filteredItems.sort(() => Math.random() - 0.5); // Randomize the order
+    } else {
+        filteredItems.sort((a, b) => {
+            if (sortOrder === 'asc') {
+                return Number(a.price) - Number(b.price);
+            } else {
+                return Number(b.price) - Number(a.price);
+            }
+        });
+    }
 
     if (maxItems && maxItems > 0) {
         filteredItems = filteredItems.slice(0, maxItems);

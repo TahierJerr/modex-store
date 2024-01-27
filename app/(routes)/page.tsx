@@ -33,7 +33,7 @@ const HomePage = async () => {
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
                     <BulletSection />
                     <KlarnaSection />
-                    <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} sortOrder="asc" maxItems={3}/>
+                    <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} sortOrder="random" maxItems={3}/>
                 </div>
             </Container>
         </div>
