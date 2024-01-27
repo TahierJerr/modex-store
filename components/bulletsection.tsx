@@ -5,7 +5,6 @@ const BulletSection = () => {
   return (
     <div className="text-white space-y-4 my-12">
         <h3 className="text-primary font-bold text-3xl mx-auto">Waarom MODEX?</h3>
-        <p className="text-white text-1xl mx-auto font-semibold">MODEX is een toonaangevend bedrijf dat zich specialiseert in het bouwen van hoogwaardige computers voor gamers, en dat tegen een eerlijke prijs.</p>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:gird-cols-3 gap-4 bg-black200 rounded-md py-4 px-2">
         <div className="px-4 py-2">
           <h4 className='text-primary font-semibold text-2xl mb-6 flex items-center'><PcCase className="mr-2 w-6 h-6"/>Prestaties eerst</h4>
