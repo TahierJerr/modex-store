@@ -35,6 +35,7 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
       event.stopPropagation();
 
       cart.addItem(data);
+      router.push("/cart");
     }
    
     return (
@@ -75,7 +76,7 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
        </div>
        <div className="sm:flex items-center justify-between ">
          <Currency value={data?.price} />
-         <IconButton title="Add to cart" className="rounded-md px-6 hover:bg-primary border-0 transition-all w-full sm:w-auto mt-2 sm:mt-0" onClick={onAddToCart} icon={<ShoppingCart size={20} className="text-black"/> } />
+         <IconButton title="Add to cart" className="hover:scale-100 rounded-md px-6 hover:bg-primary border-0 transition-all w-full sm:w-auto mt-2 sm:mt-0" onClick={onAddToCart} icon={<ShoppingCart size={20} className="text-black"/> } />
        </div>
      </div>
     );

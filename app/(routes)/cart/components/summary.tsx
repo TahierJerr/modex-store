@@ -38,7 +38,7 @@ const Summary = () => {
     }
 
     return (
-        <div className="mt-12 rounded-lg bg-black200  px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-4 lg:p-8 text-white">
+        <div className="mt-12 rounded-lg bg-black200 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-4 lg:p-8 text-white">
             <p className="text-xl font-semibold text-primary">
                 Samenvatting
             </p>

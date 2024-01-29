@@ -78,7 +78,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     return (
         <div className="bg-black">
             <Container>
-                <div className="px-4 sm:px-6 lg:px-8 mb-24 mt-6">
+                <div className="px-4 sm:px-6 lg:px-8 mb-8 mt-6">
                     <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-6 lg:mt-0">
                         <MobileFilters  graphics={graphics} processors={processors} memory={memory} />
                         <div className="hidden lg:block ">
