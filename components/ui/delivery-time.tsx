@@ -1,9 +1,11 @@
+import { CheckIcon } from 'lucide-react';
 
 interface DeliveryTimeProps {
   deliveryTime: string;
+  classNames?: string;
 }
 
-const DeliveryTime: React.FC<DeliveryTimeProps> = ({ deliveryTime }) => {
+const DeliveryTime: React.FC<DeliveryTimeProps> = ({ deliveryTime, classNames }) => {
   let number = '';
   if (deliveryTime) {
     number = deliveryTime.replace(/[^0-9]/g, '');
@@ -30,9 +32,10 @@ const DeliveryTime: React.FC<DeliveryTimeProps> = ({ deliveryTime }) => {
   }
 
   return (
-    <div className="flex items-center">
-  <p className={`${colorClass} overflow-hidden font-semibold text-sm sm:text-md -mb-2 sm:-mb-4`}>{text}</p>
-  </div>
+    <div className={`flex items-center ${classNames} `}>
+      <CheckIcon className=" items-center flex mr-2 bg-success text-black font-extrabold rounded-full p-0.5" size={22} />
+      <p className={`${colorClass} overflow-hidden font-semibold`}>{text}</p>
+    </div>
   );
 };
 

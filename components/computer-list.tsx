@@ -64,7 +64,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
                 <Link href="/gaming-pcs" key="/gaming-pcs" className="">
                 <Button className="translate-y-4 bg-white text-black px-16 sm:px-auto ">
                     <span className="flex items-center hover:translate-x-2 transition-all">
-                        <span className="mr-2 ">Meer computers zien? Klik hier!</span>
+                        <span className="mr-2 text-sm md:text-md">Meer computers zien? Klik hier!</span>
                         <ArrowRight className="" size={20} />
                     </span>
                 </Button>

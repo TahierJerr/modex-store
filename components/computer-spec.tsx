@@ -5,6 +5,7 @@ import { Computer } from "@/types";
 import { ChevronDown } from "lucide-react";
 import dynamic from "next/dynamic";
 import LoadingNow from "./loading";
+import Container from "./ui/container";
 
 interface ComputerSpecProps {
     data: Computer;
@@ -21,9 +22,10 @@ const ComputerSpec: React.FC<ComputerSpecProps> = ({ data }) => {
     const [showSpecs, setShowSpecs] = useState(false);
 
     return (
-        <div className="container mx-auto">
+        <Container>
+        <div className="mx-auto md:ml-0 ml-2">
             <h3
-                className="text-3xl font-bold text-primary mt-6 mb-8 cursor-pointer flex justify-between items-center"
+                className="md:text-3xl text-2xl font-bold text-primary mt-6 mb-8 cursor-pointer flex justify-between items-center"
                 onClick={() => setShowSpecs(!showSpecs)}
             >
                 Uitgebreide specificaties
@@ -33,6 +35,7 @@ const ComputerSpec: React.FC<ComputerSpecProps> = ({ data }) => {
             <ComputerSpecData data={data} />
             )}
         </div>
+        </Container>
       );
     }
 

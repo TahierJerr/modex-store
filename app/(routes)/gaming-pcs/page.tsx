@@ -5,14 +5,12 @@ import getMemory from "@/actions/get-memory";
 import getProcessors from "@/actions/get-processors";
 
 import Container from "@/components/ui/container";
-import Billboard from "@/components/billboard";
 
 import NoResults from "@/components/ui/no-results";
 import dynamic from "next/dynamic";
 import type { Metadata } from 'next'
 
 import LoadingNow from "@/components/loading";
-import KlarnaSection from "@/components/klarna-section";
 
 
 export const metadata: Metadata = {

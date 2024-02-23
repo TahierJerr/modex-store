@@ -49,13 +49,11 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
            </div>
          </div>
        </div>
-       <div>
-       <DeliveryTime deliveryTime={data.deliveryTime} />
-       </div>
        <div className="border-b py-2 border-gray">
          <p className="font-semibold text-lg overflow-auto md:h-auto">
            {data.name}
          </p>
+       <DeliveryTime deliveryTime={data.deliveryTime} classNames="mt-2 mb-1 text-md" />
          <div className="text-sm text-gray block sm:hidden">
            <p>
               {data.graphics.model}
@@ -68,11 +66,13 @@ const ComputerCard: React.FC<ComputerCard> = ({ data }) => {
             </p>
          </div>
        </div>
-       <div className="border-b py-2 border-gray hidden sm:block">
-         <p className="font-semibold pb-2 text-lg">Specificaties</p>
+       <div className="border-b border-gray hidden sm:block">
+         <p className="font-semibold text-lg mb-2">Specificaties</p>
+         <div className="mb-2">
          <p className="text-md text-white">- {data.processor.name}</p>
          <p className="text-md text-white">- {data.graphics.model}</p>
          <p className="text-md text-white">- {data.memory.name}</p>
+         </div>
        </div>
        <div className="sm:flex items-center justify-between ">
          <Currency value={data?.price} />
