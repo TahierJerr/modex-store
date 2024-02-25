@@ -77,16 +77,16 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
         <div className="bg-black">
             <Container>
                 <div className="px-4 sm:px-6 lg:px-8 mb-8 mt-6">
-                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-6 lg:mt-0">
+                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-6">
                         <MobileFilters  graphics={graphics} processors={processors} memory={memory} />
-                        <div className="hidden lg:block ">
+                        <div className="hidden lg:block">
                             <Filter valueKey="graphicsId" name="Grafische kaart" data={graphics} />
                             <Filter valueKey="processorId" name="Processor" data={processors} />
                             <Filter valueKey="memoryId" name="Geheugen" data={memory} />
                         </div>
-                        <div className="mt-6 lg:col-span-4">
+                        <div className="mt-6 lg:col-span-4 ">
                             {computers.length === 0 && <NoResults />}
-                            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 text-white gap-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 text-white gap-2">
                                 {computers.map((item) => (
                                     <ComputerCard key={item.id} data={item}/>
                                 ))}
