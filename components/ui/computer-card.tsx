@@ -54,7 +54,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 </div>
                 <hr className="mt-2 text-black100" />
                 <div className="flex items-center mt-4">
-                    <Button onClick={handleClick} className="flex text-md items-center w-full justify-center rounded-full hover:opacity-75 transition-all bg-primary text-black">
+                    <Button onClick={handleClick} className="px-4 py-2 flex text-md items-center w-full justify-center rounded-full hover:opacity-75 transition-all bg-primary text-black">
                         Ontdek!
                         <ChevronRightIcon size={20} className="ml-1" />
                     </Button>
