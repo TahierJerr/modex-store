@@ -33,7 +33,7 @@ const DeliveryTime: React.FC<DeliveryTimeProps> = ({ deliveryTime, classNames })
 
   return (
     <div className={`flex items-center ${classNames} `}>
-      <CheckIcon className=" items-center flex mr-2 bg-success text-black font-extrabold rounded-full p-0.5" size={22} />
+      <CheckIcon className=" items-center flex mr-1.5 bg-transparent text-success font-extrabold rounded-full p-0.5 -ml-0.5" size={22} />
       <p className={`${colorClass} overflow-hidden font-semibold`}>{text}</p>
     </div>
   );

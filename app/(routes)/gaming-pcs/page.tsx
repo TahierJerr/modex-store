@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import type { Metadata } from 'next'
 
 import LoadingNow from "@/components/loading";
+import LoadingCard from "@/components/loading-components/loading-card";
 
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ const ComputerCard = dynamic(
 
 const Filter = dynamic(
     () => import("./components/filter"), {
-    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>,
+    loading: () => <LoadingNow />,
     ssr: false,
     }
 );

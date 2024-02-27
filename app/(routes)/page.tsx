@@ -3,9 +3,11 @@ import Container from "@/components/ui/container";
 import type { Metadata } from 'next'
 import Billboard from "@/components/billboard";
 import ComputerList from "@/components/computer-list";
-import getComputers from "@/actions/get-computers";
 import BulletSection from "@/components/bulletsection";
 import KlarnaSection from "@/components/klarna-section";
+import { Suspense } from "react";
+import LoadingCard from "@/components/loading-components/loading-card";
+import LoadingProductList from "@/components/loading-components/loading-computer-list";
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
@@ -23,7 +25,6 @@ export const metadata: Metadata = {
 const HomePage = async () => {
     
     const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
-    const computers = await getComputers({ isFeatured: true });
 
 
     return (
@@ -33,7 +34,9 @@ const HomePage = async () => {
                 <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
                     <BulletSection />
                     <KlarnaSection />
-                    <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" items={computers} sortOrder="random" maxItems={3}/>
+                    <Suspense fallback={<LoadingProductList description="Check onze MODEX Pre-Builds" title="MODEX PCs" loadingCards={3} />}>
+                        <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" sortOrder="random" maxItems={3}/>
+                    </Suspense>
                 </div>
             </Container>
         </div>

@@ -28,9 +28,8 @@ export default function RootLayout({
       <body className={font.className + " bg-black"}>
         <NavProvider>
           <CategoryProvider>
+          <ToastProvider />
             <div className='sm:block hidden'>
-              <ModalProvider />
-              <ToastProvider />
               <Navbar />
             </div>
             <div className="sm:hidden mb-16">

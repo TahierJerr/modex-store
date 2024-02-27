@@ -10,7 +10,6 @@ interface ComputerListProps {
     title: string;
     description: string;
     id?: string;
-    items: Computer[];
     sortOrder?: 'asc' | 'desc' | 'random';
     maxItems?: number;
 }
@@ -19,10 +18,11 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     title,
     description,
     id,
-    items,
     sortOrder = 'asc',
     maxItems,
 }) => {
+
+    const items: Computer[] = await getComputers({ isFeatured: true });
 
     let filteredItems: Computer[] = [];
 

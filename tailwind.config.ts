@@ -11,7 +11,7 @@ const config: Config = {
       white: '#ffffff',
       gray: '#8f8e8a',
       primary: '#cfb968',
-      primary20: '#625835',
+      primary20: '#998849',
       black: '#000000',
       black100: '#595959',
       black200: '#303030',
