@@ -1,34 +1,38 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import Button from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
-import { Category } from "@/types";
 
-interface MainNavProps {
-    data: Category[];
-};
 
-const MainNav: React.FC<MainNavProps> = ({
-    data
-}) => {
+
+const MainNav = () => {
     const pathname = usePathname();
+    const route = useRouter();
 
-    const routes = data.map((route) => ({
-        href: `/gaming-pcs`,
-        label: route.name,
-        active: pathname === `gaming-pcs`
-    }));
+    const homeClick = () => {
+        route.push("/");
+    };
+
+    const gamingPcsClick = () => {
+        route.push("/gaming-pcs");
+    };
 
     return (
         <nav className="mx-6 flex items-center space-x-4 lg:space-x-6">
-            {routes.map((route) => (
-                <Link key={route.href} href={route.href} className={cn("text-sm font-medium transition-colors hover:text-primary", route.active ? "text-primary" : "text-white")}>
-                    {route.label}
-                </Link>
-            )
-            )}
+            <Button
+                onClick={homeClick}
+                className={cn("text-sm font-medium transition-colors hover:text-primary", pathname === "/" ? "text-primary" : "text-white")}
+            >
+                Home
+            </Button>
+            <Button
+                onClick={gamingPcsClick}
+                className={cn("text-sm font-medium transition-colors hover:text-primary", pathname === "/gaming-pcs" ? "text-primary" : "text-white")}
+            >
+                Gaming PCs
+            </Button>
         </nav>
     )
 }

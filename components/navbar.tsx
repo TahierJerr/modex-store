@@ -17,7 +17,7 @@ const Navbar = async () => {
                     <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2 mr-4 mb-0.5">
                         <Image src="/transparent.png" alt="Logo" width={100} height={1}/>
                     </Link>
-                <MainNav data={categories}/>
+                <MainNav />
                 <NavbarActions />
                 </div>
             </Container>

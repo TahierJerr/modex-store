@@ -13,7 +13,7 @@ const LoadingCard = () => {
                 </div>
                 <hr className="mt-2 text-black100" />
                 <div className="flex items-center mt-4">
-                    <div className="flex items-center w-full  justify-center mr-4 rounded-full h-10 bg-black100 animate-pulse"></div>
+                    <div className="flex items-center w-full  justify-center mr-4 rounded-lg h-10 bg-black100 animate-pulse"></div>
                 </div>
             </div>
         </div>
