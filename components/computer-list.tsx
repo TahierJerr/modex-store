@@ -54,7 +54,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
             <p className="text-white font-bold text-3xl mx-auto">{title}</p>
             <p className=" text-gray text-1xl mx-auto font-semibold ">{description}</p>
             {filteredItems.length === 0 && <NoResults />}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-4 gap-4 text-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-3 gap-4 text-white">
                 {filteredItems.map(item => (
                     <ComputerCard key={item.id} data={item} />
                 ))}
@@ -62,9 +62,9 @@ const ComputerList: React.FC<ComputerListProps> = async ({
             {maxItems && maxItems > 0 && (
                 <div className="flex justify-center sm:justify-start">
                 <Link href="/gaming-pcs" key="/gaming-pcs" className="">
-                <Button className="translate-y-4 bg-white text-black px-16 sm:px-auto rounded-lg">
+                <Button className="translate-y-4 bg-white text-black px-14 sm:px-auto rounded-lg">
                     <span className="flex items-center hover:translate-x-2 transition-all">
-                        <span className="mr-2 text-sm md:text-md">Meer computers zien? Klik hier!</span>
+                        <span className="mr-2 text-sm sm:text-base">Meer computers zien? Klik hier!</span>
                         <ArrowRight className="" size={20} />
                     </span>
                 </Button>

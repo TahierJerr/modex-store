@@ -44,7 +44,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 )}
             </div>
             <div className="p-4 flex flex-col">
-                <p className="font-bold text-xl text-white">{data.name}</p>
+                <p className="font-bold text-xl text-white ">{data.name}</p>
                 <p className="text-lg text-white font-semibold">€ {data.price}</p>
                 <hr className="mt-2 text-black100" />
                 <div className="mt-2">
