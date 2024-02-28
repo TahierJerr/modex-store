@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
             {data?.images?.[0]?.url ? (
                 <div className="relative">
                     <Image src={data?.images?.[0]?.url} width={1000} height={1000} quality={100} alt={data.name} loading="lazy" className="rounded-md" />
-                    <div className="bg-primary flex items-center justify-center bottom-0 w-full absolute py-2 px-4 font-semibold">Verbeterde foto's komen binnenkort!</div>
+                    <div className="bg-primary flex items-center justify-center bottom-0 w-full absolute py-2 px-4 font-semibold">Verbeterde foto{"\'"}s komen binnenkort!</div>
                 </div>
                 ) : (
                 <p className="w-full h-auto text-center text-gray">Geen afbeelding beschikbaar.</p>
