@@ -7,7 +7,6 @@ import { CategoryProvider } from '@/context/category-provider'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
 import MobileNavbar from '@/components/mobile-navbar'
-import { GoogleTagManager } from '@next/third-parties/google';
 
 const font = Montserrat({ subsets: ['latin'] })
 
@@ -20,9 +19,7 @@ export default function RootLayout({
   return (
     
     <html lang="nl">
-      
       <body className={font.className + " bg-black"}>
-     <GoogleTagManager gtmId="GTM-TTR6MP9D" />
         <NavProvider>
           <CategoryProvider>
           <ToastProvider />
@@ -40,8 +37,6 @@ export default function RootLayout({
         </NavProvider >
         <CookieConsentComponent />
       </body>
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTR6MP9D"
-height="0" width="0"></iframe></noscript>
     </html>
   )
 }
