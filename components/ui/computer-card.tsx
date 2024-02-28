@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
     };
     
     return (
-    <div onClick={handleClick} className="bg-black200 rounded-lg shadow-xl  text-black flex-col flex cursor-pointer transition-all duration-300  hover:bg-opacity-75">
+    <div onClick={handleClick} className="bg-black200 rounded-lg shadow-xl  text-black flex-col flex cursor-pointer transition-all duration-300  hover:bg-black100">
         <div className="w-full min-h-80 aspect-square rounded-t-md bg-white flex items-center">
             {data?.images?.[0]?.url ? (
                 <div className="relative">
@@ -54,7 +54,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 </div>
                 <hr className="mt-2 text-black100" />
                 <div className="flex items-center mt-4">
-                    <Button onClick={handleClick} className="px-4 py-2 flex text-md items-center w-full justify-center rounded-full hover:opacity-75 transition-all bg-primary text-black">
+                    <Button onClick={handleClick} className="px-4 py-2 flex text-md items-center w-full justify-center rounded-lg hover:opacity-75 transition-all bg-primary text-black hover:bg-white">
                         Ontdek!
                         <ChevronRightIcon size={20} className="ml-1" />
                     </Button>

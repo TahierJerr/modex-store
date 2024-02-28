@@ -3,7 +3,7 @@ import { PcCase, Shield, EuroIcon } from "lucide-react";
 
 const BulletSection = () => {
   return (
-    <div className="text-white space-y-4 my-12">
+    <div className="text-white space-y-4 my-12 rounded-lg">
         <h3 className="text-primary font-bold text-3xl mx-auto">Waarom MODEX?</h3>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:gird-cols-3 gap-4 bg-black200 rounded-md py-4 px-2">
         <div className="px-4 py-2">

@@ -27,10 +27,10 @@ const Billboard: React.FC<BillboardProps> = async ({ data, buttonText, buttonLin
                         </h2>
                         {buttonText && buttonLink ? (
                             <Link href={buttonLink} key={buttonLink}>
-                                <Button className="translate-y-4 bg-white text-black">
+                                <Button className="translate-y-4 bg-white text-black rounded-lg hover:bg-primary">
                                     <span className="flex items-center hover:translate-x-2 transition-all">
                                         <span className="mr-2 ">{buttonText}</span>
-                                        <ArrowRight className="" size={20} />
+                                        <ArrowRight size={20} />
                                     </span>
                                 </Button>
                             </Link>
