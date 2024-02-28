@@ -3,30 +3,21 @@
 import { Computer } from "@/types";
 
 import Image from "next/image";
-import { ShoppingCartIcon, InfoIcon, ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 
 import Button from "@/components/ui/button";
-import useCart from "@/hooks/use-cart";
-import { MouseEventHandler } from "react";
 import { useRouter } from "next/navigation";
-import DeliveryTime from "./delivery-time";
 
 interface CardProps {
     data: Computer;
 }
 
 const Card: React.FC<CardProps> = ({ data }) => {
-    const cart = useCart();
     const router = useRouter();
     
     const handleClick = () => {
         const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
         router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
-    };
-
-    const handleAddToCart: MouseEventHandler<HTMLButtonElement> = (e) => {
-        e.stopPropagation();
-        cart.addItem(data);
     };
     
     return (
