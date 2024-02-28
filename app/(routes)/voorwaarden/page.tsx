@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Voorwaarden() {
     return (
-        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-20 mb-16">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-32 mb-16">
   <h1 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-12 mt-12">Algemene Voorwaarden</h1>
   <div className="text-white space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
         

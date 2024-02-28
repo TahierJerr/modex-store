@@ -14,7 +14,7 @@ const Promotion = () => {
     }, []);
 
   return (
-    <div className="bg-primary flex items-center justify-center text-black -mb-10 font-semibold text-xs sm:text-sm">
+    <div className="bg-primary flex items-center justify-center text-black font-semibold text-xs sm:text-sm">
         <p className="px-4 py-2">We zijn nu ook beschikbaar in België met gratis verzending!</p>
             </div>
   )

@@ -26,7 +26,7 @@ const HomePage = async () => {
     const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
 
     return (
-        <div className="space-y-10 pb-10">
+        <div className="pb-10">
             <Promotion />
             <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs" />
             <Container>
