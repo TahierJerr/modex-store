@@ -1,17 +1,10 @@
-import getCategory from "@/actions/get-category";
-import getComputers from "@/actions/get-computers";
-import getGraphics from "@/actions/get-graphics";
-import getMemory from "@/actions/get-memory";
-import getProcessors from "@/actions/get-processors";
-
 import Container from "@/components/ui/container";
 
-import NoResults from "@/components/ui/no-results";
-import dynamic from "next/dynamic";
 import type { Metadata } from 'next'
+import { Suspense } from "react";
+import LoadingProductList from "@/components/loading-components/loading-computer-list";
+import ComputerList from "@/components/computer-list";
 
-import LoadingNow from "@/components/loading";
-import LoadingCard from "@/components/loading-components/loading-card";
 
 
 export const metadata: Metadata = {
@@ -29,72 +22,14 @@ export const metadata: Metadata = {
 
 export const revalidate = 0;
 
-const ComputerCard = dynamic(
-    () => import("@/components/ui/computer-card"), {
-    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
-    }
-);
-
-const Filter = dynamic(
-    () => import("./components/filter"), {
-    loading: () => <LoadingNow />,
-    ssr: false,
-    }
-);
-
-const MobileFilters = dynamic(
-    () => import("./components/mobile-filters"), {
-    loading: () => <div className="flex justify-center items-center my-4"><LoadingNow /></div>
-    }
-);
-
-interface CategoryPageProps {
-    searchParams: {
-        processorId?: string;
-        graphicsId?: string;
-        memoryId?: string;
-    }
-}
-
-const CategoryPage: React.FC<CategoryPageProps> = async ({
-    searchParams
-}) => {
-    const categoryId = "ac6c2c0a-1a72-49f3-85eb-e5be863186de";
-
-    const [computers, processors, graphics, memory, category] = await Promise.all([
-        getComputers({
-            categoryId: categoryId,
-            processorId: searchParams.processorId,
-            graphicsId: searchParams.graphicsId,
-            memoryId: searchParams.memoryId,
-        }),
-        getProcessors(),
-        getGraphics(),
-        getMemory(),
-        getCategory(categoryId)
-    ]);
+const CategoryPage =  () => {
 
     return (
-        <div className="bg-black">
+        <div className="bg-black mt-32 mb-12 mx-4">
             <Container>
-                <div className="px-4 sm:px-6 lg:px-8 mb-8 mt-6">
-                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8 mt-6">
-                        <MobileFilters  graphics={graphics} processors={processors} memory={memory} />
-                        <div className="hidden lg:block">
-                            <Filter valueKey="graphicsId" name="Grafische kaart" data={graphics} />
-                            <Filter valueKey="processorId" name="Processor" data={processors} />
-                            <Filter valueKey="memoryId" name="Geheugen" data={memory} />
-                        </div>
-                        <div className="mt-6 lg:col-span-4 ">
-                            {computers.length === 0 && <NoResults />}
-                            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 text-white gap-2">
-                                {computers.map((item) => (
-                                    <ComputerCard key={item.id} data={item}/>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Suspense fallback={<LoadingProductList description="Check onze MODEX Pre-Builds" title="MODEX PCs" loadingCards={6} />}>
+                        <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" sortOrder="desc" maxItems={6} />
+                    </Suspense>
             </Container>
         </div>
     )

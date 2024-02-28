@@ -85,7 +85,7 @@ export async function generateMetadata(
     );
 
     return (
-        <div className="bg-black text-white mt-16 md:mt-0">
+        <div className="bg-black text-white mt-20 sm:mt-28">
             <Container>
                 <div className="px-4 py-10 sm:px-6 lg:px-8">
                     <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
