@@ -35,9 +35,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
             {data?.images?.[0]?.url ? (
                 <div className="relative">
                     <Image src={data?.images?.[0]?.url} width={1000} height={1000} quality={100} alt={data.name} loading="lazy" className="rounded-md" />
-                    <Button onClick={handleAddToCart} className="rounded-none hover:bg-primary20 absolute bottom-0 left-0 w-full bg-primary text-black py-1 text-center">
-                        Toevoegen aan winkelwagen
-                    </Button>
+                    
                 </div>
                 ) : (
                 <p className="w-full h-auto text-center text-gray">Geen afbeelding beschikbaar.</p>
