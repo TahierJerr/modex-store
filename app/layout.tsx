@@ -20,8 +20,9 @@ export default function RootLayout({
   return (
     
     <html lang="nl">
+      
       <body className={font.className + " bg-black"}>
-     <GoogleTagManager gtmId="G-RQ7YBPG1QK" />
+     <GoogleTagManager gtmId="GTM-TTR6MP9D" />
         <NavProvider>
           <CategoryProvider>
           <ToastProvider />
@@ -39,6 +40,8 @@ export default function RootLayout({
         </NavProvider >
         <CookieConsentComponent />
       </body>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTR6MP9D"
+height="0" width="0"></iframe></noscript>
     </html>
   )
 }
