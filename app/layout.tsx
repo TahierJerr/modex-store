@@ -6,16 +6,10 @@ import { NavProvider } from '@/context/nav-provider'
 import { CategoryProvider } from '@/context/category-provider'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
-import dynamic from 'next/dynamic'
 import MobileNavbar from '@/components/mobile-navbar'
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const font = Montserrat({ subsets: ['latin'] })
-
-const ModalProvider = dynamic(
-  () => import('@/providers/modal-provider'), {
-  loading: () => <div className="flex justify-center items-center"><p className="text-white font-semibold">Aan het laden...</p></div>
-  }
-);
 
 
 export default function RootLayout({
@@ -24,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    
     <html lang="nl">
       <body className={font.className + " bg-black"}>
+     <GoogleTagManager gtmId="G-RQ7YBPG1QK" />
         <NavProvider>
           <CategoryProvider>
           <ToastProvider />
