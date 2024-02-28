@@ -22,10 +22,10 @@ const FaqPage = async () => {
             <Accordion type="single" collapsible className="w-full">
                 {data.map((item, index) => (
                     <AccordionItem key={index} className="mb-4 border-b-primary20" value={index.toString()}>
-                        <AccordionTrigger className="bg-black p-4 font-semibold text-lg">
+                        <AccordionTrigger className="bg-black p-4 font-semibold text-xl items-center justify-start flex">
                             {item.question}
                         </AccordionTrigger>
-                        <AccordionContent className="bg-black p-4">
+                        <AccordionContent className="bg-black p-4 text-lg">
                             {item.answers}
                         </AccordionContent>
                     </AccordionItem>
