@@ -21,8 +21,9 @@ data
     const router = useRouter();
 
     const handleClick = () => {
-        router.push(`/computer/${data?.id}`);
-       };
+        const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
+        router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
+    };
 
     const onRemove = () => {
         cart.removeItem(data.id)
