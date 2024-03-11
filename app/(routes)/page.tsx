@@ -8,7 +8,6 @@ import KlarnaSection from "@/components/klarna-section";
 import { Suspense } from "react";
 import LoadingProductList from "@/components/loading-components/loading-computer-list";
 import HowItWorks from "@/components/how-it-works";
-import Reviews from "@/components/reviews";
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
