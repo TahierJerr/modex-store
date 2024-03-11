@@ -8,7 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useNavContext } from "@/context/nav-provider";
 import MobileMenuPage from "./mobile-menu-page";
-import Promotion from "./promotion";
 
 
 const MobileNavbar = () => {
@@ -21,7 +20,6 @@ const MobileNavbar = () => {
   return (
     
     <div className="border-b bg-black border-primary fixed top-0 left-0 w-full z-40">
-      <Promotion />
       <Container>
         <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
           <Link href="/" className="flex gap-x-2 " onClick={handleLinkClick}>
