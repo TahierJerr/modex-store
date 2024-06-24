@@ -4,7 +4,6 @@ import type { Metadata } from 'next'
 import Billboard from "@/components/billboard";
 import ComputerList from "@/components/computer-list";
 import BulletSection from "@/components/bulletsection";
-import KlarnaSection from "@/components/klarna-section";
 import { Suspense } from "react";
 import LoadingProductList from "@/components/loading-components/loading-computer-list";
 import HowItWorks from "@/components/how-it-works";
@@ -34,10 +33,7 @@ const HomePage = async () => {
                         <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" sortOrder="desc" maxItems={6} />
                     </Suspense>
                     <BulletSection />
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 -mt-6">
                     <HowItWorks />
-                    <KlarnaSection />
-                    </div>
                 </div>
             </Container>
         </div>
