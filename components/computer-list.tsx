@@ -31,7 +31,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     }
 
     if (sortOrder === 'random') {
-        filteredItems.sort(() => Math.random() - 0.5); // Randomize the order
+        filteredItems.sort(() => Math.random() - 0.5);
     } else {
         filteredItems.sort((a, b) => {
             if (sortOrder === 'asc') {
@@ -48,10 +48,10 @@ const ComputerList: React.FC<ComputerListProps> = async ({
 
     return (
         <div className="space-y-4">
-            <p className="text-white font-bold text-3xl mx-auto flex justify-center items-center">{title}</p>
-            <p className=" text-gray text-1xl mx-auto font-semibold flex justify-center items-center">{description}</p>
+            <p className="font-bold text-3xl mx-auto flex justify-center items-center">{title}</p>
+            <p className="text-1xl mx-auto font-semibold flex justify-center items-center">{description}</p>
             {filteredItems.length === 0 && <NoResults />}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-3 gap-4 text-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-3 gap-4">
                 {filteredItems.map(item => (
                     <ComputerCard key={item.id} data={item} />
                 ))}

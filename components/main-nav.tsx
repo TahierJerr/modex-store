@@ -23,13 +23,13 @@ const MainNav = () => {
         <nav className="mx-6 flex items-center space-x-4 lg:space-x-6">
             <Button
                 onClick={homeClick}
-                className={cn("text-sm font-medium transition-colors hover:text-primary", pathname === "/" ? "text-primary" : "text-white")}
+                className={cn("text-sm font-medium transition-colors ", pathname === "/" ? "underline underline-offset-2" : "")}
             >
                 Home
             </Button>
             <Button
                 onClick={gamingPcsClick}
-                className={cn("text-sm font-medium transition-colors hover:text-primary", pathname === "/gaming-pcs" ? "text-primary" : "text-white")}
+                className={cn("text-sm font-medium transition-colors", pathname === "/gaming-pcs" ? "underline underline-offset-2" : "")}
             >
                 Gaming PCs
             </Button>

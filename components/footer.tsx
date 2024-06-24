@@ -6,34 +6,34 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-black border-t border-primary text-white py-8">
+        <footer className="bg-white border-t border-black text-black py-8">
             <Container>
             <div className="container mx-auto flex flex-wrap justify-between md:pl-8">
-                <div className="mb-4 bg-black p-4  md:w-1/2 lg:w-1/4">
+                <div className="mb-4 p-4  md:w-1/2 lg:w-1/4">
                     <p className="text-lg font-bold mb-2">Volg Ons!</p>
                     <a href="https://www.instagram.com/modexpcs">
-                        <p className='text-white hover:text-primary transition-all mb-2'>Instagram</p>
+                        <p className='hover:text-primary transition-all mb-2'>Instagram</p>
                     </a>
                     <a href="https://www.tiktok.com/@modexpcs">
-                        <p className='text-white hover:text-primary transition-all mb-2'>TikTok</p>
+                        <p className=' hover:text-primary transition-all mb-2'>TikTok</p>
                     </a>
                     <a href="https://discord.gg/2nz9fqMweu">
-                        <p className='text-white hover:text-primary transition-all'>Discord</p>
+                        <p className=' hover:text-primary transition-all'>Discord</p>
                     </a>
                 </div>
-                <div className="mb-4 bg-black p-4 md:w-1/2 lg:w-1/4">
+                <div className="mb-4 p-4 md:w-1/2 lg:w-1/4">
                     <p className="text-lg font-bold mb-2">Voorwaarden</p>
                     <Link key="/privacy" href="/privacy">
-                        <p className='text-white hover:text-primary transition-all mb-2'>Privacy</p>
+                        <p className=' hover:text-primary transition-all mb-2'>Privacy</p>
                     </Link>
                     <Link key="/voorwaarden" href="/voorwaarden">
-                        <p className='text-white hover:text-primary transition-all mb-2'>Algemene Voorwaarden</p>
+                        <p className=' hover:text-primary transition-all mb-2'>Algemene Voorwaarden</p>
                     </Link>
                     <Link key="/cookies" href="/cookies">
-                        <p className='text-white hover:text-primary transition-all'>Cookies</p>
+                        <p className=' hover:text-primary transition-all'>Cookies</p>
                     </Link>
                 </div>
-                <div className="mb-4 bg-black p-4 md:w-1/2 lg:w-1/4">
+                <div className="mb-4 p-4 md:w-1/2 lg:w-1/4">
                     <p className="text-lg font-bold mb-2">Contact Informatie</p>
                     <p className="mb-2">Telefoonnummer: <a title='phone number' href="tel:+31649146060" className='hover:text-primary transition-colors'>+31649146060</a></p>
                     <p className="mb-2">Email: <a title='email' href="mailto:info@modex-pc.nl" className='hover:text-primary transition-colors'>info@modex-pc.nl</a></p>
@@ -42,7 +42,7 @@ const Footer = () => {
                     <p title='KVK nummer' className='mb-2'>KVK: 89703685</p>
                     <p title='BTW Nummer'>BTW: NL004752554B13</p>
                 </div>
-                <div className="mb-4 bg-black p-4 md:w-1/2 lg:w-1/4">
+                <div className="mb-4 p-4 md:w-1/2 lg:w-1/4">
                     <p className="text-lg font-bold mb-2">Service</p>
                     <Link key="/retour" href="/retour" ><p className='mb-2 hover:text-primary transition-colors'>Retourneren</p></Link>
                 </div>

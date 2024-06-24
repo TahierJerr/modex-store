@@ -19,13 +19,12 @@ const CartPage = () => {
 
 
     return (
-        <div className="bg-black">
             <Container>
                 <div className="py-8 sm:px-6 lg:px-8 mt-16 mx-4 md:mx-0">
                     <h1 className="text-primary font-bold text-3xl">Winkelwagen</h1>
                     <div className="mt-6 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
                         <div className="lg:col-span-7  rounded-lg">
-                            {cart.items.length === 0 && <p className="text-white">Geen producten in de winkelwagen.</p>}
+                            {cart.items.length === 0 && <p>Geen producten in de winkelwagen.</p>}
                             <ul>
                                 {cart.items.map((item) => (
                                     <CartItem key={item.id} data={item} />
@@ -36,7 +35,6 @@ const CartPage = () => {
                     </div>
                 </div>
             </Container>
-        </div>
     );
 }
 

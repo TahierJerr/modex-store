@@ -3,8 +3,8 @@ import { Home, Search, Wrench } from "lucide-react"
 const HowItWorks = () => {
     return (
     <>
-    <h3 className="text-3xl font-semibold text-primary mb-4">Hoe het werkt</h3>
-    <div className="grid grid-cols-1 gap-4 bg-primary text-black rounded-lg py-4 px-4 mb-6 -mt-4">
+    <h3 className="text-3xl font-semibold text-black mb-4">Hoe het werkt</h3>
+    <div className="grid grid-cols-1 gap-4 text-black rounded-lg py-4 px-4 mb-6 -mt-4 ">
         <div>
             <h4 className="text-2xl font-semibold flex items-center mb-2"><Search size={24} className="mr-2 text-black200"/> Stap 1</h4>
             <p className="font-medium text-lg">Kies een van onze game{"\'"}pcs, die zorgvuldig zijn samengesteld door onze experts en hoogwaardige componenten bevatten.</p>

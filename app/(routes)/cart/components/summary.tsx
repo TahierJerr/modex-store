@@ -38,7 +38,7 @@ const Summary = () => {
     }
 
     return (
-        <div className="mt-12 rounded-lg bg-black200 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-4 lg:p-8 text-white">
+        <div className="mt-12 rounded-lg bg-black200 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-4 lg:p-8">
             <p className="text-xl font-semibold text-primary">
                 Samenvatting
             </p>
@@ -52,7 +52,7 @@ const Summary = () => {
                     <Currency value={totalPrice} />
                 </div>
             </div>
-            <Button disabled={items.length === 0} title="Checkout" onClick={onCheckout} className="bg-white w-full mt-6 text-black hover:bg-primary">
+            <Button disabled={items.length === 0} title="Checkout" onClick={onCheckout} className="bg-white w-full mt-6 text-black border border-black">
                 Bestellen
             </Button>
         </div>

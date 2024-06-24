@@ -85,7 +85,7 @@ export async function generateMetadata(
     );
 
     return (
-        <div className="bg-black text-white mt-20 sm:mt-28">
+        <div className="mt-20 sm:mt-28">
             <Container>
                 <div className="px-4 py-10 sm:px-6 lg:px-8">
                     <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
@@ -94,9 +94,9 @@ export async function generateMetadata(
                             <ComputerInfo data={computer} />
                         </div>
                     </div>
-                    <hr className="my-10 text-black200" />
+                    <hr className="my-10 text-black" />
                     <ComputerSpec data={computer} />
-                    <hr className="my-10 text-black200" />
+                    <hr className="my-10 text-black" />
                     <ComputerList maxItems={3} title="Andere Computers" description="Check onze andere pre-builds" id={computer.id}/>
                 </div>
             </Container>

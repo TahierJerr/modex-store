@@ -17,15 +17,15 @@ const FaqPage = async () => {
     const data = await getAnswers();
 
     return (
-        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32 text-white">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32">
             <h1 className="mb-10 text-2xl sm:text-3xl font-bold">Veelgestelde vragen</h1>
             <Accordion type="single" collapsible className="w-full">
                 {data.map((item, index) => (
                     <AccordionItem key={index} className="mb-4 border-b-primary20" value={index.toString()}>
-                        <AccordionTrigger className="bg-black p-4 font-semibold text-xl">
+                        <AccordionTrigger className="p-4 font-semibold text-xl">
                             {item.question}
                         </AccordionTrigger>
-                        <AccordionContent className="bg-black p-4 text-lg">
+                        <AccordionContent className="p-4 text-lg">
                             {item.answers}
                         </AccordionContent>
                     </AccordionItem>

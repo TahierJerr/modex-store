@@ -19,7 +19,7 @@ const Billboard: React.FC<BillboardProps> = async ({ data, buttonText, buttonLin
             {data?.label && data?.description ? (
                 <div className="container flex flex-col md:flex-row justify-between">
                     <div className="md:w-1/2 max-w-3xl  md:mr-10 md:order-none">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-primary mb-6 transform translate-y-4 transition-all duration-700 delay-200 break-words" data-animate>
+                        <h1 className="text-4xl text-white sm:text-5xl lg:text-6xl font-bold leading-tight text-primary mb-6 transform translate-y-4 transition-all duration-700 delay-200 break-words" data-animate>
                             {data?.label}
                         </h1>
                         <h2 className="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-8 translate-y-4 break-words" data-animate>

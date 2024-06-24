@@ -7,9 +7,9 @@ export const metadata: Metadata = {
     keywords: ['MODEX Privacy', 'MODEX Privacy Policy', 'MODEX Privacy Beleid', 'MODEX Privacy Verklaring', 'MODEX Privacy Statement', 'MODEX Privacy Pagina', 'MODEX Privacy Policy Pagina', 'MODEX Privacy Beleid Pagina', 'MODEX Privacy Verklaring Pagina', 'MODEX Privacy Statement Pagina',]
   }
 
-const TextComponent2 = () => {
+const PrivacyPage = () => {
     return (
-        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-32">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8">Cookies, of vergelijkbare technieken, die wij gebruiken</h2>
         <h2 className="text-xl mb-4">MODEX, gevestigd aan Draakstraat 7 9742TD Groningen, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</h2>
             
@@ -82,4 +82,4 @@ const TextComponent2 = () => {
     );
 };
 
-export default TextComponent2;
+export default PrivacyPage;

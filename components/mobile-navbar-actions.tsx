@@ -23,8 +23,8 @@ const MobileActions = () => {
 
     return (
             <Button onClick={() => router.push("/cart")} className="flex items-center rounded-full px-4 py-2">
-                <ShoppingBag size={20} color="#cfb968"/>
-                <span className="ml-2 text-sm font-medium text-primary">
+                <ShoppingBag size={20} color="#000000"/>
+                <span className="ml-2 text-sm font-medium text-black">
                     {cart.items.length}
                 </span>
             </Button>

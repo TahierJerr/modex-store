@@ -3,8 +3,8 @@ import React from 'react';
 const LoadingNow = () => {
     return (
         <div className="flex items-center justify-center h-full">
-            <p className="text-2xl font-bold text-primary animate-pulse mr-2">Aan het laden...</p>
-            <span className="inline-block w-6 h-6 border-4 border-primary border-t-transparent rounded-full animate-spin"></span>
+            <p className="text-2xl font-bold text-black animate-pulse mr-2">Aan het laden...</p>
+            <span className="inline-block w-6 h-6 border-4 border-black border-t-transparent rounded-full animate-spin"></span>
         </div>
     );
 };

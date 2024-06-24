@@ -7,19 +7,6 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      white: '#ffffff',
-      gray: '#8f8e8a',
-      primary: '#cfb968',
-      primary20: '#998849',
-      black: '#000000',
-      black100: '#595959',
-      black200: '#303030',
-      danger: '#e03849',
-      success: '#42FF91',
-      warning: '#FFDD99',
-      klarna: '#FFB3C7',
-    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

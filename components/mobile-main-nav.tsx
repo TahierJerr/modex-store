@@ -32,7 +32,7 @@ const MainNavMobile: React.FC<MainNavProps> = ({
     return (
         <nav className="flex flex-col">
             {routes.map((route) => (
-                <Link onClick={handleLinkClick} key={route.href} href={route.href} className={cn("text-xl font-medium transition-colors hover:text-primary my-6", route.active ? "text-primary" : "text-white")}>
+                <Link onClick={handleLinkClick} key={route.href} href={route.href} className={cn("text-xl text-black font-medium transition-colors my-6", route.active ? "underline underline-offset-2" : "")}>
                     {route.label}
                 </Link>
             )

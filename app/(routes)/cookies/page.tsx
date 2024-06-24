@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Cookies() { 
     return (
-    <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-32">
+    <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32">
         <h1 className="text-4xl font-bold mb-8 text-center">Cookiebeleid van MODEX</h1>
         <p className="text-2xl font-bold mb-4">Wat zijn cookies</p>
         <p className="text-lg mb-4">Zoals gebruikelijk is bij bijna alle professionele websites, gebruikt deze site cookies, dit zijn kleine bestanden die naar uw computer worden gedownload, om uw ervaring te verbeteren. Deze pagina beschrijft welke informatie ze verzamelen, hoe we deze gebruiken en waarom we deze cookies soms moeten opslaan. We zullen ook delen hoe u deze cookies kunt voorkomen dat ze worden opgeslagen, maar dit kan bepaalde elementen van de functionaliteit van de sites downgraden of breken.</p>

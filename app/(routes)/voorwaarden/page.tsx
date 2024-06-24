@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function Voorwaarden() {
     return (
-        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 text-white mt-32 mb-16">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32 mb-16">
   <h1 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-12 mt-12">Algemene Voorwaarden</h1>
-  <div className="text-white space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
+  <div className="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
         
         <h2 className="text-2xl mt-4">Inhoudsopgave</h2>
         
@@ -325,7 +325,7 @@ export default function Voorwaarden() {
         Aanvullende dan wel van deze algemene voorwaarden afwijkende bepalingen mogen niet ten nadele van de consument zijn en dienen schriftelijk te worden vastgelegd dan wel op zodanige wijze dat deze door de consument op een toegankelijke manier kunnen worden opgeslagen op een duurzame gegevensdrager.
         </p>
 
-        <a href=" ../../../public/algemene-voorwaarden-modex.pdf"><p className="mt-8 text-xl underline text-primary">Link voor algemene voorwaarden PDF</p></a>
+        <a href="algemene-voorwaarden-modex.pdf" download><p className="mt-8 text-xl underline text-primary">Link voor algemene voorwaarden PDF</p></a>
         </div>
         </div>
         

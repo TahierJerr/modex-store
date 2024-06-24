@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     
     <html lang="nl">
-      <body className={font.className + " bg-black"}>
+      <body className={font.className + " bg-white"}>
         <NavProvider>
           <CategoryProvider>
           <ToastProvider />
