@@ -1,8 +1,9 @@
 import { Billboard as BillboardType } from "@/types";
 import Image from "next/image";
 import Button from "./ui/button";
-import { ArrowRight } from "lucide-react"; 
+import { ArrowRight, EuroIcon, PcCase, Shield } from "lucide-react"; 
 import Link from "next/link";
+import BulletSection from "./bulletsection";
 
 interface BillboardProps {
     data: BillboardType;
@@ -34,7 +35,12 @@ const Billboard: React.FC<BillboardProps> = async ({ data, buttonText, buttonLin
                                     </span>
                                 </Button>
                             </Link>
-                        ) : null}
+                        ) : null }
+                        <div className="translate-y-4 mt-6 hidden sm:flex flex-row text-white whitespace-nowrap">
+                            <p className='font-semibold text-2xl mr-6 flex items-center '><PcCase className="mr-2 w-6 h-6"/>Prestaties eerst</p>
+                            <p className='text-2xl font-semibold mr-6 flex items-center'><EuroIcon className="mr-2 w-6 h-6"/>Eerlijke prijzen</p>
+                            <p className='text-2xl font-semibold flex items-center'><Shield className="mr-2 w-6 h-6"/>Betrouwbare garantie</p>
+                        </div>
                     </div>
                 </div>
             ) : null}

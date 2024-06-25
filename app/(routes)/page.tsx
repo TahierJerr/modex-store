@@ -32,8 +32,7 @@ const HomePage = async () => {
                     <Suspense fallback={<LoadingProductList description="Check onze MODEX Pre-Builds" title="MODEX PCs" loadingCards={6} />}>
                         <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" sortOrder="desc" maxItems={6} />
                     </Suspense>
-                    <BulletSection />
-                    <HowItWorks />
+                    <HowItWorks className="my-12" />
                 </div>
             </Container>
         </div>

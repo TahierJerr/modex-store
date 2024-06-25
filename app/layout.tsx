@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import { Montserrat } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import { NavProvider } from '@/context/nav-provider'
 import { CategoryProvider } from '@/context/category-provider'
@@ -8,7 +8,10 @@ import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
 import MobileNavbar from '@/components/mobile-navbar'
 
-const font = Montserrat({ subsets: ['latin'] })
+const font = Poppins({
+  subsets: ['latin'],
+  weight: '400'
+})
 
 
 export default function RootLayout({
