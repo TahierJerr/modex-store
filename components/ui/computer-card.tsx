@@ -3,10 +3,12 @@
 import { Computer } from "@/types";
 
 import Image from "next/image";
-import { ChevronRightIcon, ShoppingCartIcon } from "lucide-react";
+import { ShoppingCartIcon } from "lucide-react";
 
 import Button from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import useCart from "@/hooks/use-cart";
+import { MouseEventHandler } from "react";
 
 interface CardProps {
     data: Computer;
@@ -19,6 +21,14 @@ const Card: React.FC<CardProps> = ({ data }) => {
         const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
         router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
     };
+
+    const cart = useCart();
+
+    const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+        event.stopPropagation();
+  
+        cart.addItem(data);
+    }
     
     return (
     <div onClick={handleClick} className="bg-white rounded-lg drop-shadow-lg shadow-xl text-black flex-col flex cursor-pointer transition-all duration-300 hover:bg-slate border">
@@ -42,8 +52,8 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 <hr className="my-2 text-black100" />
                 <p className="text-lg font-semibold">€ {data.price}</p>
             </div>
-            <Button onClick={handleClick} className="py-2 rounded-b-lg flex rounded-t-none hover:bg-blue-950 hover:transition-all justify-center items-center text-white bg-black w-full text-center">
-                <ShoppingCartIcon size={20} className="mr-2" /> Add to cart
+            <Button title="Toevoegen aan winkelwagen" onClick={onAddToCart} className="py-2 rounded-b-lg flex rounded-t-none hover:bg-blue-950 hover:transition-all justify-center items-center text-white bg-black w-full text-center">
+                <ShoppingCartIcon size={20} className="mr-2" /> Toevoegen aan winkelwagen
             </Button>
         </div>
         );
