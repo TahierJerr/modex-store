@@ -1,58 +1,77 @@
+"use client"
+
 import Link from 'next/link';
-import Container from '@/components/ui/container';
+import { BanknoteIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
+import Image from 'next/image';
 
 
-const Footer = () => {
-    const currentYear = new Date().getFullYear();
+const Footer = () => {    
+    const handleCopyToClipboard = () => {
+        navigator.clipboard.writeText('NL03REVO8295671783');
+    };
 
     return (
-        <footer className="bg-white border-t border-black text-black py-8">
-            <Container>
-            <div className="container mx-auto flex flex-wrap justify-between md:pl-8">
-                <div className="mb-4 p-4  md:w-1/2 lg:w-1/4">
-                    <p className="text-lg font-bold mb-2">Volg Ons!</p>
-                    <a href="https://www.instagram.com/modexpcs">
-                        <p className='hover:text-primary transition-all mb-2'>Instagram</p>
-                    </a>
-                    <a href="https://www.tiktok.com/@modexpcs">
-                        <p className=' hover:text-primary transition-all mb-2'>TikTok</p>
-                    </a>
-                    <a href="https://discord.gg/2nz9fqMweu">
-                        <p className=' hover:text-primary transition-all'>Discord</p>
-                    </a>
-                </div>
-                <div className="mb-4 p-4 md:w-1/2 lg:w-1/4">
-                    <p className="text-lg font-bold mb-2">Voorwaarden</p>
-                    <Link key="/privacy" href="/privacy">
-                        <p className=' hover:text-primary transition-all mb-2'>Privacy</p>
+        <footer className="bg-background text-muted-foreground py-12 border-t">
+            <div className="container max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="flex flex-col gap-4">
+                    <Link href="#" className="flex items-center gap-2" prefetch={false}>
+                        <Image src="/transparent.png" alt="Logo" width={100} height={1} />
                     </Link>
-                    <Link key="/voorwaarden" href="/voorwaarden">
-                        <p className=' hover:text-primary transition-all mb-2'>Algemene Voorwaarden</p>
-                    </Link>
-                    <Link key="/cookies" href="/cookies">
-                        <p className=' hover:text-primary transition-all'>Cookies</p>
-                    </Link>
+                    <p className="text-sm">
+                        Welcome to Modex! We are dedicated to providing top-tier gaming computers designed by gamers, for gamers. Our mission is to elevate your gaming experience with innovative, high-quality PCs that stands out. Join us and discover the future of gaming with Modex!
+                    </p>
+                    <div className="grid gap-2">
+                        <div className="flex items-center gap-2">
+                            <MailIcon className="w-5 h-5" />
+                            <a href="mailto:info@modexgaming.com" className="underline underline-offset-2">
+                                info@modexgaming.com
+                            </a>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <PhoneIcon className="w-5 h-5" />
+                            <a href="tel:+31649146060" className="underline underline-offset-2">
+                                +31 6 49146060
+                            </a>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <BanknoteIcon className="w-5 h-5" />
+                            <p>IBAN: <span className='underline underline-offset-2 cursor-pointer' onClick={handleCopyToClipboard}>NL03 REVO 8295 6717 83</span></p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <LandmarkIcon className="w-5 h-5" />
+                            <span>BTW: NL004752554B13</span>
+                        </div>
+                    </div>
                 </div>
-                <div className="mb-4 p-4 md:w-1/2 lg:w-1/4">
-                    <p className="text-lg font-bold mb-2">Contact Informatie</p>
-                    <p className="mb-2">Telefoonnummer: <a title='phone number' href="tel:+31649146060" className='hover:text-primary transition-colors'>+31649146060</a></p>
-                    <p className="mb-2">Email: <a title='email' href="mailto:info@modex-pc.nl" className='hover:text-primary transition-colors'>info@modex-pc.nl</a></p>
-                    <Link title='frequently asked questions' key="/faq" href="/faq" ><p className='hover:text-primary transition-colors mb-2'>Veelgestelde Vragen</p></Link>
-                    <p title='Bank number' className="mb-2">IBAN: NL03 REVO 8295 6717 83</p>
-                    <p title='KVK nummer' className='mb-2'>KVK: 89703685</p>
-                    <p title='BTW Nummer'>BTW: NL004752554B13</p>
+                <div className="flex flex-col gap-4">
+                    <h4 className="text-lg font-semibold">Follow Us</h4>
+                    <div className="flex gap-4">
+                        <a href="#" className="hover:text-primary transition-colors">
+                            <InstagramIcon className="w-6 h-6" />
+                        </a>
+                    </div>
                 </div>
-                <div className="mb-4 p-4 md:w-1/2 lg:w-1/4">
-                    <p className="text-lg font-bold mb-2">Service</p>
-                    <Link key="/retour" href="/retour" ><p className='mb-2 hover:text-primary transition-colors'>Retourneren</p></Link>
+                <div className="flex flex-col gap-4">
+                    <h4 className="text-lg font-semibold">Legal</h4>
+                    <div className="grid gap-2">
+                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                            Privacy Policy
+                        </Link>
+                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                            Terms of Service
+                        </Link>
+                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                            Returns
+                        </Link>
+                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                            Our Services
+                        </Link>
+                        <p className="text-sm">&copy; 2024 Modex. All rights reserved.</p>
+                    </div>
                 </div>
             </div>
-            <p className="text-center mt-8">
-                © {currentYear} MODEX. Alle prijzen zijn inclusief BTW
-            </p>
-            </Container>
         </footer>
-    )
+    );
 }
 
 export default Footer;

@@ -2,6 +2,7 @@ import NoResults from "@/components/ui/no-results";
 import ComputerCard from "./ui/computer-card";
 import getComputers from "@/actions/get-computers";
 import { Computer } from "@/types";
+import Link from "next/link";
 
 interface ComputerListProps {
     title: string;
@@ -9,6 +10,7 @@ interface ComputerListProps {
     id?: string;
     sortOrder?: 'asc' | 'desc' | 'random';
     maxItems?: number;
+    viewAllLink?: boolean;
 }
 
 const ComputerList: React.FC<ComputerListProps> = async ({
@@ -17,6 +19,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     id,
     sortOrder = 'asc',
     maxItems,
+    viewAllLink,
 }) => {
 
     const items: Computer[] = await getComputers({ isFeatured: true });
@@ -47,16 +50,30 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     }
 
     return (
-        <div className="space-y-4">
-            <p className="font-bold text-3xl mx-auto flex justify-center items-center">{title}</p>
-            <p className="text-1xl mx-auto font-semibold flex justify-center items-center">{description}</p>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+            <div className="mb-8 flex items-center justify-center flex-col">
+                <p className="rounded-lg bg-white px-4 mb-1">Modex PCs</p>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">{title}</h2>
+                <p className="max-w-[900px] text-muted-foreground text-center px-4 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">{description}</p>
+            </div>
             {filteredItems.length === 0 && <NoResults />}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gird-cols-3 gap-4 mx-4 sm:mx-12">
                 {filteredItems.map(item => (
                     <ComputerCard key={item.id} data={item} />
                 ))}
             </div>
-        </div>
+            {viewAllLink && (
+                <div className="flex items-center justify-center mt-4">
+                <Link
+                href="/gaming-pcs"
+                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                prefetch={false}
+                >
+                View All Gaming PCs
+            </Link>
+            </div>
+            )}
+        </section>
     );
 };
 

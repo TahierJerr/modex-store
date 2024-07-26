@@ -3,7 +3,7 @@
 import { Computer } from "@/types";
 
 import Image from "next/image";
-import { ShoppingCartIcon } from "lucide-react";
+import { CpuIcon, MemoryStickIcon, ShoppingCartIcon } from "lucide-react";
 
 import Button from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -29,32 +29,36 @@ const Card: React.FC<CardProps> = ({ data }) => {
   
         cart.addItem(data);
     }
+
+    const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(Number(data.price));
     
     return (
-    <div onClick={handleClick} className="bg-white rounded-lg drop-shadow-lg shadow-xl text-black flex-col flex cursor-pointer transition-all duration-300 hover:bg-slate border">
-        <div className="w-full min-h-80 aspect-square rounded-t-md flex items-center">
-            {data?.images?.[0]?.url ? (
-                <div className="relative">
-                    <Image src={data?.images?.[0]?.url} width={1000} height={1000} quality={100} alt={data.name} loading="lazy" className="rounded-md" />
+        <div onClick={handleClick} className="relative overflow-hidden transition-transform duration-300 ease-in-out rounded-lg shadow-lg group hover:shadow-xl hover:-translate-y-2 cursor-pointer">
+            <Image src={data.images[0].url} alt={`${data.name} image`} width={500} height={400} quality={100} className=" object-contain w-full h-64 bg-white" />
+            <div className="p-4 bg-background">
+                <h3 className="text-xl font-bold text-primary">{data.name}</h3>
+                <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2 text-sm">
+                        <CpuIcon className="w-4 h-4" />
+                        <span>{data.processor.name}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                        <MemoryStickIcon className="w-4 h-4" />
+                        <span>{data.memory.name}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm">
+                        <CpuIcon className="w-4 h-4" />
+                        <span>{data.graphics.name}</span>
+                    </div>
                 </div>
-                ) : (
-                <p className="w-full h-auto text-center text-gray">Geen afbeelding beschikbaar.</p>
-                )}
-            </div>
-            <div className="py-2 flex flex-col justify-center text-center">
-                <p className="font-bold text-xl ">{data.name}</p>
-                <hr className="mt-2 " />
-                <div className="mt-2">
-                    <p className="">{data.graphics.model}</p>
-                    <p className="">{data.processor.name}</p>
-                    <p className="">{data.memory.name}</p>
+                <div className="flex items-center justify-between mt-4">
+                    <h4 className="text-lg font-semibold md:text-xl text-primary">{formattedPrice}</h4>
+                    <Button onClick={onAddToCart} className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                        <ShoppingCartIcon className="w-4 h-4 mr-2" />
+                        Buy now
+                    </Button>
                 </div>
-                <hr className="my-2 text-black100" />
-                <p className="text-lg font-semibold">€ {data.price}</p>
             </div>
-            <Button title="Toevoegen aan winkelwagen" onClick={onAddToCart} className="py-2 rounded-b-lg flex rounded-t-none hover:bg-blue-950 hover:transition-all justify-center items-center text-white bg-black w-full text-center">
-                <ShoppingCartIcon size={20} className="mr-2" /> Toevoegen aan winkelwagen
-            </Button>
         </div>
         );
     };

@@ -1,51 +1,35 @@
-import { Billboard as BillboardType } from "@/types";
 import Image from "next/image";
-import Button from "./ui/button";
-import { ArrowRight, EuroIcon, PcCase, Shield } from "lucide-react"; 
 import Link from "next/link";
-import BulletSection from "./bulletsection";
 
-interface BillboardProps {
-    data: BillboardType;
-    buttonText?: string;
-    buttonLink?: string;
-}
-
-const Billboard: React.FC<BillboardProps> = async ({ data, buttonText, buttonLink }) => {
+const Billboard = () => {
     return (
-        <section
-            className="relative flex flex-col md:flex-row items-center justify-center py-28 sm:py-72 px-6 mb-4 md:mb-8"
-        >
-            <Image loading="eager" src={data?.imageUrl} alt="billboard" layout="fill" objectFit="cover" fetchPriority="high" quality={100} priority={true} />
-            {data?.label && data?.description ? (
-                <div className="container flex flex-col md:flex-row justify-between">
-                    <div className="md:w-1/2 max-w-3xl  md:mr-10 md:order-none">
-                        <h1 className="text-4xl text-white sm:text-5xl lg:text-6xl font-bold leading-tight text-primary mb-6 transform translate-y-4 transition-all duration-700 delay-200 break-words" data-animate>
-                            {data?.label}
-                        </h1>
-                        <h2 className="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-8 translate-y-4 break-words" data-animate>
-                            {data?.description}
-                        </h2>
-                        {buttonText && buttonLink ? (
-                            <Link href={buttonLink} key={buttonLink}>
-                                <Button className="translate-y-4 bg-white text-black rounded-lg hover:bg-primary">
-                                    <span className="flex items-center hover:translate-x-2 transition-all">
-                                        <span className="mr-2 ">{buttonText}</span>
-                                        <ArrowRight size={20} />
-                                    </span>
-                                </Button>
-                            </Link>
-                        ) : null }
-                        <div className="translate-y-4 mt-6 hidden sm:flex flex-row text-white whitespace-nowrap">
-                            <p className='font-semibold text-2xl mr-6 flex items-center '><PcCase className="mr-2 w-6 h-6"/>Prestaties eerst</p>
-                            <p className='text-2xl font-semibold mr-6 flex items-center'><EuroIcon className="mr-2 w-6 h-6"/>Eerlijke prijzen</p>
-                            <p className='text-2xl font-semibold flex items-center'><Shield className="mr-2 w-6 h-6"/>Betrouwbare garantie</p>
-                        </div>
-                    </div>
+    <section className="w-full pt-12 md:pt-24 lg:pt-32 my-12">
+        <div className="container px-4 md:px-6 space-y-10 xl:space-y-16">
+            <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
+                <div>
+                    <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] text-primary">
+                        Powerful PCs, Tailored for You
+                    </h1>
+                    <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                        Discover Modex's pre-built PCs, designed to deliver exceptional performance and unmatched reliability.
+                    </p>
+                    <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
+                        <Link
+                        href="#"
+                        className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                        prefetch={false}
+                        >
+                        Explore Gaming PCs
+                        </Link>
                 </div>
-            ) : null}
-        </section>
-    );
+            </div>
+            <div>
+                <Image src="/test2.jpg" width={800} height={600} quality={100} alt="Billboard image" className="mx-auto aspect-video overflow-hidden rounded-xl object-cover" />
+            </div>
+        </div>
+    </div>
+</section>
+);
 };
 
 export default Billboard;

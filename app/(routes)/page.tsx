@@ -7,6 +7,8 @@ import BulletSection from "@/components/bulletsection";
 import { Suspense } from "react";
 import LoadingProductList from "@/components/loading-components/loading-computer-list";
 import HowItWorks from "@/components/how-it-works";
+import WhyModex from "@/components/why-modex";
+import Reviews from "@/components/reviews";
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
@@ -25,15 +27,15 @@ const HomePage = async () => {
     const billboard = await getBillboard("5854fd05-b077-4185-b72e-16539570c641");
 
     return (
-        <div className="pb-10 ">
-            <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs" />
+        <div>
             <Container>
-                <div className="flex flex-col gap-2 px-4 sm:px-6 lg:px-8">
-                    <Suspense fallback={<LoadingProductList description="Check onze MODEX Pre-Builds" title="MODEX PCs" loadingCards={6} />}>
-                        <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" sortOrder="desc" maxItems={6} />
-                    </Suspense>
-                    <HowItWorks className="my-12" />
-                </div>
+            <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs" />
+            <BulletSection />
+                <Suspense fallback={<LoadingProductList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" loadingCards={6} />}>
+                    <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={3} viewAllLink={true} />
+                </Suspense>
+            <WhyModex />
+            <Reviews />
             </Container>
         </div>
     )

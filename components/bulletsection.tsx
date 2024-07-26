@@ -1,26 +1,57 @@
 import React from 'react';
-import { PcCase, Shield, EuroIcon } from "lucide-react";
+import { PcCase, Shield, EuroIcon, HeadsetIcon, WrenchIcon, TruckIcon } from "lucide-react";
 
 const BulletSection = () => {
-  return (
-    <div className="text-black space-y-4 my-12 rounded-lg">
-        <h3 className="text-black font-bold text-3xl mx-auto">Waarom MODEX?</h3>
-      <div className="border grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:gird-cols-3 gap-4 border-black rounded-md py-4 px-2">
-        <div className="px-4 py-2">
-          <h4 className='text-black font-semibold text-2xl mb-6 flex items-center'><PcCase className="mr-2 w-6 h-6"/>Prestaties eerst</h4>
-          <p className='font-medium text-lg'>Bij MODEX staat prestatie voorop. Onze computers zijn gebouwd met de beste componenten om een soepele en meeslepende game-ervaring te garanderen.</p>
+    return (
+    <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container grid items-center justify-center gap-4 px-4 md:px-6 lg:gap-10">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                    <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary">Why Choose Modex</div>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
+                        Tailored for Your Needs
+                    </h2>
+                    <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                        Modex offers a wide range of pre-built PCs, each designed to meet your unique computing needs. From
+                        powerful gaming rigs to versatile workstations, we have the perfect solution for you.
+                    </p>
+                </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+                <div className="grid gap-4">
+                    <div className="grid gap-1">
+                        <h3 className="text-xl font-bold text-primary flex items-center"><WrenchIcon size={22} className='mr-2' />Customizable Configurations</h3>
+                        <p className="text-muted-foreground">
+                            Tailor your PC to your exact specifications, choosing from a wide range of components and
+                            accessories.
+                        </p>
+                    </div>
+                    <div className="grid gap-1">
+                        <h3 className="text-xl font-bold text-primary flex items-center"><TruckIcon size={22} className='mr-2' />Fast Shipping</h3>
+                        <p className="text-muted-foreground">
+                            Get your new PC delivered to your doorstep quickly, with our efficient shipping and handling
+                            process.
+                        </p>
+                    </div>
+                    <div className="grid gap-1">
+                        <h3 className="text-xl font-bold text-primary flex items-center"><HeadsetIcon size={22} className='mr-2' />Excellent Support</h3>
+                        <p className="text-muted-foreground">
+                            Our knowledgeable support team is always here to assist you with any questions or issues you may
+                            have.
+                        </p>
+                    </div>
+                </div>
+                <img
+                src="/test.jpg"
+                alt="Modex Benefits"
+                width={550}
+                height={310}
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                />
+            </div>
         </div>
-        <div className="px-4 py-2">
-          <h5 className='text-black text-2xl font-semibold mb-6 flex items-center'><EuroIcon className="mr-2 w-6 h-6"/>Eerlijke prijzen</h5>
-          <p className='text-lg font-medium'>Bij MODEX geloven we in eerlijke prijzen. We streven ernaar om de beste prestaties per euro te bieden, waardoor gamen toegankelijker wordt.</p>
-        </div>
-        <div className="px-4 py-2">
-          <h6 className='text-black text-2xl font-semibold mb-6 flex items-center'><Shield className="mr-2 w-6 h-6"/>Betrouwbare garantie</h6>
-          <p className='font-medium text-lg'>We staan achter de kwaliteit van onze producten. Daarom bieden we een betrouwbare garantie op onze machines. Je kunt met een gerust hart gamen, wetende dat wij er voor je zijn als er iets misgaat.</p>
-        </div>
-      </div>
-    </div>
-  );
+    </section>
+    );
 };
 
 export default BulletSection;
