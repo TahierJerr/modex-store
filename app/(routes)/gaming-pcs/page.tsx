@@ -25,13 +25,9 @@ export const revalidate = 0;
 const CategoryPage =  () => {
 
     return (
-        <div className="mt-32 mb-12 mx-4">
             <Container>
-                <Suspense fallback={<LoadingProductList description="Check onze MODEX Pre-Builds" title="MODEX PCs" loadingCards={6} />}>
-                        <ComputerList description="Check onze MODEX Pre-Builds" title="MODEX PCs" sortOrder="desc" maxItems={6} />
-                    </Suspense>
+                <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={6} />
             </Container>
-        </div>
     )
 }
 

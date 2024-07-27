@@ -11,7 +11,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 
 
 interface FilterProps {
-    data: (Processor | Memory | Graphics )[];
+    data: (Processor | Memory | Graphics)[];
     name: string;
     valueKey: string;
 }

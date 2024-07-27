@@ -5,8 +5,9 @@ import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/button";
 import { MouseEventHandler } from "react";
 import useCart from "@/hooks/use-cart";
-import { ShoppingCart } from "lucide-react";
+import { CheckIcon, ShoppingCart, ShoppingCartIcon } from "lucide-react";
 import DeliveryTime from "./ui/delivery-time";
+import Image from "next/image";
 
 interface ComputerInfoProps {
     data: Computer;
@@ -15,44 +16,67 @@ interface ComputerInfoProps {
 const ComputerInfo: React.FC<ComputerInfoProps> = ({
     data
 }) => {
-
+    
     const cart = useCart();
-
+    
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
-  
+        
         cart.addItem(data);
-      }
-
+    }
+    
+    const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(Number(data.price));
+    
     return (
-        <div>
-            <h1 className="text-3xl font-bold text-primary">{data.name}</h1>
-            <div className="mt-3 flex items-end justify-between">
-                <p className="text-2xl">
-                    <Currency value={data?.price}/>
-                </p>
-            </div>
-            <hr className="my-4"/>
-            <div className="flex gap-x-4 flex-col">
-                <h2 className="font-semibold text-primary text-lg mb-4">Belangrijkste specificaties:</h2>                
-                <p className="mb-2">Processor: {data.processor.name}</p>
-                <p className="mb-2">Processor Koeler: {data.cooler.name}</p>
-                <p className="mb-2">Grafische kaart: {data.graphics.name}</p>
-                <p className="mb-2">Geheugen: {data.memory.name}</p>
-                <p className="mb-2">Moederbord: {data.motherboard.name}</p>
-                <p className="mb-2">Opslag: {data.storage.name}</p>
-                <p className="mb-2">Voeding: {data.power.name}</p>
-                <p className="mb-2">Behuizing: {data.pccase.name}</p>
-            </div>
-            <hr className="my-4"/>
-            <div className="mt-6 flex gap-x-3 flex-col">
-            <DeliveryTime deliveryTime={data.deliveryTime} classNames="mb-2" />
-                <Button title="Add to cart" onClick={onAddToCart} className="border border-black hover:bg-gray-300 flex items-center w-full rounded-lg justify-center gap-x-2 mt-2 sm:mt-4">
-                    Toevoegen aan winkelwagen
-                    <ShoppingCart size={20} className="ml-2" />
-                </Button>
-            </div>
+    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto py-12 px-4 md:px-6 w-full pt-12 md:pt-24 lg:pt-32 my-12">
+        <div className="flex items-center justify-center">
+            <Image
+            quality={100}
+            priority
+            src={data.images[0].url}
+            alt={data.name}
+            width={600}
+            height={600}
+            className="w-full max-w-[500px] rounded-lg"
+            />
         </div>
+        <div className="space-y-6">
+            <div>
+                <h1 className="text-3xl md:text-4xl font-bold">{data.name}</h1>
+            </div>
+            <div className="grid gap-4">
+                <div>
+                    <h3 className="text-lg font-semibold">Key Features:</h3>
+                    <ul className="mt-2 space-y-2 text-muted-foreground">
+                        <li>
+                            <CheckIcon className="w-5 h-5 inline-block mr-2 text-primary" />
+                            {data.processor.name}
+                        </li>
+                        <li>
+                            <CheckIcon className="w-5 h-5 inline-block mr-2 text-primary" />
+                            {data.graphics.name}
+                        </li>
+                        <li>
+                            <CheckIcon className="w-5 h-5 inline-block mr-2 text-primary" />
+                            {data.memory.name}
+                        </li>
+                        <li>
+                            <CheckIcon className="w-5 h-5 inline-block mr-2 text-primary" />
+                            {data.storage.name}
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="text-lg font-semibold">Warranty:</h3>
+                    <p className="mt-2 text-muted-foreground">{data.warranty.name} year comprehensive warranty with excellent customer support.</p>
+                </div>
+            </div>
+            <div className="flex items-center justify-between">
+                <p className="text-4xl font-bold">{formattedPrice}</p>
+            </div>
+            <Button className="bg-black flex items-center text-white justify-center w-full hover:bg-black/70" onClick={onAddToCart}><ShoppingCartIcon size={24} className="mr-2" />Add to Cart</Button>
+        </div>
+    </section>
     );
 }
 

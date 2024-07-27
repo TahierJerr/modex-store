@@ -60,10 +60,10 @@ const Footer = () => {
                         <Link href="#" className="hover:underline text-sm" prefetch={false}>
                             Terms of Service
                         </Link>
-                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                        <Link href="" className="hover:underline text-sm" prefetch={false}>
                             Returns
                         </Link>
-                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                        <Link href="/return" className="hover:underline text-sm" prefetch={false}>
                             Our Services
                         </Link>
                         <p className="text-sm">&copy; 2024 Modex. All rights reserved.</p>

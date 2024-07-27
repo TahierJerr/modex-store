@@ -1,5 +1,6 @@
 import React from 'react';
-import { PcCase, Shield, EuroIcon, HeadsetIcon, WrenchIcon, TruckIcon } from "lucide-react";
+import { HeadsetIcon, WrenchIcon, TruckIcon } from "lucide-react";
+import Image from 'next/image';
 
 const BulletSection = () => {
     return (
@@ -22,8 +23,7 @@ const BulletSection = () => {
                     <div className="grid gap-1">
                         <h3 className="text-xl font-bold text-primary flex items-center"><WrenchIcon size={22} className='mr-2' />Customizable Configurations</h3>
                         <p className="text-muted-foreground">
-                            Tailor your PC to your exact specifications, choosing from a wide range of components and
-                            accessories.
+                            Choose one of our well thought-out configurations, that suits your needs.
                         </p>
                     </div>
                     <div className="grid gap-1">
@@ -41,8 +41,8 @@ const BulletSection = () => {
                         </p>
                     </div>
                 </div>
-                <img
-                src="/test.jpg"
+                <Image
+                src="/ramimage.jpg"
                 alt="Modex Benefits"
                 width={550}
                 height={310}

@@ -29,11 +29,9 @@ const HomePage = async () => {
     return (
         <div>
             <Container>
-            <Billboard data={billboard} buttonLink="/gaming-pcs" buttonText="Check onze gaming pcs" />
+            <Billboard />
             <BulletSection />
-                <Suspense fallback={<LoadingProductList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" loadingCards={6} />}>
-                    <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={3} viewAllLink={true} />
-                </Suspense>
+            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={3} viewAllLink={true} />
             <WhyModex />
             <Reviews />
             </Container>

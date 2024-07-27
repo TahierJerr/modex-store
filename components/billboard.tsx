@@ -15,7 +15,7 @@ const Billboard = () => {
                     </p>
                     <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
                         <Link
-                        href="#"
+                        href="/gaming-pcs"
                         className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                         prefetch={false}
                         >
@@ -24,7 +24,7 @@ const Billboard = () => {
                 </div>
             </div>
             <div>
-                <Image src="/test2.jpg" width={800} height={600} quality={100} alt="Billboard image" className="mx-auto aspect-video overflow-hidden rounded-xl object-cover" />
+                <Image src="/test2.jpg" width={800} height={600} quality={100} priority alt="Billboard image" className="mx-auto aspect-video overflow-hidden rounded-xl object-cover" />
             </div>
         </div>
     </div>
