@@ -7,7 +7,7 @@ const Reviews = () => {
             imageUrl: "https://example.com/image1.jpg",
             name: "Marvin",
             reviewFrom: "Google",
-            reviewUrl: "https://g.co/kgs/2Lvw85P",
+            reviewUrl: "https://maps.app.goo.gl/6H1ywwvSYXDikd4c8",
             title: "Great Product",
             review: "Super good experience, Top service! Very considerate, helpful and friendly!",
             customProductPurchased: "Custom Gaming PC",
