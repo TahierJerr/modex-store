@@ -1,26 +1,62 @@
-import Container from "@/components/ui/container";
-import MainNav from "@/components/main-nav";
-import NavbarActions from "@/components/navbar-actions";
+"use client"
 
-import Link from "next/link";
+import useCart from "@/hooks/use-cart";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/navbar";
+import { ShoppingCartIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-export const revalidate = 0;
+import { useState } from 'react'
 
-const Navbar = async () => {
-    return (
-        <div className="border-b border-black bg-white fixed top-0 left-0 w-full z-50">
-            <Container>
-                <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
-                    <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2 mr-4 mb-0.5">
-                        <Image src="/transparent.png" alt="Logo" width={100} height={1}/>
-                    </Link>
-                <MainNav />
-                <NavbarActions />
-                </div>
-            </Container>
-        </div>
-        );  
-    };
-    
-    export default Navbar;
+const NavbarComponent = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = [{
+    title: 'Gaming PCs',
+    href: '/gaming-pcs'
+  }]
+
+  const cart = useCart();
+
+  return (
+    <Navbar isBordered onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent className="flex sm:hidden" justify="start">
+      <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+      </NavbarContent>
+      <NavbarContent className="flex sm:hidden" justify="center">
+      <NavbarBrand>
+        <Link prefetch={false} href="/">
+          <Image src="/transparent.png" className="object-contain" alt="Logo" width={100} height={100} />
+        </Link>
+      </NavbarBrand>
+      </NavbarContent>
+      <NavbarBrand className="hidden sm:flex">
+        <Link prefetch={false} href="/">
+          <Image src="/transparent.png" className="object-contain" alt="Logo" width={100} height={100} />
+        </Link>
+      </NavbarBrand>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+        <Link prefetch={false} href="/gaming-pcs">Gaming PCs</Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent className="" justify="end">
+        <NavbarItem>
+            <Link prefetch={false} className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-muted transition-colors border border-gray-200 bg-white" href="/cart"><ShoppingCartIcon className="h-4 w-4 sm:h-5 sm:w-5" /><span className="hidden sm:flex">Cart</span><span className="text-sm sm:text-medium">{cart.items.length}</span></Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={index}>
+            <Link prefetch={false} href={item.href}>{item.title}</Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
+  )
+}
+
+export default NavbarComponent

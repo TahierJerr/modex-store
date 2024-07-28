@@ -3,7 +3,7 @@
 import { Computer } from "@/types";
 
 import Image from "next/image";
-import { CpuIcon, MemoryStickIcon, ShoppingCartIcon } from "lucide-react";
+import { CpuIcon, InfoIcon, MemoryStickIcon, ShoppingCartIcon } from "lucide-react";
 
 import Button from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -53,10 +53,15 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 </div>
                 <div className="flex items-center justify-between mt-4">
                     <h4 className="text-lg font-semibold md:text-xl text-primary">{formattedPrice}</h4>
+                    <div className="gap-2 flex items-center ">
+                    <Button onClick={handleClick} className="inline-flex h-8 items-center justify-center rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground shadow transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                        Learn more
+                    </Button>
                     <Button onClick={onAddToCart} className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                         <ShoppingCartIcon className="w-4 h-4 mr-2" />
                         Buy now
                     </Button>
+                    </div>
                 </div>
             </div>
         </div>

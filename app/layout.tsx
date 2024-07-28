@@ -1,12 +1,9 @@
-import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import { NavProvider } from '@/context/nav-provider'
-import { CategoryProvider } from '@/context/category-provider'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
-import MobileNavbar from '@/components/mobile-navbar'
+import NavbarComponent from '@/components/navbar'
 
 const font = Poppins({
   subsets: ['latin'],
@@ -20,24 +17,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    
-    <html lang="nl">
+    <html lang="en">
       <body className={font.className + " bg-white"}>
-        <NavProvider>
-          <CategoryProvider>
           <ToastProvider />
-            <div className='sm:block hidden'>
-              <Navbar />
-            </div>
-            <div className="sm:hidden mb-16">
-              <MobileNavbar />
-            </div>
+          <NavbarComponent />
             <div className='min-h-screen'>
             {children}
             </div>
             <Footer />
-          </CategoryProvider>
-        </NavProvider >
         <CookieConsentComponent />
       </body>
     </html>
