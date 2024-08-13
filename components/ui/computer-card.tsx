@@ -18,8 +18,8 @@ const Card: React.FC<CardProps> = ({ data }) => {
     const router = useRouter();
     
     const handleClick = () => {
-        const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
-        router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
+        const name = data.name.toLowerCase().replace(/\s/g, '-');
+        router.push(`/gaming-pcs/${name}`);
     };
 
     const cart = useCart();

@@ -1,8 +1,5 @@
 import Container from "@/components/ui/container";
-
 import type { Metadata } from 'next'
-import { Suspense } from "react";
-import LoadingProductList from "@/components/loading-components/loading-computer-list";
 import ComputerList from "@/components/computer-list";
 
 
