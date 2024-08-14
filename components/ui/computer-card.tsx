@@ -9,6 +9,7 @@ import Button from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import useCart from "@/hooks/use-cart";
 import { MouseEventHandler } from "react";
+import { Badge } from "./badge";
 
 interface CardProps {
     data: Computer;
@@ -43,7 +44,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
         if (updatedAt > twoWeeksAgo) {
             return (
-                <div className="absolute top-2 right-2 text-sm text-primary text-white bg-black rounded-full px-2 py-0.5">Updated!</div>
+                <Badge className="absolute top-0 right-0 m-4 font-light">Updated!</Badge>
             );
         }
     }
@@ -68,9 +69,9 @@ const Card: React.FC<CardProps> = ({ data }) => {
                     </div>
                 </div>
                 <div className="flex items-center justify-between mt-4">
-                    <h4 className="text-lg font-semibold md:text-xl text-primary">{formattedPrice}</h4>
+                    <h4 className="font-semibold md:text-xl text-primary text-lg">{formattedPrice}</h4>
                     <div className="gap-2 flex items-center ">
-                    <Button onClick={handleClick} className="inline-flex h-8 items-center justify-center rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground shadow transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                    <Button onClick={handleClick} className="sm:inline-flex hidden h-8 items-center justify-center rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground shadow transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                         Learn more
                     </Button>
                     <Button onClick={onAddToCart} className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
