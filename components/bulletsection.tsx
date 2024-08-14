@@ -27,9 +27,9 @@ const BulletSection = () => {
                         </p>
                     </div>
                     <div className="grid gap-1">
-                        <h3 className="text-xl font-bold text-primary flex items-center"><TruckIcon size={22} className='mr-2' />Fast Shipping</h3>
+                        <h3 className="text-xl font-bold text-primary flex items-center"><TruckIcon size={22} className='mr-2' />Fast Delivery</h3>
                         <p className="text-muted-foreground">
-                            Get your new PC delivered to your doorstep quickly, with our efficient shipping and handling
+                            Get your new PC delivered to your doorstep quickly, with our efficient delivery and handling
                             process.
                         </p>
                     </div>
