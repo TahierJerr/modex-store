@@ -19,19 +19,19 @@ const useCart = create(
             const existingItem = currentItems.find((item) => item.id === data.id);
 
             if (existingItem) {
-                return toast.error("Artikel is al toegevoegd aan de winkelwagen")
+                return toast.error("PC is already in the cart");
             }
 
             set({ items: [...get().items, data] });
-            toast.success("Artikel is toegevoegd aan de winkelwagen");
+            toast.success("PC has been added to the cart");
         },
         removeItem: (id: string) => {
             set({ items: [...get().items.filter((item) => item.id !== id)] });
-            toast.success("Artikel is verwijderd uit de winkelwagen");
+            toast.success("PC has been removed from the cart");
         },
         removeAll: () => {
             set({ items: [] });
-            toast.success("Alle artikelen zijn verwijderd uit de winkelwagen");
+            toast.success("All PCs have been removed from the cart");
         },
         
     }), {

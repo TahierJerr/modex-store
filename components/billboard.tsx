@@ -11,7 +11,7 @@ const Billboard = () => {
                         Powerful PCs, Tailored for You
                     </h1>
                     <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                        Discover Modex's pre-built PCs, designed to deliver exceptional performance and unmatched reliability.
+                        Discover MODEX&apos;s pre-built PCs, designed to deliver exceptional performance and unmatched reliability.
                     </p>
                     <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
                         <Link

@@ -16,19 +16,19 @@ const DeliveryTime: React.FC<DeliveryTimeProps> = ({ deliveryTime, classNames })
 
   if (deliveryTimeNumber === 1) {
     colorClass = 'text-success';
-    text = `Voor 17:00 besteld, morgen in huis!`;
+    text = `Order before 17:00, tomorrow at home!`;
   } else if (deliveryTimeNumber > 1 && deliveryTimeNumber < 5) {
     colorClass = 'text-success';
-    text = `Binnen ${deliveryTimeNumber} werkdagen bezorgd!`;
+    text = `Delivered in ${deliveryTimeNumber} working days!`;
   } else if (deliveryTimeNumber >= 5 && deliveryTimeNumber < 7) {
     colorClass = 'text-warning';
-    text = `Binnen ${deliveryTimeNumber} werkdagen bezorgd!`;
+    text = `Delivered in ${deliveryTimeNumber} working days!`;
   } else if (deliveryTimeNumber >= 7) {
     colorClass = 'text-danger';
-    text = `Tussen 7-14 werkdagen bezorgd.`;
+    text = `Delivered between 7 to 14 working days.`;
   } else {
     colorClass = 'text-danger';
-    text = 'Onbekende leverdatum';
+    text = 'Unknown delivery date';
   }
 
   return (

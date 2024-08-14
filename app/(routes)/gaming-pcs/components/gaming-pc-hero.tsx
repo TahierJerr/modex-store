@@ -7,7 +7,7 @@ export default async function GamingPcHero() {
 
     const computer = await getComputer("31d361ce-ead0-4e95-a75a-1b3b656136a1")
     return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black text-white">
+    <section className="w-full py-12 md:py-24 lg:py-24 xl:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -19,8 +19,7 @@ export default async function GamingPcHero() {
                     </p>
                 </div>
                 <div>
-                    {/* new image */}
-                    <Image src={computer.images[0].url} alt="Gaming PC" width={800} height={600} quality={100} className="object-contain w-full h-64 bg-black pt-1" />
+                    <Image src="/gaming-pc.png" alt="Gaming PC" width={800} height={600} quality={100} className="object-contain w-full h-96 bg-black pt-1" />
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-8">
                     <div className="flex flex-col items-center space-y-2">

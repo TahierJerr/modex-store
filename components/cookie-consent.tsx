@@ -29,29 +29,32 @@ const CookieConsentComponent = () => {
     <div>
     <CookieConsent
     location="bottom"
-    buttonText="Accepteren"
-    declineButtonText="Weigeren"
+    buttonText="Accept"
+    declineButtonText="Decline"
     style={{
-        background: '#000',
-        borderTop: "1px solid #cfb968",
-        boxShadow: "0 0 10px rgba(207, 185, 104, 0.7)",
+        background: '#ffffff',
+        borderTop: "1px solid #000000",
+        boxShadow: "0 0 10px rgba(0,0,0,0.1)",
     }}
     buttonStyle={{ 
-        background: "#625835", 
+        background: "#007600", 
         color: "#fff",
         fontSize: "14px",
+        borderRadius: "4px",
     }}
     declineButtonStyle={{ 
-        color: "fffffff", 
+        color: "#fffffff", 
         fontSize: "14px", 
+        borderRadius: "4px",
     }}
     expires={150}
     enableDeclineButton
     onAccept={handleAcceptCookies}
     onDecline={handleRejectCookies}
   >
-    Deze website maakt gebruik van cookies om uw ervaring te verbeteren.{' '}
-    <Link href="/cookies" className='text-primary underline'>Meer informatie</Link> over ons cookiebeleid.
+    <p className='text-black'>
+    Our website uses cookies and analytics to improve our services.{' '}
+    <Link href="/cookies" className='text-primary underline'>Click here for more information</Link> about our cookies.</p>
   </CookieConsent>
   {consentAccepted && <SpeedInsights />}
     {consentAccepted && <Analytics />}

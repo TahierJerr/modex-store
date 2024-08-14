@@ -1,7 +1,7 @@
 import Container from "@/components/ui/container";
 import type { Metadata } from 'next'
 import ComputerList from "@/components/computer-list";
-import GamingPcHero from "./components/gamingpchero";
+import GamingPcHero from "./components/gaming-pc-hero";
 
 
 

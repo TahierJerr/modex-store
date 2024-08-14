@@ -3,23 +3,23 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX Retour | MODEX',
-    description: 'Dit is de retour pagina van MODEX.',
-    keywords: ['MODEX retour', 'MODEX retourneren', 'MODEX Retourvoorwaarden', 'MODEX Retourvoorwaarden', 'MODEX Retourneren', 'MODEX Retourneren Nederland', 'MODEX Retour Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourneren Nederland', 'MODEX Retourvoorwaarden Nederland', 'MODEX Retourvoorwaarden Nederland',]
+    title: 'MODEX Return | MODEX',
+    description: 'This is the return page of MODEX.',
+    keywords: ['MODEX return', 'MODEX returning', 'MODEX Return conditions', 'MODEX Return conditions', 'MODEX Returning', 'MODEX Returning Netherlands', 'MODEX Return Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands',]
 }
 
-const RetourPage = () => {
+const ReturnPage = () => {
     return (
     <Container>
         <div className="px-4 py-10 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold">Retourneren</h1>
+            <h1 className="text-3xl font-bold">Returning</h1>
             <div className="mt-4 max-w-2xl text-lg">
-                <p className="mb-4">Je hebt het recht om je bestelling tot 30 dagen na ontvangst zonder opgave van reden te annuleren. Je hebt na annulering nogmaals 14 dagen om je product retour te sturen. De kosten voor het retourneren van het pakket zijn voor eigen rekening en verantwoordelijkheid. Stuur het pakket alstublieft niet terug tenzij uw aanvraag is geaccepteerd.</p>
-                <p className="mb-4">Als u een retour wilt aanvragen, kunt u een e-mail sturen naar <a href="mailto:info@modex-pc.nl" className="text-primary underline">info@modex-pc.nl</a> met uw factuurnummer, naam en adres. U kunt geen retour aanvragen voor computers die op maat voor u zijn gebouwd. Indien uw aanvraag wordt geaccepteerd, dient u het pakket terug te sturen naar Draakstraat 7, 9742TD.</p>
+                <p className="mb-4">You have the right to cancel your order within 30 days of receipt without giving any reason. After cancellation, you have an additional 14 days to return the product. The costs for returning the package are at your own expense and responsibility. Please do not return the package unless your request has been accepted.</p>
+                <p className="mb-4">If you want to request a return, you can send an email to <a href="mailto:info@modexgaming.com" className="text-primary underline">info@modex-pc.nl</a> with your invoice number, name, and address. You cannot request a return for custom-built computers. If your request is accepted, please return the package to Draakstraat 7, 9742TD.</p>
             </div>
         </div>
     </Container>
     )
 }
 
-export default RetourPage;  
+export default ReturnPage;  

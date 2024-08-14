@@ -52,7 +52,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
     return (
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
             <div className="mb-8 flex items-center justify-center flex-col">
-                <p className="rounded-lg bg-white px-4 mb-1">Modex PCs</p>
+                <p className="rounded-lg bg-white px-4 mb-1">MODEX PCs</p>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">{title}</h2>
                 <p className="max-w-[900px] text-muted-foreground text-center px-4 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">{description}</p>
             </div>
