@@ -3,7 +3,7 @@
 import { Computer } from "@/types";
 
 import Image from "next/image";
-import { CpuIcon, InfoIcon, MemoryStickIcon, ShoppingCartIcon } from "lucide-react";
+import { CpuIcon, MemoryStickIcon, ShoppingCartIcon } from "lucide-react";
 
 import Button from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -17,20 +17,36 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ data }) => {
     const router = useRouter();
     
+    // const handleClick = () => {
+    //     const name = data.name.toLowerCase().replace(/\s/g, '-');
+    //     router.push(`/gaming-pcs/${name}`);
+    // };
+
     const handleClick = () => {
-        const name = data.name.toLowerCase().replace(/\s/g, '-');
-        router.push(`/gaming-pcs/${name}`);
+        const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
+        router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
     };
 
     const cart = useCart();
 
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
-  
         cart.addItem(data);
     }
 
     const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(Number(data.price));
+    
+    const isUpdated = () => {
+        const twoWeeksAgo = new Date();
+        twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
+        const updatedAt = new Date(data.updatedAt);
+
+        if (updatedAt > twoWeeksAgo) {
+            return (
+                <div className="absolute top-2 right-2 text-sm text-primary text-white bg-black rounded-full px-2 py-0.5">Updated!</div>
+            );
+        }
+    }
     
     return (
         <div onClick={handleClick} className="relative overflow-hidden transition-transform duration-300 ease-in-out rounded-lg shadow-lg group hover:shadow-xl hover:-translate-y-2 cursor-pointer">
@@ -63,10 +79,11 @@ const Card: React.FC<CardProps> = ({ data }) => {
                     </Button>
                     </div>
                 </div>
+                {isUpdated()}
             </div>
         </div>
-        );
-    };
+    );
+};
     
     export default Card;
     

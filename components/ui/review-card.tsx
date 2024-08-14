@@ -13,9 +13,10 @@ interface ReviewCardProps {
     customProductPurchased?: string;
     published: string;
     stars: number;
+    avatarFallback?: string;
 }
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ imageUrl, name, reviewFrom, reviewUrl, title, review, productPurchased, customProductPurchased, stars, published }) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({ imageUrl, name, reviewFrom, reviewUrl, title, review, productPurchased, customProductPurchased, stars, published, avatarFallback }) => {
 
     const handleStars = (stars: number) => {
         let starsArray = [];
@@ -41,7 +42,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ imageUrl, name, reviewFrom, rev
             <div className="mb-4 flex items-center">
                 <Avatar className="mr-4">
                     <AvatarImage src={imageUrl} />
-                    <AvatarFallback>M</AvatarFallback>
+                    <AvatarFallback>{avatarFallback}</AvatarFallback>
                 </Avatar>
                 <div>
                     <h3 className="text-lg font-semibold">{name}</h3>

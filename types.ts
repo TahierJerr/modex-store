@@ -30,6 +30,7 @@ export interface Computer {
     motherboard: Motherboard;
     warranty: Warranty;
     memory: Memory;
+    updatedAt: Date;
 }
 
 export interface Image {

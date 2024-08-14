@@ -16,27 +16,29 @@ const Reviews = () => {
         },
         {
             imageUrl: "https://example.com/image2.jpg",
-            name: "Jane Smith",
-            reviewFrom: "Modex",
-            reviewUrl: "https://example.com/review2",
+            name: "P. W",
+            reviewFrom: "Google",
+            reviewUrl: "https://maps.app.goo.gl/ttD9ja5nCiS7LGnL8",
             title: "Excellent Service",
-            review: "The customer service was top-notch and the product arrived on time. Very satisfied!",
+            review: "I bought a refurbished graphics card from Modex for a good price, received in very good condition! Very happy with it, the support is also very nice!",
             customProductPurchased: "Custom Gaming PC",
             published: "1 year ago",
-            stars: 4
+            stars: 5
         },
         {
             imageUrl: "https://example.com/image3.jpg",
-            name: "David Johnson",
-            reviewFrom: "Facebook",
-            reviewUrl: "https://example.com/review3",
+            name: "Thijs van D.",
+            reviewFrom: "Google",
+            reviewUrl: "https://maps.app.goo.gl/6bF48Q9xUHfKR85g6",
             title: "Impressive Quality",
-            review: "I've been using this computer for a month now and it's been performing flawlessly. Impressed with the build quality!",
+            review: "Super service and fast delivery! Super nice PC works great! Definitely recommended!!",
             customProductPurchased: "Custom Gaming PC",
             published: "1 year ago",
-            stars: 4
+            stars: 5
         }
     ];
+
+    const avatarsFallback = reviews.map((review) => review.name.charAt(0));
 
 return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
@@ -46,7 +48,7 @@ return (
                     </div>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {reviews.map((review, index) => (
-                                    <ReviewCard key={index} customProductPurchased={review.customProductPurchased} title={review.title} published={review.published} name={review.name} reviewFrom={review.reviewFrom} reviewUrl={review.reviewUrl} review={review.review} stars={review.stars} />
+                                    <ReviewCard avatarFallback={avatarsFallback[index]} key={index} customProductPurchased={review.customProductPurchased} title={review.title} published={review.published} name={review.name} reviewFrom={review.reviewFrom} reviewUrl={review.reviewUrl} review={review.review} stars={review.stars} />
                             ))}
                     </div>
             </div>

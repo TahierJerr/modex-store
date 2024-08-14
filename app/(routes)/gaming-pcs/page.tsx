@@ -1,6 +1,7 @@
 import Container from "@/components/ui/container";
 import type { Metadata } from 'next'
 import ComputerList from "@/components/computer-list";
+import GamingPcHero from "./components/gamingpchero";
 
 
 
@@ -23,6 +24,7 @@ const CategoryPage =  () => {
 
     return (
             <Container>
+                <GamingPcHero />
                 <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={6} />
             </Container>
     )

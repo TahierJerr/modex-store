@@ -7,8 +7,8 @@ interface ComputerSpecProps {
 
 const ComputerSpec: React.FC<ComputerSpecProps> = ({ data }) => {
     return (
-    <section className="bg-background py-12 md:py-16 lg:py-20">
-        <div className="container px-4">
+    <section className="py-12 md:py-16 lg:py-20 bg-muted">
+        <div className="container px-4 ">
             <div className="mx-auto max-w-4xl">
                 <div className="mb-8 md:mb-12 lg:mb-16">
                     <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Gaming PC Specifications</h2>

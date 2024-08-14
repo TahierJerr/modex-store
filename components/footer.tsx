@@ -54,17 +54,14 @@ const Footer = () => {
                 <div className="flex flex-col gap-4">
                     <h4 className="text-lg font-semibold">Legal</h4>
                     <div className="grid gap-2">
-                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                        <Link href="/privacy" className="hover:underline text-sm" prefetch={false}>
                             Privacy Policy
                         </Link>
-                        <Link href="#" className="hover:underline text-sm" prefetch={false}>
+                        <Link href="/terms-of-service" className="hover:underline text-sm" prefetch={false}>
                             Terms of Service
                         </Link>
-                        <Link href="" className="hover:underline text-sm" prefetch={false}>
-                            Returns
-                        </Link>
                         <Link href="/return" className="hover:underline text-sm" prefetch={false}>
-                            Our Services
+                            Returns
                         </Link>
                         <p className="text-sm">&copy; 2024 Modex. All rights reserved.</p>
                     </div>

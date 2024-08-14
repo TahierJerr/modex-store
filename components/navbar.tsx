@@ -38,14 +38,20 @@ const NavbarComponent = () => {
           <Image src="/transparent.png" className="object-contain" alt="Logo" width={100} height={100} />
         </Link>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
         <NavbarItem>
-        <Link prefetch={false} href="/gaming-pcs">Gaming PCs</Link>
+        <Link prefetch={false} href="/gaming-pcs" className="text-sm">Gaming PCs</Link>
         </NavbarItem>
+        <NavbarMenuItem>
+            <p className="text-gray-500 text-sm">Mini PCs (Coming Soon!)</p>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+          <p className="text-gray-500 text-sm">Refurbished PCs (Coming Soon!)</p>
+          </NavbarMenuItem>
       </NavbarContent>
-      <NavbarContent className="" justify="end">
+      <NavbarContent justify="end">
         <NavbarItem>
-            <Link prefetch={false} className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-muted transition-colors border border-gray-200 bg-white" href="/cart"><ShoppingCartIcon className="h-4 w-4 sm:h-5 sm:w-5" /><span className="hidden sm:flex">Cart</span><span className="text-sm sm:text-medium">{cart.items.length}</span></Link>
+            <Link prefetch={false} className="flex items-center rounded-md bg-white relative py-2 px-2" href="/cart"><ShoppingCartIcon className="h-4 w-4 sm:h-5 sm:w-5 " /><span className="text-xs absolute top-0 right-0 bg-black text-white rounded-full px-1">{cart.items.length}</span></Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
@@ -54,6 +60,12 @@ const NavbarComponent = () => {
             <Link prefetch={false} href={item.href}>{item.title}</Link>
           </NavbarMenuItem>
         ))}
+        <NavbarMenuItem>
+            <p>Mini PCs (Coming Soon!)</p>
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+          <p>Refurbished PCs (Coming Soon!)</p>
+          </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   )
