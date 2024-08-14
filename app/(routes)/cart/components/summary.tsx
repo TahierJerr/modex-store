@@ -16,12 +16,12 @@ const Summary = () => {
 
     useEffect(() => {
         if (searchParams.get("success")) {
-            toast.success("Bestelling geplaatst!", {style: {background: "#000000", color: "#fff", border: "3px solid #cfb968"}});
+            toast.success("Order placed!");
             removeAll();
         }
 
         if (searchParams.get("canceled")) {
-            toast.error("Betaling geannuleerd.", {style: {background: "#000000", color: "#fff", border: "3px solid #cfb968"}});
+            toast.error("Payment canceled.");
         }
     }, [searchParams, removeAll]);
 
@@ -40,20 +40,20 @@ const Summary = () => {
     return (
         <div className="mt-12 rounded-lg bg-black200 px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-4 lg:p-8">
             <p className="text-xl font-semibold text-primary">
-                Samenvatting
+                Summary
             </p>
             <div className="mt-6">
             <div className="font-medium flex items-center justify-between border-t border-primary pt-4 mb-4">
-                    <p>Verzendkosten:</p>
-                    <p>Gratis</p>
+                    <p>Shipping:</p>
+                    <p>Free</p>
                 </div>
                 <div className="font-medium flex items-center justify-between border-t border-primary pt-4">
-                        <p>Totaal inclusief BTW:</p>
+                        <p>Total including VAT:</p>
                     <Currency value={totalPrice} />
                 </div>
             </div>
             <Button disabled={items.length === 0} title="Checkout" onClick={onCheckout} className="bg-white w-full mt-6 text-black border border-black">
-                Bestellen
+                Order now
             </Button>
         </div>
     )
