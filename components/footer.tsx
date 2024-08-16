@@ -35,7 +35,7 @@ const Footer = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <BanknoteIcon className="w-5 h-5" />
-                            <p>IBAN: <span className='underline underline-offset-2 cursor-pointer' onClick={handleCopyToClipboard}>NL03 REVO 8295 6717 83</span></p>
+                            <p>IBAN: <span className='underline underline-offset-2 cursor-pointer' onClick={handleCopyToClipboard}>NL13 REVO 6924 8820 56</span></p>
                         </div>
                         <div className="flex items-center gap-2">
                             <LandmarkIcon className="w-5 h-5" />
