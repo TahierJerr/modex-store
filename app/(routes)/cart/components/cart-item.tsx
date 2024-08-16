@@ -32,7 +32,7 @@ data
     return (
         <li className='flex py-6 border-b border-primary'>
             <div className='relative h-24 w-24 rounded-md overflow-hidden sm:h-48 sm:w-48'>
-                <Image loading='lazy' onClick={handleClick} fill src={data.images[0].url} alt={data.name} className='cursor-pointer object-cover object-center' quality={75} fetchPriority='high' priority={false} />
+                <Image loading='lazy' onClick={handleClick} fill src={data.images[0].url} alt={data.name} className='cursor-pointer object-cover object-center' quality={100} fetchPriority='high' priority={false} />
             </div>
             <div className='relative ml-4 flex flex-1 flex-col justify-between md:ml-6'>
                 <div className='absolute z-10 right-0 -top-2'>

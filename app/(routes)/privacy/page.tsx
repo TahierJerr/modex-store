@@ -3,80 +3,80 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX Privacy | MODEX',
-    description: 'Dit is de privacy pagina van MODEX.',
-    keywords: ['MODEX Privacy', 'MODEX Privacy Policy', 'MODEX Privacy Beleid', 'MODEX Privacy Verklaring', 'MODEX Privacy Statement', 'MODEX Privacy Pagina', 'MODEX Privacy Policy Pagina', 'MODEX Privacy Beleid Pagina', 'MODEX Privacy Verklaring Pagina', 'MODEX Privacy Statement Pagina',]
-  }
+    description: 'This is the privacy page of MODEX.',
+    keywords: ['MODEX Privacy', 'MODEX Privacy Policy', 'MODEX Privacy Statement']
+}
 
 const PrivacyPage = () => {
     return (
         <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8">Cookies, of vergelijkbare technieken, die wij gebruiken</h2>
-        <h2 className="text-xl mb-4">MODEX, gevestigd aan Draakstraat 7 9742TD Groningen, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</h2>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8">Cookies, or similar techniques, that we use</h2>
+        <h2 className="text-xl mb-4">MODEX, located at Draakstraat 7 9742TD Groningen, is responsible for the processing of personal data as shown in this privacy statement.</h2>
             
-        <ul><h2 className="text-2xl font-bold mb-4">Contactgegevens:</h2>
+        <ul><h2 className="text-2xl font-bold mb-4">Contact information:</h2>
         <li><p className="text-lg mb-4">https://www.modex-pc.nl</p></li>
             <li><p className="text-lg mb-4">Draakstraat 7 9742TD Groningen</p></li>
             <li><p className="text-lg mb-4">+31649146060</p></li>
             </ul>
             
-            <h2 className="text-2xl font-bold mb-4">Persoonsgegevens die wij verwerken</h2>
-            <p className="text-lg mb-4">MODEX verwerkt uw persoonsgegevens doordat u gebruik maakt van onze diensten en/of omdat u deze zelf aan ons verstrekt.</p>
+            <h2 className="text-2xl font-bold mb-4">Personal data that we process</h2>
+            <p className="text-lg mb-4">MODEX processes your personal data because you use our services and/or because you provide this information to us.</p>
             
-            <ul><h2 className="text-2xl font-bold mb-4">Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:</h2>
-            <li><p className="text-lg mb-4">- Adresgegevens</p></li>
-            <li><p className="text-lg mb-4">- Telefoonnummer</p></li>
-            <li><p className="text-lg mb-4">- E-mailadres</p></li>
-            <li><p className="text-lg mb-4">- Bankrekeningnummer</p></li>
+            <ul><h2 className="text-2xl font-bold mb-4">Below you will find an overview of the personal data that we process:</h2>
+            <li><p className="text-lg mb-4">- Address details</p></li>
+            <li><p className="text-lg mb-4">- Phone number</p></li>
+            <li><p className="text-lg mb-4">- Email address</p></li>
+            <li><p className="text-lg mb-4">- Bank account number</p></li>
             </ul>
             
-            <h2 className="text-2xl font-bold mb-4">Bijzondere en/of gevoelige persoonsgegevens die wij verwerken</h2>
-            <p className="text-lg mb-4">Onze website en/of dienst heeft niet de intentie gegevens te verzamelen over websitebezoekers die jonger zijn dan 16 jaar. Tenzij ze toestemming hebben van ouders of voogd. We kunnen echter niet controleren of een bezoeker ouder dan 16 is. Wij raden ouders dan ook aan betrokken te zijn bij de online activiteiten van hun kinderen, om zo te voorkomen dat er gegevens over kinderen verzameld worden zonder ouderlijke toestemming. Als u er van overtuigd bent dat wij zonder die toestemming persoonlijke gegevens hebben verzameld over een minderjarige, neem dan contact met ons op via info@modex-pc.nl, dan verwijderen wij deze informatie.
+            <h2 className="text-2xl font-bold mb-4">Special and/or sensitive personal data that we process</h2>
+            <p className="text-lg mb-4">Our website and/or service does not intend to collect data about website visitors who are younger than 16 years old. Unless they have permission from parents or guardian. However, we cannot verify the age of visitors. We therefore recommend that parents be involved in their children's online activities to prevent data from being collected about children without parental consent. If you are convinced that we have collected personal information about a minor without permission, please contact us at info@modex-pc.nl and we will delete this information.
             </p>
             
-            <h2 className="text-2xl font-bold mb-4">Met welk doel en op basis van welke grondslag wij persoonsgegevens verwerken</h2>
+            <h2 className="text-2xl font-bold mb-4">For what purpose and on what basis we process personal data</h2>
             <p className="text-lg mb-4">
-            MODEX verwerkt uw persoonsgegevens voor de volgende doelen:
-            - Het afhandelen van uw betaling
-            - U te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren
-            - U te informeren over wijzigingen van onze diensten en producten
-            - Om goederen en diensten bij u af te leveren
-            - MODEX volgt uw surfgedrag over verschillende websites waarmee wij onze producten en diensten afstemmen op uw behoefte.
-            - MODEX verwerkt ook persoonsgegevens als wij hier wettelijk toe verplicht zijn, zoals gegevens die wij nodig hebben voor onze belastingaangifte. 
+            MODEX processes your personal data for the following purposes:
+            - Handling your payment
+            - Being able to call or email you if necessary to perform our services
+            - Informing you about changes to our services and products
+            - Delivering goods and services to you
+            - MODEX tracks your browsing behavior across different websites in order to tailor our products and services to your needs.
+            - MODEX also processes personal data if we are legally obliged to do so, such as data that we need for our tax return. 
             
             
-            Geautomatiseerde besluitvorming
-            MODEX neemt verantwoordelijkheid op basis van geautomatiseerde verwerkingen besluiten over zaken die (aanzienlijke) gevolgen kunnen hebben voor personen. Het gaat hier om besluiten die worden genomen door computerprogramma&apos;s of -systemen, zonder dat daar een mens (bijvoorbeeld een medewerker van MODEX) tussen zit. MODEX gebruikt de volgende computerprogramma&apos;s of -systemen:
+            Automated decision making
+            MODEX takes responsibility for making decisions about matters that can have (significant) consequences for individuals based on automated processing. These are decisions that are made by computer programs or systems, without the involvement of a human being (for example, an employee of MODEX). MODEX uses the following computer programs or systems:
             
             Stripe
             
             </p>
-            <h2 className="text-2xl font-bold mb-4">Hoe lang we persoonsgegevens bewaren</h2>
+            <h2 className="text-2xl font-bold mb-4">How long we keep personal data</h2>
             <p className="text-lg mb-4">
-            MODEX bewaart uw persoonsgegevens niet langer dan strikt nodig is om de doelen te realiseren waarvoor uw gegevens worden verzameld. Wij hanteren de volgende bewaartermijnen voor de volgende (categorieën) van persoonsgegevens: 2 jaar
+            MODEX does not keep your personal data longer than is strictly necessary to achieve the purposes for which your data is collected. We use the following retention periods for the following (categories) of personal data: 2 years
             
             
-            Delen van persoonsgegevens met derden
-            MODEX deelt uw persoonsgegevens met verschillende derden als dit noodzakelijk is voor het uitvoeren van de overeenkomst en om te voldoen aan een eventuele wettelijke verplichting. Met bedrijven die u gegevens verwerken in onze opdracht, sluiten wij een verwerkersovereenkomst om te zorgen voor eenzelfde niveau van beveiliging en vertrouwelijkheid van uw gegevens. MODEX blijft verantwoordelijk voor deze verwerkingen. Daarnaast verstrekt MODEX uw persoonsgegevens aan andere derden. Dit doen wij alleen met uw nadrukkelijke toestemming.
+            Sharing personal data with third parties
+            MODEX shares your personal data with various third parties if this is necessary for the performance of the agreement and to comply with any legal obligation. We conclude a data processing agreement with companies that process your data on our behalf to ensure the same level of security and confidentiality of your data. MODEX remains responsible for these processing operations. In addition, MODEX provides your personal data to other third parties. We only do this with your explicit consent.
             
-            Stripe: naam, adres, email, betalingsgegevens om koopovereenkomst af te ronden
+            Stripe: name, address, email, payment details to complete purchase agreement
             
             
-            Cookies, of vergelijkbare technieken, die wij gebruiken
-            MODEX gebruikt alleen technische en functionele cookies. En analytische cookies die geen inbreuk maken op uw privacy. Een cookie is een klein tekstbestand dat bij het eerste bezoek aan deze website wordt opgeslagen op uw computer, tablet of smartphone. De cookies die wij gebruiken zijn noodzakelijk voor de technische werking van de website en uw gebruiksgemak. Ze zorgen ervoor dat de website naar behoren werkt en onthouden bijvoorbeeld uw voorkeursinstellingen. Ook kunnen wij hiermee onze website optimaliseren. U kunt zich afmelden voor cookies door uw internetbrowser zo in te stellen dat deze geen cookies meer opslaat. Daarnaast kunt u ook alle informatie die eerder is opgeslagen via de instellingen van uw browser verwijderen.
+            Cookies, or similar techniques, that we use
+            MODEX only uses technical and functional cookies. And analytical cookies that do not infringe on your privacy. A cookie is a small text file that is stored on your computer, tablet or smartphone when you first visit this website. The cookies we use are necessary for the technical operation of the website and your ease of use. They ensure that the website works properly and remember, for example, your preferences. We can also optimize our website with this. You can opt out of cookies by setting your internet browser so that it no longer stores cookies. In addition, you can also delete all information previously stored via the settings of your browser.
             
             </p>
-            <h2 className="text-2xl font-bold mb-4">Gegevens inzien, aanpassen of verwijderen </h2>
-            <p className="text-lg mb-4">U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking van uw persoonsgegevens door MODEX en heeft u het recht op gegevensoverdraagbaarheid. Dat betekent dat u bij ons een verzoek kunt indienen om de persoonsgegevens die wij van u beschikken in een computerbestand naar u of een ander, door u genoemde organisatie, te sturen.
+            <h2 className="text-2xl font-bold mb-4">View, modify or delete data</h2>
+            <p className="text-lg mb-4">You have the right to access, correct or delete your personal data. You also have the right to withdraw your consent to the data processing or to object to the processing of your personal data by MODEX and you have the right to data portability. This means that you can submit a request to us to send the personal data we hold about you in a computer file to you or another organization mentioned by you.
             
-            U kunt een verzoek tot inzage, correctie, verwijdering, gegevensoverdraging van uw persoonsgegevens of verzoek tot intrekking van uw toestemming of bezwaar op de verwerking van uw persoonsgegevens sturen naar info@modex-pc.nl.
+            You can send a request for access, correction, deletion, data transfer of your personal data or request for withdrawal of your consent or objection to the processing of your personal data to info@modex-pc.nl.
             
-            We reageren zo snel mogelijk, maar binnen vier weken, op uw verzoek.
+            We will respond to your request as soon as possible, but within four weeks.
             
-            MODEX wil u er tevens op wijzen dat u de mogelijkheid heeft om een klacht in te dienen bij de nationale toezichthouder, de Autoriteit Persoonsgegevens. Dat kan via de volgende link: https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/tip-ons
+            MODEX also wants to point out that you have the possibility to file a complaint with the national supervisory authority, the Dutch Data Protection Authority. This can be done via the following link: https://autoriteitpersoonsgegevens.nl/nl/contact-met-de-autoriteit-persoonsgegevens/tip-ons
             </p>
-            <h2 className="text-2xl font-bold mb-4">Hoe wij persoonsgegevens beveiligen</h2>
+            <h2 className="text-2xl font-bold mb-4">How we secure personal data</h2>
             <p className="text-lg mb-16">
-            MODEX neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan. Als u de indruk heeft dat uw gegevens niet goed beveiligd zijn of er aanwijzingen zijn van misbruik, neem dan contact op met onze klantenservice of via info@modex-pc.nl
+            MODEX takes the protection of your data seriously and takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized alteration. If you have the impression that your data is not properly secured or there are indications of abuse, please contact our customer service or via info@modex-pc.nl
         </p>
     </div>
     );

@@ -3,40 +3,40 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX Cookies | MODEX',
-    description: 'Hier vind je het cookiebeleid van MODEX.'
-  }
+    description: 'Here you will find the cookie policy of MODEX.'
+}
 
 export default function Cookies() { 
     return (
     <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32">
-        <h1 className="text-4xl font-bold mb-8 text-center">Cookiebeleid van MODEX</h1>
-        <p className="text-2xl font-bold mb-4">Wat zijn cookies</p>
-        <p className="text-lg mb-4">Zoals gebruikelijk is bij bijna alle professionele websites, gebruikt deze site cookies, dit zijn kleine bestanden die naar uw computer worden gedownload, om uw ervaring te verbeteren. Deze pagina beschrijft welke informatie ze verzamelen, hoe we deze gebruiken en waarom we deze cookies soms moeten opslaan. We zullen ook delen hoe u deze cookies kunt voorkomen dat ze worden opgeslagen, maar dit kan bepaalde elementen van de functionaliteit van de sites downgraden of breken.</p>
-        <p className="text-2xl font-bold mb-4">Hoe we cookies gebruiken</p>
-        <p className="text-lg mb-4">We gebruiken cookies om verschillende redenen die hieronder worden beschreven. Helaas zijn er in de meeste gevallen geen industriestandaard opties voor het uitschakelen van cookies zonder de functionaliteit en functies die ze aan deze site toevoegen volledig uit te schakelen. Het wordt aanbevolen dat u alle cookies aan laat staan als u niet zeker weet of u ze nodig heeft of niet, voor het geval ze worden gebruikt om een dienst te leveren die u gebruikt.</p>
-        <p className="text-2xl font-bold mb-4">Cookies uitschakelen</p>
-        <p className="text-lg mb-4">U kunt het instellen van cookies voorkomen door de instellingen in uw browser aan te passen (zie de Help van uw browser voor hoe u dit moet doen). Wees u ervan bewust dat het uitschakelen van cookies de functionaliteit van deze en vele andere websites die u bezoekt, zal beïnvloeden. Het uitschakelen van cookies zal meestal ook bepaalde functionaliteit en functies van deze site uitschakelen. Daarom wordt aanbevolen dat u cookies niet uitschakelt. Dit cookiebeleid is gemaakt met de hulp van de <a className="text-blue-500 underline" href="https://www.cookiepolicygenerator.com/cookie-policy-generator/">Cookiebeleid Generator</a>.</p>
-        <p className="text-2xl font-bold mb-4">De cookies die we instellen</p>
+        <h1 className="text-4xl font-bold mb-8 text-center">Cookie Policy of MODEX</h1>
+        <p className="text-2xl font-bold mb-4">What are cookies</p>
+        <p className="text-lg mb-4">As is common practice with almost all professional websites, this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it, and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored, however, this may downgrade or 'break' certain elements of the sites functionality.</p>
+        <p className="text-2xl font-bold mb-4">How we use cookies</p>
+        <p className="text-lg mb-4">We use cookies for a variety of reasons detailed below. Unfortunately, in most cases, there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not, in case they are used to provide a service that you use.</p>
+        <p className="text-2xl font-bold mb-4">Disabling cookies</p>
+        <p className="text-lg mb-4">You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of this site. Therefore, it is recommended that you do not disable cookies. This Cookie Policy was created with the help of the <a className="text-blue-500 underline" href="https://www.cookiepolicygenerator.com/cookie-policy-generator/">Cookie Policy Generator</a>.</p>
+        <p className="text-2xl font-bold mb-4">The cookies we set</p>
         <ul className="list-disc list-inside">
             <li className="mb-4 list-none">
-                <p className="text-lg font-bold">Cookies gerelateerd aan orderverwerking</p>
-                <p className="text-lg">Deze site biedt e-commerce of betalingsfaciliteiten en sommige cookies zijn essentieel om ervoor te zorgen dat uw bestelling tussen paginas wordt onthouden, zodat we deze correct kunnen verwerken.</p>
+                <p className="text-lg font-bold">Order processing related cookies</p>
+                <p className="text-lg">This site offers e-commerce or payment facilities and some cookies are essential to ensure that your order is remembered between pages so that we can process it correctly.</p>
             </li>
         </ul>
-        <p className="text-2xl font-bold mb-4">Cookies van derden</p>
-        <p className="text-lg mb-4">In sommige speciale gevallen gebruiken we ook cookies die door vertrouwde derde partijen worden geleverd. Het volgende gedeelte geeft details over welke cookies van derden u mogelijk tegenkomt op deze site.</p>
+        <p className="text-2xl font-bold mb-4">Third-party cookies</p>
+        <p className="text-lg mb-4">In some special cases, we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site.</p>
         <ul className="list-disc list-inside">
             <li className="mb-4 list-none">
-                <p className="text-lg font-bold">Cookies voor het testen van nieuwe functies</p>
-                <p className="text-lg">Van tijd tot tijd testen we nieuwe functies en maken we subtiele veranderingen aan de manier waarop de site wordt geleverd. Wanneer we nog steeds nieuwe functies testen, kunnen deze cookies worden gebruikt om ervoor te zorgen dat u een consistente ervaring op de site krijgt, terwijl we begrijpen welke optimalisaties onze gebruikers het meest waarderen.</p>
+                <p className="text-lg font-bold">Testing new features cookies</p>
+                <p className="text-lg">From time to time, we test new features and make subtle changes to the way that the site is delivered. When we are still testing new features, these cookies may be used to ensure that you receive a consistent experience on the site while ensuring we understand which optimizations our users appreciate the most.</p>
             </li>
         </ul>
-        <p className="text-2xl font-bold mb-4">Meer informatie</p>
-        <p className="text-lg mb-4">Hopelijk heeft dat dingen voor u verduidelijkt en zoals eerder vermeld, als er iets is waarvan u niet zeker weet of u het nodig heeft of niet, is het meestal veiliger om cookies ingeschakeld te laten voor het geval het interactie heeft met een van de functies die u op onze site gebruikt.</p>
-        <p className="text-lg mb-4">Voor meer algemene informatie over cookies, lees het artikel over het <a className="text-blue-500 underline" href="https://www.cookiepolicygenerator.com/sample-cookies-policy/">Cookiebeleid</a>.</p>
-        <p className="text-lg mb-4">Als u echter nog steeds op zoek bent naar meer informatie, kunt u contact met ons opnemen via een van onze voorkeurscontactmethoden:</p>
+        <p className="text-2xl font-bold mb-4">More information</p>
+        <p className="text-lg mb-4">Hopefully, that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually safer to leave cookies enabled in case it does interact with one of the features you use on our site.</p>
+        <p className="text-lg mb-4">For more general information on cookies, please read the article on <a className="text-blue-500 underline" href="https://www.cookiepolicygenerator.com/sample-cookies-policy/">Cookie Policy</a>.</p>
+        <p className="text-lg mb-4">However, if you are still looking for more information, you can contact us through one of our preferred contact methods:</p>
         <ul className="list-disc list-inside">
-            <li className="mb-12 text-lg">E-mail: info@modex-pc.nl</li>
+            <li className="mb-12 text-lg">Email: info@modex-pc.nl</li>
         </ul>
     </div>
     

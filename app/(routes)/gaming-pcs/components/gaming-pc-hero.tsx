@@ -1,11 +1,9 @@
 
-import getComputer from "@/actions/get-computer"
 import { Cpu, Zap, EuroIcon, HeadsetIcon } from "lucide-react"
 import Image from "next/image"
 
-export default async function GamingPcHero() {
+export default function GamingPcHero() {
 
-    const computer = await getComputer("31d361ce-ead0-4e95-a75a-1b3b656136a1")
     return (
     <section className="w-full py-12 md:py-24 lg:py-24 xl:py-32 bg-black text-white">
         <div className="container px-4 md:px-6">

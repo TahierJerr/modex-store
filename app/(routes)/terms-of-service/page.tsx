@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX Voorwaarden | MODEX',
-    description: 'Dit zijn de algemene voorwaarden van MODEX.',
-    keywords: ['MODEX voorwaarden', 'MODEX algemene voorwaarden', 'MODEX voorwaarden en condities', 'MODEX condities', 'MODEX algemene condities',
-    'MODEX voorwaarden en condities', 'MODEX voorwaarden en voorwaarden', 'MODEX condities en condities', 'MODEX voorwaarden en condities', 
+    title: 'MODEX Terms and Conditions | MODEX',
+    description: 'These are the general terms and conditions of MODEX.',
+    keywords: ['MODEX terms and conditions', 'MODEX general terms and conditions', 'MODEX terms and conditions and conditions', 'MODEX conditions', 'MODEX general conditions',
+    'MODEX terms and conditions and conditions', 'MODEX terms and conditions and conditions', 'MODEX conditions and conditions', 'MODEX terms and conditions and conditions', 
     ]
 }
 
