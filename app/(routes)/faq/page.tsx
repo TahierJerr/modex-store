@@ -32,7 +32,7 @@ const FaqPage = async () => {
                 ))}
             </Accordion>
             <div className="mt-16 bg-black200 px-4 py-4 rounded-lg ">
-                <h2 className="text-2xl font-bold mb-4">Can't find what you're looking for?</h2>
+                <h2 className="text-2xl font-bold mb-4">Can&apos;t find what you&apos;re looking for?</h2>
                 <p className="text-xl mb-4 font-semibold">Contact us:</p>
                     <p className="mb-2">Email: <a title='email' href="mailto:info@modexgaming.com" className='hover:text-primary transition-colors'>info@modexgaming.com</a></p>
                 <p className="mb-2">Phone number: <a title='phone number' href="tel:+31649146060" className='hover:text-primary transition-colors mr-2'>+31649146060</a> (Available only from Mon to Fri, 8:00 AM to 6:00 PM)</p>

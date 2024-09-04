@@ -30,7 +30,7 @@ const PrivacyPage = () => {
             </ul>
             
             <h2 className="text-2xl font-bold mb-4">Special and/or sensitive personal data that we process</h2>
-            <p className="text-lg mb-4">Our website and/or service does not intend to collect data about website visitors who are younger than 16 years old. Unless they have permission from parents or guardian. However, we cannot verify the age of visitors. We therefore recommend that parents be involved in their children's online activities to prevent data from being collected about children without parental consent. If you are convinced that we have collected personal information about a minor without permission, please contact us at info@modex-pc.nl and we will delete this information.
+            <p className="text-lg mb-4">Our website and/or service does not intend to collect data about website visitors who are younger than 16 years old. Unless they have permission from parents or guardian. However, we cannot verify the age of visitors. We therefore recommend that parents be involved in their children&apos;s online activities to prevent data from being collected about children without parental consent. If you are convinced that we have collected personal information about a minor without permission, please contact us at info@modex-pc.nl and we will delete this information.
             </p>
             
             <h2 className="text-2xl font-bold mb-4">For what purpose and on what basis we process personal data</h2>
