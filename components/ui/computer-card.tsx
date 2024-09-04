@@ -44,7 +44,13 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
         if (updatedAt > twoWeeksAgo) {
             return (
-                <Badge className="absolute top-0 right-0 m-4 font-light">Updated!</Badge>
+                <Badge className="absolute top-0 right-0 m-4 font-light">New!</Badge>
+            );
+        }
+
+        if (data.memory.type === "DDR5") {
+            return (
+                <Badge className="absolute top-0 right-0 m-4 font-light bg-emerald-700">Future proof!</Badge>
             );
         }
     }
