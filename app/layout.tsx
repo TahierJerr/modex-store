@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={font.className + " bg-white"}>
           <ToastProvider />
           <NavbarComponent />
-            <div className='min-h-screen'>
+            <div>
             {children}
             </div>
             <Footer />

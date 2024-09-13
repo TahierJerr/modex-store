@@ -44,7 +44,7 @@ data
                             {data.name}
                         </p>
                     </div>
-                    <div className='flex text-sm text-white overflow-hidden mr-0 sm:mr-9 my-1'>
+                    <div className='flex text-sm text-black overflow-hidden mr-0 sm:mr-9 my-1'>
                         <p className=''>{data.graphics.name}</p>
                         <p className='ml-4 border-l border-black100 pl-4'>{data.processor.name}</p>
                     </div>
