@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
-import { GoogleTagManager } from '@next/third-parties/google';
 import CookieConsent from 'react-cookie-consent';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react'
@@ -58,7 +57,6 @@ const CookieConsentComponent = () => {
   </CookieConsent>
   {consentAccepted && <SpeedInsights />}
     {consentAccepted && <Analytics />}
-    {consentAccepted && <GoogleTagManager gtmId="G-Y8B38HERJE" /> }
   </div>
    );
 };
