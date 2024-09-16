@@ -10,7 +10,7 @@ const BulletSection = () => {
                 <div className="space-y-2">
                     <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary">Why Choose Modex</div>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
-                        MODEX PCs are tailored for Your Needs
+                        MODEX computers tailored for your needs
                     </h2>
                     <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                         MODEX offers a wide range of pre-built PCs, each designed to meet your unique computing needs. From

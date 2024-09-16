@@ -46,7 +46,7 @@ const Footer = () => {
                 <div className="flex flex-col gap-4">
                     <p className="text-lg font-semibold">Follow Us</p>
                     <div className="flex gap-4">
-                        <a href="#" className="hover:text-primary transition-colors">
+                        <a href="#" title='Instagram' className="hover:text-primary transition-colors">
                             <InstagramIcon className="w-6 h-6" />
                         </a>
                     </div>
