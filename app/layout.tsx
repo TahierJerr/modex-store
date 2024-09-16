@@ -38,6 +38,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsentComponent />
         <GoogleAnalytics gaId='G-Y8B38HERJE' />
+        <GoogleAnalytics gaId='G-JNT40MYQTZ' />
     </body>
     </html>
     </>
