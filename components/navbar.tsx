@@ -10,6 +10,10 @@ import { useState } from 'react'
 
 const NavbarComponent = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleMenuClose = () => {
+        setIsMenuOpen(false);
+    };
     
     const menuItems = [{
         title: 'Gaming PCs',
@@ -56,8 +60,8 @@ const NavbarComponent = () => {
         </NavbarContent>
         <NavbarMenu>
             {menuItems.map((item, index) => (
-                <NavbarMenuItem key={index}>
-                    <Link prefetch={false} href={item.href}>{item.title}</Link>
+                <NavbarMenuItem key={index} onClick={handleMenuClose}>
+                    <Link onClick={handleMenuClose} prefetch={false} href={item.href}>{item.title}</Link>
                 </NavbarMenuItem>
                 ))}
                 <NavbarMenuItem>

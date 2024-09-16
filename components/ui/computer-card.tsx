@@ -70,7 +70,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                     </div>
                 </div>
                 <div className="flex items-center justify-between mt-4">
-                    <h4 className="font-semibold md:text-xl text-primary text-lg">{formattedPrice}</h4>
+                    <p className="font-semibold md:text-xl text-primary text-lg">{formattedPrice}</p>
                     <div className="gap-2 flex items-center ">
                     <Button onClick={handleClick} className="sm:inline-flex hidden h-8 items-center justify-center rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground shadow transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                         Learn more

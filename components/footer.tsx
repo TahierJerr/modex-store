@@ -44,7 +44,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <h4 className="text-lg font-semibold">Follow Us</h4>
+                    <p className="text-lg font-semibold">Follow Us</p>
                     <div className="flex gap-4">
                         <a href="#" className="hover:text-primary transition-colors">
                             <InstagramIcon className="w-6 h-6" />
@@ -52,7 +52,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <h4 className="text-lg font-semibold">Legal</h4>
+                    <p className="text-lg font-semibold">Legal</p>
                     <div className="grid gap-2">
                         <Link href="/privacy" className="hover:underline text-sm" prefetch={false}>
                             Privacy Policy

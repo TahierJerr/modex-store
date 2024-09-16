@@ -7,8 +7,8 @@ import WhyModex from "@/components/why-modex";
 import Reviews from "@/components/reviews";
 
 export const metadata: Metadata = {
-    title: 'MODEX | MODEX Gaming PCs offer the best performance and reliability',
-    description: 'MODEX is the best place to buy your new gaming PC. We offer computers for every budget. Our pre-built PCs are designed to deliver exceptional performance and reliability. Order your MODEX Gaming PC today!',
+    title: 'MODEX | Custom Gaming PCs Built for Performance & Value',
+    description: 'MODEX is the best place to buy your new gaming PC. Our pre-built PCs  deliver exceptional performance and reliability. Order your MODEX Gaming PC today!',
     keywords: ['Computer', 'Gaming PC', 'PC', 'Gaming', 'Gaming Computer', 'Buy Gaming Computer',
         'Buy Gaming PC', 'Order Gaming PC', 'Order Gaming Computer', 'Buy Gaming PC Netherlands',
         'Buy Gaming Computer Netherlands', 'Order Gaming PC Netherlands', 'Order Gaming Computer Netherlands',

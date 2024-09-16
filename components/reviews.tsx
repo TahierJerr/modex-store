@@ -44,7 +44,7 @@ return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
             <div className="container mx-auto px-4 md:px-6">
                     <div className="mb-10 md:mb-16">
-                            <h2 className="text-2xl font-bold md:text-3xl">Modex Reviews</h2>
+                            <h2 className="text-2xl font-bold md:text-3xl">MODEX Reviews</h2>
                     </div>
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {reviews.map((review, index) => (

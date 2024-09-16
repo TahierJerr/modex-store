@@ -21,8 +21,8 @@ export default function RootLayout({
     return (
     <>
     <Head>
-        <meta property='og:title' content='MODEX | MODEX Gaming PCs offer the best performance and reliability' />
-        <meta property='og:description' content='MODEX is the best place to buy your new gaming PC. We offer computers for every budget. Our pre-built PCs are designed to deliver exceptional performance and reliability. Order your MODEX Gaming PC today!' />
+        <meta property='og:title' content='MODEX | Custom Gaming PCs Built for Performance & Value' />
+        <meta property='og:description' content='MODEX is the best place to buy your new gaming PC. Our pre-built PCs  deliver exceptional performance and reliability. Order your MODEX Gaming PC today!' />
         <meta property='og:image' content='https://modexgaming.com/transparent.png' />
         <meta property='og:url' content='https://modexgaming.com' />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />

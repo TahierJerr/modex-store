@@ -45,13 +45,13 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ imageUrl, name, reviewFrom, rev
                     <AvatarFallback>{avatarFallback}</AvatarFallback>
                 </Avatar>
                 <div>
-                    <h3 className="text-lg font-semibold">{name}</h3>
+                    <p className="text-lg font-semibold">{name}</p>
                     <a href={`${reviewUrl}`} className="text-sm text-muted-foreground underline-offset-2 underline cursor-pointer">From {reviewFrom}</a>
                     <div className="text-sm text-muted-foreground">Published {published}</div>
                 </div>
             </div>
             <div className="mb-4">
-                <h4 className="text-lg font-semibold">{title}</h4>
+                <p className="text-lg font-semibold">{title}</p>
                 <p className="text-muted-foreground">
                     {review}
                 </p>

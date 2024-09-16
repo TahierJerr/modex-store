@@ -10,10 +10,10 @@ const BulletSection = () => {
                 <div className="space-y-2">
                     <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary">Why Choose Modex</div>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
-                        Tailored for Your Needs
+                        MODEX PCs are tailored for Your Needs
                     </h2>
                     <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Modex offers a wide range of pre-built PCs, each designed to meet your unique computing needs. From
+                        MODEX offers a wide range of pre-built PCs, each designed to meet your unique computing needs. From
                         powerful gaming rigs to versatile workstations, we have the perfect solution for you.
                     </p>
                 </div>
@@ -21,20 +21,20 @@ const BulletSection = () => {
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
                 <div className="grid gap-4">
                     <div className="grid gap-1">
-                        <h3 className="text-xl font-bold text-primary flex items-center"><WrenchIcon size={22} className='mr-2' />Customizable Configurations</h3>
+                        <p className="text-xl font-bold text-primary flex items-center"><WrenchIcon size={22} className='mr-2' />Customizable Configurations</p>
                         <p className="text-muted-foreground">
                             Choose one of our well thought-out configurations, that suits your needs.
                         </p>
                     </div>
                     <div className="grid gap-1">
-                        <h3 className="text-xl font-bold text-primary flex items-center"><TruckIcon size={22} className='mr-2' />Fast Delivery</h3>
+                        <p className="text-xl font-bold text-primary flex items-center"><TruckIcon size={22} className='mr-2' />Fast Delivery</p>
                         <p className="text-muted-foreground">
                             Get your new PC delivered to your doorstep quickly, with our efficient delivery and handling
                             process.
                         </p>
                     </div>
                     <div className="grid gap-1">
-                        <h3 className="text-xl font-bold text-primary flex items-center"><HeadsetIcon size={22} className='mr-2' />Excellent Support</h3>
+                        <p className="text-xl font-bold text-primary flex items-center"><HeadsetIcon size={22} className='mr-2' />Excellent Support</p>
                         <p className="text-muted-foreground">
                             Our knowledgeable support team is always here to assist you with any questions or issues you may
                             have.
