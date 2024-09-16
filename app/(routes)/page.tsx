@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         'Order MODEX Gaming PC', 'Order MODEX Gaming Computer', 'Buy MODEX Gaming PC Netherlands',
         'Prebuilt Gaming PC', 'High-Performance PC', 'Custom Gaming PC', 'Affordable Gaming PC', 'Best Gaming PC Deals',
         'Gaming Setup', 'Gaming Workstation', 'MODEX Gaming Setup', 'MODEX PC Build', 'Cheap Gaming PC', 'Powerful Gaming PC',
-        'Gaming Rig', 'Esports PC', 'Gaming Enthusiast PC', 'PC for Streaming', 'Prebuilt PC for Gaming', 'Ready-to-Ship Gaming PC', 'modex computer', 'modex computers'
+        'Gaming Rig', 'Esports PC', 'Gaming Enthusiast PC', 'PC for Streaming', 'Prebuilt PC for Gaming', 'Ready-to-Ship Gaming PC', 'modex computer', 'modex computers', '1000 euro pc', 'game pc 1000 euro', 'game pc 800 euro', '800 euro game pc'
     ]
 }
 
