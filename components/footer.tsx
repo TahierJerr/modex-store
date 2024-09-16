@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { BanknoteIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
 import Image from 'next/image';
+import TiktokLogo from './tiktok-logo';
 
 
 const Footer = () => {    
@@ -46,8 +47,11 @@ const Footer = () => {
                 <div className="flex flex-col gap-4">
                     <p className="text-lg font-semibold">Follow Us</p>
                     <div className="flex gap-4">
-                        <a href="#" title='Instagram' className="hover:text-primary transition-colors">
+                        <a href="https://www.instagram.com/modexgamingpc/" title='Instagram' className="hover:text-primary transition-colors">
                             <InstagramIcon className="w-6 h-6" />
+                        </a>
+                        <a href="https://www.tiktok.com/@modexgaming">
+                            <TiktokLogo width={24} height={24} />
                         </a>
                     </div>
                 </div>
