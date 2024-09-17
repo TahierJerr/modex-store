@@ -24,7 +24,7 @@ const Billboard = () => {
                 </div>
             </div>
             <div>
-                <Image src="/test2.jpg" width={800} height={600} quality={75} priority alt="Billboard image" className="mx-auto aspect-video overflow-hidden rounded-xl object-cover" />
+                <Image src="/test2.webp" width={800} height={600} quality={100} priority alt="Billboard image" className="mx-auto aspect-video overflow-hidden rounded-xl object-cover" />
             </div>
         </div>
     </div>

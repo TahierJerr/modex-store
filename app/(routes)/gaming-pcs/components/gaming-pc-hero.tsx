@@ -17,7 +17,7 @@ export default function GamingPcHero() {
                     </p>
                 </div>
                 <div>
-                    <Image src="/gaming-pc.png" alt="Gaming PC" width={800} height={600} quality={75} className="object-contain w-full h-96 bg-black pt-1" />
+                    <Image src="/gaming-pc.webp" alt="Gaming PC" width={800} height={600} quality={100} className="object-contain w-full h-96 bg-black pt-1" />
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-8">
                     <div className="flex flex-col items-center space-y-2">

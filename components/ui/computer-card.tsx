@@ -52,7 +52,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
     
     return (
         <div onClick={handleClick} className="relative overflow-hidden transition-transform duration-300 ease-in-out rounded-lg shadow-lg group hover:shadow-xl hover:-translate-y-2 cursor-pointer">
-            <Image src={data.images[0].url} alt={`${data.name} image`} width={500} height={400} quality={75} className=" object-contain w-full h-64 bg-white pt-1" />
+            <Image src={data.images[0].url} alt={`${data.name} image`} width={500} height={400} quality={100} className=" object-contain w-full h-64 bg-white pt-1" />
             <div className="p-4 bg-background">
                 <h3 className="text-xl font-bold text-primary">{data.name}</h3>
                 <div className="flex flex-col gap-2">

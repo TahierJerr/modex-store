@@ -31,10 +31,12 @@ export default function RootLayout({
     <html lang="en">
     <body className={font.className + " bg-white"}>
         <ToastProvider />
+        <header>
         <NavbarComponent />
-        <div>
+        </header>
+        <main>
             {children}
-        </div>
+        </main>
         <Footer />
         <CookieConsentComponent />
         <GoogleAnalytics gaId='G-Y8B38HERJE' />
