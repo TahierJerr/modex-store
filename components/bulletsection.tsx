@@ -42,7 +42,7 @@ const BulletSection = () => {
                     </div>
                 </div>
                 <Image
-                src="/ramimage.jpg"
+                src="/ramimage.webp"
                 alt="Modex Benefits"
                 width={550}
                 height={310}
