@@ -1,6 +1,7 @@
 "use client"
 
 import useCart from "@/hooks/use-cart";
+import { UserButton } from "@clerk/nextjs";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/navbar";
 import { ShoppingCartIcon } from "lucide-react";
 import Image from "next/image";
@@ -23,6 +24,7 @@ const NavbarComponent = () => {
     const cart = useCart();
     
     return (
+    <header>
     <Navbar isBordered isBlurred={false} onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent className="flex sm:hidden" justify="start">
             <NavbarMenuToggle
@@ -57,6 +59,9 @@ const NavbarComponent = () => {
             <NavbarItem>
                 <Link prefetch={false} className="flex items-center rounded-md bg-white relative py-2 px-2" href="/cart"><ShoppingCartIcon className="h-4 w-4 sm:h-5 sm:w-5 " /><span className="text-xs absolute top-0 right-0 bg-black text-white rounded-full px-1">{cart.items.length}</span></Link>
             </NavbarItem>
+            <NavbarItem>
+                <UserButton signInUrl="/sign-in" userProfileMode="navigation" userProfileUrl="/profile"  />
+            </NavbarItem>
         </NavbarContent>
         <NavbarMenu>
             {menuItems.map((item, index) => (
@@ -72,6 +77,7 @@ const NavbarComponent = () => {
                 </NavbarMenuItem>
             </NavbarMenu>
         </Navbar>
+        </header>
         )
     }
     

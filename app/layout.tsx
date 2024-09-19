@@ -1,11 +1,10 @@
-import Footer from '@/components/footer'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
-import NavbarComponent from '@/components/navbar'
 import Head from 'next/head'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { ClerkProvider } from '@clerk/nextjs'
 
 const font = Poppins({
     subsets: ['latin'],
@@ -28,21 +27,19 @@ export default function RootLayout({
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <title>MODEX</title>
     </Head>
-    <html lang="en">
-    <body className={font.className + " bg-white"}>
-        <ToastProvider />
-        <header>
-        <NavbarComponent />
-        </header>
-        <main>
-            {children}
-        </main>
-        <Footer />
-        <CookieConsentComponent />
-        <GoogleAnalytics gaId='G-Y8B38HERJE' />
-        <GoogleAnalytics gaId='G-JNT40MYQTZ' />
-    </body>
-    </html>
+    <ClerkProvider>
+        <html lang="en">
+        <body className={font.className + " bg-white"}>
+            <ToastProvider />
+            <main>
+                {children}
+            </main>
+            <CookieConsentComponent />
+            <GoogleAnalytics gaId='G-Y8B38HERJE' />
+            <GoogleAnalytics gaId='G-JNT40MYQTZ' />
+        </body>
+        </html>
+    </ClerkProvider>
     </>
     )
 }
