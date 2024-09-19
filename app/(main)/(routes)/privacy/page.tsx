@@ -10,12 +10,13 @@ export const metadata: Metadata = {
 const PrivacyPage = () => {
     return (
         <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8">Cookies, or similar techniques, that we use</h2>
-        <h2 className="text-xl mb-4">MODEX, located at Draakstraat 7 9742TD Groningen, is responsible for the processing of personal data as shown in this privacy statement.</h2>
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8">Cookies, or similar techniques, that we use</h1>
+        <h2 className="text-xl mb-4">MODEX, located at Asingastraat 98 9716ES Groningen, is responsible for the processing of personal data as shown in this privacy statement.</h2>
             
         <ul><h2 className="text-2xl font-bold mb-4">Contact information:</h2>
-        <li><p className="text-lg mb-4">https://www.modex-pc.nl</p></li>
-            <li><p className="text-lg mb-4">Draakstraat 7 9742TD Groningen</p></li>
+        <li><p className="text-lg mb-4">https://www.modexgaming.com & https://www.modexgaming.nl</p></li>
+        <li><p className="text-lg mb-4">info@modexgaming.com</p></li>
+            <li><p className="text-lg mb-4">Asingastraat 98 9716ES Groningen</p></li>
             <li><p className="text-lg mb-4">+31649146060</p></li>
             </ul>
             
@@ -30,7 +31,7 @@ const PrivacyPage = () => {
             </ul>
             
             <h2 className="text-2xl font-bold mb-4">Special and/or sensitive personal data that we process</h2>
-            <p className="text-lg mb-4">Our website and/or service does not intend to collect data about website visitors who are younger than 16 years old. Unless they have permission from parents or guardian. However, we cannot verify the age of visitors. We therefore recommend that parents be involved in their children&apos;s online activities to prevent data from being collected about children without parental consent. If you are convinced that we have collected personal information about a minor without permission, please contact us at info@modex-pc.nl and we will delete this information.
+            <p className="text-lg mb-4">Our website and/or service does not intend to collect data about website visitors who are younger than 16 years old. Unless they have permission from parents or guardian. However, we cannot verify the age of visitors. We therefore recommend that parents be involved in their children&apos;s online activities to prevent data from being collected about children without parental consent. If you are convinced that we have collected personal information about a minor without permission, please contact us at info@modexgaming.com and we will delete this information.
             </p>
             
             <h2 className="text-2xl font-bold mb-4">For what purpose and on what basis we process personal data</h2>
@@ -68,7 +69,7 @@ const PrivacyPage = () => {
             <h2 className="text-2xl font-bold mb-4">View, modify or delete data</h2>
             <p className="text-lg mb-4">You have the right to access, correct or delete your personal data. You also have the right to withdraw your consent to the data processing or to object to the processing of your personal data by MODEX and you have the right to data portability. This means that you can submit a request to us to send the personal data we hold about you in a computer file to you or another organization mentioned by you.
             
-            You can send a request for access, correction, deletion, data transfer of your personal data or request for withdrawal of your consent or objection to the processing of your personal data to info@modex-pc.nl.
+            You can send a request for access, correction, deletion, data transfer of your personal data or request for withdrawal of your consent or objection to the processing of your personal data to info@modexgaming.com.
             
             We will respond to your request as soon as possible, but within four weeks.
             
@@ -76,7 +77,7 @@ const PrivacyPage = () => {
             </p>
             <h2 className="text-2xl font-bold mb-4">How we secure personal data</h2>
             <p className="text-lg mb-16">
-            MODEX takes the protection of your data seriously and takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized alteration. If you have the impression that your data is not properly secured or there are indications of abuse, please contact our customer service or via info@modex-pc.nl
+            MODEX takes the protection of your data seriously and takes appropriate measures to prevent misuse, loss, unauthorized access, unwanted disclosure and unauthorized alteration. If you have the impression that your data is not properly secured or there are indications of abuse, please contact our customer service or via info@modexgaming.com
         </p>
     </div>
     );
