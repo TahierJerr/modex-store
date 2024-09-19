@@ -2,9 +2,8 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
-import Head from 'next/head'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { ClerkProvider } from '@clerk/nextjs'
+import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs'
 
 const font = Poppins({
     subsets: ['latin'],
@@ -27,8 +26,9 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-    <ClerkProvider>
         <html lang="en">
+    <ClerkProvider>
+    <GoogleOneTap />
         <body className={font.className + " bg-white"}>
             <ToastProvider />
                 {children}
@@ -36,7 +36,7 @@ export default function RootLayout({
             <GoogleAnalytics gaId='G-Y8B38HERJE' />
             <GoogleAnalytics gaId='G-JNT40MYQTZ' />
         </body>
-        </html>
     </ClerkProvider>
+        </html>
     )
 }

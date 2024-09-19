@@ -1,9 +1,9 @@
 "use client"
 
 import useCart from "@/hooks/use-cart";
-import { UserButton } from "@clerk/nextjs";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/navbar";
-import { ShoppingCartIcon } from "lucide-react";
+import { HeartIcon, LogInIcon, ShoppingCartIcon, TruckIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,11 +21,28 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
     };
 
     const handleUserButton = () => {
-        if (userSignedIn) {
-            return <UserButton signInUrl="/sign-in" userProfileMode="navigation" userProfileUrl="/profile" />;
-        } else {
-            return <div>login</div>
-        }
+        if (!userSignedIn) {
+            return(
+            <NavbarItem>
+                <SignInButton forceRedirectUrl="/" fallbackRedirectUrl="/" signUpFallbackRedirectUrl="/" signUpForceRedirectUrl="/" mode="modal" >
+                    <button className="border-1.5 sm:gap-2 text-sm py-2 px-2 rounded-md border-black/60 flex items-center justify-center">
+                        <p className="hidden sm:flex pl-1">Sign In</p>
+                        <LogInIcon strokeWidth={1.2} className="h-5 w-5" />
+                    </button>
+                </SignInButton>
+            </NavbarItem>
+            )
+        } 
+            return(
+                <NavbarItem>
+                    <UserButton signInUrl="/sign-in">
+                    {/* <UserButton.MenuItems>
+                        <UserButton.Link label="Orders" labelIcon={<TruckIcon size={15} />} href="/orders" />
+                            <UserButton.Link label="Favourites" labelIcon={<HeartIcon size={15} />} href="/favourites" />
+                        </UserButton.MenuItems> */}
+                    </UserButton>
+                </NavbarItem>
+            )
     }
     
     const menuItems = [{
@@ -70,6 +87,7 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
             <NavbarItem>
                 <Link prefetch={false} className="flex items-center rounded-md bg-white relative py-2 px-2" href="/cart"><ShoppingCartIcon className="h-4 w-4 sm:h-5 sm:w-5 " /><span className="text-xs absolute top-0 right-0 bg-black text-white rounded-full px-1">{cart.items.length}</span></Link>
             </NavbarItem>
+            {handleUserButton()}
         </NavbarContent>
         <NavbarMenu>
             {menuItems.map((item, index) => (
