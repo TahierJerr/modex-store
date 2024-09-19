@@ -1,5 +1,6 @@
 import Footer from '@/components/footer'
 import NavbarComponent from '@/components/navbar'
+import { auth } from '@clerk/nextjs/server'
 
 
 export default function RootLayout({
@@ -7,13 +8,24 @@ export default function RootLayout({
 }: {
     children: React.ReactNode
 }) {
+    const { userId } = auth()
+
+    const checkIfUserIsSignedIn = () => {
+        if (!userId) {
+            return false
+        }
+        return true
+    }
+
     return (
-        <html lang="en">
-        <body >
-            <NavbarComponent />
+        <>
+            <header>
+                <NavbarComponent userSignedIn={checkIfUserIsSignedIn()}/>
+            </header>
+            <main>
                 {children}
+            </main>
             <Footer />
-        </body>
-        </html>
+        </>
     )
 }
