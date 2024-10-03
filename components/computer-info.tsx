@@ -20,7 +20,7 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
     
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
-        track('Added to cart', { product: data.name, });
+        track('Added to cart', { product: data.name, }, { flags: ['product_add_to_cart'] });
         cart.addItem(data);
     }
     

@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
     const handleClick = () => {
         const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
-        track('Clicked on product', { product: data.name, });
+        track('Clicked on product', { product: data.name, }, { flags: ['product_click'] });
         router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
     };
 
@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
-        track('Added to cart', { product: data.name, });
+        track('Added to cart', { product: data.name, }, { flags: ['product_add_to_cart'] });
         cart.addItem(data);
     }
 
