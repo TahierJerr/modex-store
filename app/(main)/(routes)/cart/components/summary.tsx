@@ -8,7 +8,6 @@ import { toast } from "react-hot-toast";
 import Button from "@/components/ui/button";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
-import Script from "next/script";
 
 const Summary = () => {
     const searchParams = useSearchParams();
@@ -18,9 +17,6 @@ const Summary = () => {
     useEffect(() => {
         if (searchParams.get("success")) {
             toast.success("Order placed!");
-            <Script>
-                {`gtag('event', 'ads_conversion_Aankoop_1', {});`}
-            </Script>
             removeAll();
         }
 
