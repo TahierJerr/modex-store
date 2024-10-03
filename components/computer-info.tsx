@@ -1,13 +1,12 @@
 "use client"
 
 import { Computer } from "@/types";
-import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/button";
 import { MouseEventHandler } from "react";
 import useCart from "@/hooks/use-cart";
 import { CheckIcon, ShoppingCart, ShoppingCartIcon } from "lucide-react";
-import DeliveryTime from "./ui/delivery-time";
 import Image from "next/image";
+import { track } from "@vercel/analytics";
 
 interface ComputerInfoProps {
     data: Computer;
@@ -21,7 +20,7 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
     
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
-        
+        track('Added to cart', { product: data.name, });
         cart.addItem(data);
     }
     

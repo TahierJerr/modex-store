@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import useCart from "@/hooks/use-cart";
 import { MouseEventHandler } from "react";
 import { Badge } from "./badge";
+import { track } from "@vercel/analytics";
 
 interface CardProps {
     data: Computer;
@@ -20,6 +21,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
     const handleClick = () => {
         const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
+        track('Clicked on product', { product: data.name, });
         router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
     };
 
@@ -27,6 +29,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
+        track('Added to cart', { product: data.name, });
         cart.addItem(data);
     }
 
