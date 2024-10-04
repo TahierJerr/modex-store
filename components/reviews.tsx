@@ -27,13 +27,13 @@ const Reviews = () => {
         },
         {
             imageUrl: "https://example.com/image3.jpg",
-            name: "Thijs van D.",
-            reviewFrom: "Google",
-            reviewUrl: "https://maps.app.goo.gl/6bF48Q9xUHfKR85g6",
-            title: "Impressive Quality",
-            review: "Super service and fast delivery! Super nice PC works great! Definitely recommended!!",
+            name: "Good PC, no problems with it and great performance.",
+            reviewFrom: "Trustpilot",
+            reviewUrl: "https://www.trustpilot.com/reviews/66f5690195705b27c8ae7339",
+            title: "PC Purschased",
+            review: "Good PC, no problems with it and great performance.",
             customProductPurchased: "Custom Gaming PC",
-            published: "1 year ago",
+            published: "26-09-2024",
             stars: 5
         }
     ];

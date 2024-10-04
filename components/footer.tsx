@@ -1,9 +1,10 @@
 "use client"
 
 import Link from 'next/link';
-import { BanknoteIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
+import { BanknoteIcon, FacebookIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
 import Image from 'next/image';
 import TiktokLogo from './tiktok-logo';
+import TrustpilotLogo from './trustpilot-logo';
 
 
 const Footer = () => {    
@@ -24,13 +25,13 @@ const Footer = () => {
                     <div className="grid gap-2">
                         <div className="flex items-center gap-2">
                             <MailIcon className="w-5 h-5" />
-                            <a href="mailto:info@modexgaming.com" className="underline underline-offset-2">
+                            <a href="mailto:info@modexgaming.com" title='E-mail' className="underline underline-offset-2">
                                 info@modexgaming.com
                             </a>
                         </div>
                         <div className="flex items-center gap-2">
                             <PhoneIcon className="w-5 h-5" />
-                            <a href="tel:+31649146060" className="underline underline-offset-2">
+                            <a href="tel:+31649146060" title='Phone Number' className="underline underline-offset-2">
                                 +31 6 49146060
                             </a>
                         </div>
@@ -50,8 +51,11 @@ const Footer = () => {
                         <a href="https://www.instagram.com/modexgamingpc/" title='Instagram' className="hover:text-primary transition-colors">
                             <InstagramIcon className="w-6 h-6" />
                         </a>
-                        <a href="https://www.tiktok.com/@modexgaming">
+                        <a href="https://www.tiktok.com/@modexgaming" title='TikTok'>
                             <TiktokLogo width={24} height={24} />
+                        </a>
+                        <a href="https://www.facebook.com/people/MODEX/61566822210338/" title='Facebook' className='hover:text-primary transition-colors'>
+                            <FacebookIcon className="w-6 h-6" />
                         </a>
                     </div>
                 </div>

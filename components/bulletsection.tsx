@@ -44,6 +44,7 @@ const BulletSection = () => {
                 <Image
                 src="/ramimage.webp"
                 alt="Modex Benefits"
+                loading='lazy'
                 width={550}
                 height={310}
                 quality={75}

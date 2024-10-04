@@ -30,6 +30,7 @@ export default function RootLayout({
         <html lang="en">
             <Head>
                 <script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async />
+                <link rel="apple-touch-icon" href="/icon.png" type='image/png' sizes='32x32' />
             </Head>
         <body className={font.className + " bg-white"}>
             <ClerkProvider>
