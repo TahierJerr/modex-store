@@ -1,3 +1,7 @@
+export interface User {
+    id: string;
+}
+
 export interface Billboard {
     id: string;
     label: string;
@@ -38,6 +42,37 @@ export interface Image {
     url: string;
 }
 
+export enum MemoryType {
+    DDR3 = "DDR3",
+    DDR4 = "DDR4",
+    DDR5 = "DDR5",
+}
+
+export enum SocketType { // add to prisma schema
+    AM5 = "AM5",
+    AM4 = "AM4",
+    LGA1700 = "LGA1700",
+    LGA1200 = "LGA1200",
+    LGA1151 = "LGA1151",
+}
+
+export enum FormFactor {
+    ATX = "ATX",
+    MicroATX = "MicroATX",
+    MiniITX = "MiniITX",
+}
+
+export enum CoolerType {
+    Air = "Air",
+    AIO = "AIO",
+}
+
+export enum StorageType {
+    HDD = "HDD",
+    SSD = "SSD",
+    NVMe = "NVMe",
+}
+
 export interface Processor {
     id: string;
     name: string;
@@ -45,6 +80,7 @@ export interface Processor {
     series: string;
     baseSpeed: string;
     cores: string;
+    socket: SocketType; // add to prisma schema
 }
 
 export interface Graphics {
@@ -55,6 +91,10 @@ export interface Graphics {
     memory: string;
     memoryType: string;
     maxClock: string;
+    length: number; // add to prisma schema
+    width: number; // add to prisma schema
+    slots: number; // add to prisma schema
+    minWattage: number; // add to prisma schema
 }
 
 export interface Memory {
@@ -65,6 +105,9 @@ export interface Memory {
     capacity: string;
     type: string;
     rgb: string;
+    modules: number; // add to prisma schema
+    capacityNumber: number; // add to prisma schema
+    newType: MemoryType; // add to prisma schema
 }
 
 export interface Software {
@@ -78,6 +121,8 @@ export interface Storage {
     model: string;
     capacity: string;
     type: string;
+    speed: string;
+    newType: StorageType; // add to prisma schema
 }
 
 export interface Power {
@@ -95,6 +140,13 @@ export interface Pccase {
     color: string;
     motherboardSupport: string;
     ports: string;
+    maxGpuLength: number; // add to prisma schema
+    maxGpuWidth: number; // add to prisma schema
+    maxGpuSlots: number; // add to prisma schema
+    maxCoolerHeight: number; // add to prisma schema
+    maxRadiatorLength: number; // add to prisma schema
+    maxRadiatorThickness: number; // add to prisma schema
+    formFactor: FormFactor; // add to prisma schema
 }
 
 export interface Cooler {
@@ -104,6 +156,10 @@ export interface Cooler {
     type: string;
     fanModel: string;
     rgb: string;
+    height: number; // Height of the cooler in millimeters
+    radiatorLength: number; // Length of the radiator for AIO coolers (if applicable)
+    radiatorThickness: number; // Thickness of the radiator for AIO coolers (if applicable)
+    newType: CoolerType; // add to prisma schema
 }
 
 export interface Motherboard {
@@ -112,6 +168,10 @@ export interface Motherboard {
     model: string;
     formFactor: string;
     wifi: string;
+    socket: SocketType; // add to prisma schema
+    memoryType: MemoryType; // add to prisma schema
+    maxMemoryCapacity: number; // add to prisma schema
+    memorySlots: number; // add to prisma schema
 }
 
 export interface Warranty {
