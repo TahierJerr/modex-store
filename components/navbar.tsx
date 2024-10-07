@@ -3,11 +3,12 @@
 import useCart from "@/hooks/use-cart";
 import { SignInButton, UserButton } from "@clerk/nextjs";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/navbar";
-import { HeartIcon, LogInIcon, ShoppingCartIcon, TruckIcon } from "lucide-react";
+import { LogIn, ShoppingCartIcon,} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { useState } from 'react'
+import Button from "./ui/button";
 
 interface NavbarComponentProps {
     userSignedIn: boolean;
@@ -25,10 +26,10 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
             return(
             <NavbarItem>
                 <SignInButton forceRedirectUrl="/" fallbackRedirectUrl="/" signUpFallbackRedirectUrl="/" signUpForceRedirectUrl="/" mode="modal" >
-                    <button className="border-1.5 sm:gap-2 text-sm py-2 px-2 rounded-md border-black/60 flex items-center justify-center">
-                        <p className="hidden sm:flex pl-1">Sign In</p>
-                        <LogInIcon strokeWidth={1.2} className="h-5 w-5" />
-                    </button>
+                    <Button className="h-10 w-10 rounded-full p-0 sm:h-10 sm:w-auto sm:rounded-md sm:px-4 sm:py-2">
+                        <LogIn className="h-4 w-4 sm:mr-2" />
+                        <span className="sr-only sm:not-sr-only sm:inline-block">Sign In</span>
+                    </Button>
                 </SignInButton>
             </NavbarItem>
             )
