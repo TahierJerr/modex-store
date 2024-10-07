@@ -26,9 +26,9 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
             return(
             <NavbarItem>
                 <SignInButton forceRedirectUrl="/" fallbackRedirectUrl="/" signUpFallbackRedirectUrl="/" signUpForceRedirectUrl="/" mode="modal" >
-                    <Button className="h-10 w-10 rounded-full p-0 sm:h-10 sm:w-auto sm:rounded-md flex items-center justify-center bg-black text-white sm:px-4 sm:py-2">
-                        <LogIn className="h-4 w-4 sm:mr-2" />
-                        <span className="sr-only sm:not-sr-only sm:inline-block">Sign In</span>
+                    <Button className="h-10 w-10 rounded-md p-0 md:h-10 md:w-auto md:rounded-md flex items-center justify-center bg-black text-white md:px-4 md:py-2">
+                        <LogIn className="h-4 w-4 md:mr-2" />
+                        <span className="sr-only md:not-sr-only md:inline-block text-sm font-extralight">Sign In</span>
                     </Button>
                 </SignInButton>
             </NavbarItem>
@@ -38,7 +38,7 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
                 <NavbarItem>
                     <UserButton signInUrl="/sign-in">
                     {/* <UserButton.MenuItems>
-                        <UserButton.Link label="Orders" labelIcon={<TruckIcon size={15} />} href="/orders" />
+                        <UserButton.Link label="Orders" labelIcon   ={<TruckIcon size={15} />} href="/orders" />
                             <UserButton.Link label="Favourites" labelIcon={<HeartIcon size={15} />} href="/favourites" />
                         </UserButton.MenuItems> */}
                     </UserButton>
