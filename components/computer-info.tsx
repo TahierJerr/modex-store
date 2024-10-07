@@ -1,7 +1,7 @@
 "use client"
 
 import { Computer } from "@/types";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { MouseEventHandler } from "react";
 import useCart from "@/hooks/use-cart";
 import { CheckIcon, ShoppingCart, ShoppingCartIcon } from "lucide-react";

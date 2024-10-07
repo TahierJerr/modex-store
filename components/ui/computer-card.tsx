@@ -5,7 +5,7 @@ import { Computer } from "@/types";
 import Image from "next/image";
 import { CpuIcon, MemoryStickIcon, ShoppingCartIcon } from "lucide-react";
 
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import useCart from "@/hooks/use-cart";
 import { MouseEventHandler } from "react";

@@ -49,6 +49,9 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
         },
+        colors: {
+          'bg-white': '#fdfdfd',
+        },
       },
       borderRadius: {
         xl: `calc(var(--radius) + 4px)`,
@@ -70,7 +73,11 @@ const config: Config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-    },
+      boxShadow: {
+        'input-shadow': '0 0px 14px 6px rgba(0, 0, 0, 0.1)',
+        'card-shadow': '0 0px 7px 3px rgba(0, 0, 0, 0.1)',
+      },
+    }
   },
   plugins: [nextui()],
 }

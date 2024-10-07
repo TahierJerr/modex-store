@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useState } from 'react'
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 
 interface NavbarComponentProps {
     userSignedIn: boolean;
@@ -77,12 +77,6 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
             <NavbarItem>
                 <Link prefetch={false} href="/gaming-pcs" className="text-sm">Gaming PCs</Link>
             </NavbarItem>
-            <NavbarMenuItem>
-                <p className="text-gray-500 text-sm">Mini PCs (Coming Soon!)</p>
-            </NavbarMenuItem>
-            <NavbarMenuItem>
-                <p className="text-gray-500 text-sm">Refurbished PCs (Coming Soon!)</p>
-            </NavbarMenuItem>
         </NavbarContent>
         <NavbarContent justify="end">
             <NavbarItem>
@@ -96,12 +90,6 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
                     <Link onClick={handleMenuClose} prefetch={false} href={item.href}>{item.title}</Link>
                 </NavbarMenuItem>
                 ))}
-                <NavbarMenuItem>
-                    <p className="text-gray-500">Mini PCs (Coming Soon!)</p>
-                </NavbarMenuItem>
-                <NavbarMenuItem>
-                    <p className="text-gray-500">Refurbished PCs (Coming Soon!)</p>
-                </NavbarMenuItem>
             </NavbarMenu>
         </Navbar>
         )
