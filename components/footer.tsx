@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { BanknoteIcon, FacebookIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
 import Image from 'next/image';
 import TiktokLogo from './tiktok-logo';
-import TrustpilotLogo from './trustpilot-logo';
 
 
 const Footer = () => {    
