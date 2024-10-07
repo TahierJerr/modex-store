@@ -26,7 +26,7 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
             return(
             <NavbarItem>
                 <SignInButton forceRedirectUrl="/" fallbackRedirectUrl="/" signUpFallbackRedirectUrl="/" signUpForceRedirectUrl="/" mode="modal" >
-                    <Button className="h-10 w-10 rounded-full p-0 sm:h-10 sm:w-auto sm:rounded-md sm:px-4 sm:py-2">
+                    <Button className="h-10 w-10 rounded-full p-0 sm:h-10 sm:w-auto sm:rounded-md flex items-center justify-center bg-black text-white sm:px-4 sm:py-2">
                         <LogIn className="h-4 w-4 sm:mr-2" />
                         <span className="sr-only sm:not-sr-only sm:inline-block">Sign In</span>
                     </Button>
