@@ -3,8 +3,6 @@ import type { Metadata } from 'next'
 import ComputerList from "@/components/computer-list";
 import GamingPcHero from "./components/gaming-pc-hero";
 
-
-
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
     description: 'MODEX is the best place to buy your new gaming PC. We offer computers for every budget.',
@@ -20,7 +18,6 @@ export const metadata: Metadata = {
         'Gaming Rig', 'Esports PC', 'Gaming Enthusiast PC', 'PC for Streaming', 'Prebuilt PC for Gaming', 'Ready-to-Ship Gaming PC'
     ]
 }
-
 
 export const revalidate = 0;
 

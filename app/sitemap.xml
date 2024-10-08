@@ -4,7 +4,7 @@
 >
     <url>
         <loc>https://www.modexgaming.com/</loc>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1</priority>
     </url>
@@ -13,7 +13,7 @@
         <image:image>
             <image:loc>https://example.com/gaming-pc.webp</image:loc>
         </image:image>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -22,7 +22,7 @@
         <image:image>
             <image:loc>https://res.cloudinary.com/dgbhzvy6k/image/upload/v1725477607/ourmudlxx48wdoerurtm.jpg</image:loc>
         </image:image>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -31,7 +31,7 @@
         <image:image>
             <image:loc>https://res.cloudinary.com/dgbhzvy6k/image/upload/v1709131309/lrpd6gz23isakx1rli3p.webp</image:loc>
         </image:image>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -40,7 +40,7 @@
         <image:image>
             <image:loc>https://res.cloudinary.com/dgbhzvy6k/image/upload/v1709131309/lrpd6gz23isakx1rli3p.webp</image:loc>
         </image:image>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -49,7 +49,7 @@
         <image:image>
             <image:loc>https://res.cloudinary.com/dgbhzvy6k/image/upload/v1725484157/cxbpem0mfg1dpquy2k1k.webp</image:loc>
         </image:image>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -58,7 +58,7 @@
         <image:image>
             <image:loc>https://res.cloudinary.com/dgbhzvy6k/image/upload/v1726565120/sgamyceqmgiuz5q9fzwm.webp</image:loc>
         </image:image>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -67,25 +67,31 @@
         <image:image>
             <image:loc>https://res.cloudinary.com/dgbhzvy6k/image/upload/v1726565120/sgamyceqmgiuz5q9fzwm.webp</image:loc>
         </image:image>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://www.modexgaming.com/gpu-comparison-tool</loc>
+        <lastmod>2024-10-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
         <loc>https://www.modexgaming.com/privacy</loc>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://www.modexgaming.com/return</loc>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://www.modexgaming.com/terms-of-service</loc>
-        <lastmod>2024-10-03</lastmod>
+        <lastmod>2024-10-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
