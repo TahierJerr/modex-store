@@ -49,7 +49,12 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
     const menuItems = [{
         title: 'Gaming PCs',
         href: '/gaming-pcs'
-    }]
+    },
+    {
+        title: 'GPU Comparison Tool',
+        href: '/gpu-comparison-tool'
+    }
+]
     
     const cart = useCart();
     
