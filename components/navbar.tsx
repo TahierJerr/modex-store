@@ -79,9 +79,11 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
             </Link>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-6" justify="center">
-            <NavbarItem>
-                <Link prefetch={false} href="/gaming-pcs" className="text-sm">Gaming PCs</Link>
-            </NavbarItem>
+            {menuItems.map((item, index) => (
+                <NavbarMenuItem key={index}>
+                    <Link prefetch={false} href={item.href}>{item.title}</Link>
+                </NavbarMenuItem>
+            ))}
         </NavbarContent>
         <NavbarContent justify="end">
             <NavbarItem>
