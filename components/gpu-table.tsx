@@ -190,6 +190,7 @@ const GpuTable: React.FC<GpuTableProps> = ({ data }) => {
                         <AnimatePresence>
                             {sortedAndFilteredGPUs.map((gpu) => (
                                 <motion.tr
+                                className='hover:bg-gray-100 duration-300 transition-colors'
                                 key={gpu.id}
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
