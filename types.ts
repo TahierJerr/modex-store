@@ -80,6 +80,9 @@ export interface Processor {
     series: string;
     baseSpeed: string;
     cores: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
     socket: SocketType; // add to prisma schema
 }
 
@@ -91,6 +94,10 @@ export interface Graphics {
     memory: string;
     memoryType: string;
     maxClock: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
+    performance: number;
     length: number; // add to prisma schema
     width: number; // add to prisma schema
     slots: number; // add to prisma schema
@@ -105,6 +112,9 @@ export interface Memory {
     capacity: string;
     type: string;
     rgb: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
     modules: number; // add to prisma schema
     capacityNumber: number; // add to prisma schema
     newType: MemoryType; // add to prisma schema
@@ -122,6 +132,9 @@ export interface Storage {
     capacity: string;
     type: string;
     speed: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
     newType: StorageType; // add to prisma schema
 }
 
@@ -131,6 +144,9 @@ export interface Power {
     model: string;
     wattage: string;
     rating: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
 }
 
 export interface Pccase {
@@ -140,6 +156,9 @@ export interface Pccase {
     color: string;
     motherboardSupport: string;
     ports: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
     maxGpuLength: number; // add to prisma schema
     maxGpuWidth: number; // add to prisma schema
     maxGpuSlots: number; // add to prisma schema
@@ -156,6 +175,9 @@ export interface Cooler {
     type: string;
     fanModel: string;
     rgb: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
     height: number; // Height of the cooler in millimeters
     radiatorLength: number; // Length of the radiator for AIO coolers (if applicable)
     radiatorThickness: number; // Thickness of the radiator for AIO coolers (if applicable)
@@ -168,6 +190,9 @@ export interface Motherboard {
     model: string;
     formFactor: string;
     wifi: string;
+    price: number;
+    priceTrackUrl: string;
+    productUrl: string;
     socket: SocketType; // add to prisma schema
     memoryType: MemoryType; // add to prisma schema
     maxMemoryCapacity: number; // add to prisma schema

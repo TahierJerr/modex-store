@@ -27,7 +27,7 @@ const Reviews = () => {
         },
         {
             imageUrl: "https://example.com/image3.jpg",
-            name: "Good PC, no problems with it and great performance.",
+            name: "Luuk Battjes",
             reviewFrom: "Trustpilot",
             reviewUrl: "https://www.trustpilot.com/reviews/66f5690195705b27c8ae7339",
             title: "PC Purschased",
