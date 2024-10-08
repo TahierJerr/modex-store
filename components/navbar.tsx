@@ -81,7 +81,7 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
         <NavbarContent className="hidden sm:flex gap-6" justify="center">
             {menuItems.map((item, index) => (
                 <NavbarMenuItem key={index}>
-                    <Link prefetch={false} href={item.href}>{item.title}</Link>
+                    <Link prefetch={false} href={item.href} className="text-sm">{item.title}</Link>
                 </NavbarMenuItem>
             ))}
         </NavbarContent>
