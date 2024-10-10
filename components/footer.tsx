@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { BanknoteIcon, FacebookIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
 import Image from 'next/image';
 import TiktokLogo from './tiktok-logo';
+import Container from './ui/container';
 
 
 const Footer = () => {    
@@ -13,7 +14,8 @@ const Footer = () => {
 
     return (
         <footer className="bg-background text-muted-foreground py-12 border-t">
-            <div className="container max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Container>
+            <div className=" mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="flex flex-col gap-4">
                     <Link href="#" className="flex items-center gap-2" prefetch={false}>
                         <Image src="/transparent.png" alt="Logo" width={100} height={1} />
@@ -74,6 +76,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            </Container>
         </footer>
     );
 }

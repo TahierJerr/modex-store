@@ -5,6 +5,7 @@ import ToastProvider from '@/providers/toast-provider'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs'
 import Head from 'next/head'
+import Container from '@/components/ui/container'
 
 const font = Poppins({
     subsets: ['latin'],

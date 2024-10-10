@@ -59,7 +59,7 @@ const NavbarComponent:React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
     const cart = useCart();
     
     return (
-    <Navbar isBordered isBlurred={false} onMenuOpenChange={setIsMenuOpen}>
+    <Navbar isBordered isBlurred={false} onMenuOpenChange={setIsMenuOpen} className="bg-white   ">
         <NavbarContent className="flex sm:hidden" justify="start">
             <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}

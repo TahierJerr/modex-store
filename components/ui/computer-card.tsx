@@ -56,9 +56,9 @@ const Card: React.FC<CardProps> = ({ data }) => {
     return (
         <div onClick={handleClick} className="relative overflow-hidden transition-transform duration-300 ease-in-out rounded-lg shadow-lg group hover:shadow-xl hover:-translate-y-2 cursor-pointer">
             <Image src={data.images[0].url} alt={`${data.name} image`} width={500} height={400} quality={75} className=" object-contain w-full h-64 bg-white pt-1" loading="lazy"/>
-            <div className="p-4 bg-background">
+            <div className="p-4 bg-background flex gap-4 flex-col">
                 <h3 className="text-xl font-bold text-primary">{data.name}</h3>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-2 text-sm">
                         <CpuIcon className="w-4 h-4" />
                         <span>{data.processor.name}</span>
@@ -72,12 +72,9 @@ const Card: React.FC<CardProps> = ({ data }) => {
                         <span>{data.graphics.name}</span>
                     </div>
                 </div>
-                <div className="flex items-center justify-between mt-4">
+                <div className="flex items-center justify-between">
                     <p className="font-semibold md:text-xl text-primary text-lg">{formattedPrice}</p>
                     <div className="gap-2 flex items-center ">
-                    <Button onClick={handleClick} className="sm:inline-flex hidden h-8 items-center justify-center rounded-md bg-secondary px-4 text-sm font-medium text-secondary-foreground shadow transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-                        Learn more
-                    </Button>
                     <Button onClick={onAddToCart} className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                         <ShoppingCartIcon className="w-4 h-4 mr-2" />
                         Buy now

@@ -1,35 +1,44 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Star } from "lucide-react"
+import Image from "next/image"
+import Container from "./ui/container"
+import Link from "next/link"
 
-const Billboard = () => {
+export default function Component() {
     return (
-    <section className="w-full pt-12 md:pt-24 lg:pt-32 my-12">
-        <div className="container px-4 md:px-6 space-y-10 xl:space-y-16">
-            <div className="grid max-w-[1300px] mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16">
-                <div>
-                    <h1 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem] text-primary">
-                        MODEX PCs, Tailored for You
-                    </h1>
-                    <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                        Discover MODEX&apos;s pre-built PCs, designed to deliver exceptional performance and unmatched reliability.
-                    </p>
-                    <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
-                        <Link
-                        href="/gaming-pcs"
-                        className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        prefetch={false}
-                        >
-                        Explore Gaming PCs
-                        </Link>
+    <section className="w-full my-12 sm:my-16 md:my-24">
+        <Container>
+            <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
+                <div className="flex flex-col justify-center space-y-4">
+                    <div className="space-y-2">
+                        <h1 className="text-4xl font-bold">
+                            High-Performance MODEX PCs at Unbeatable Value
+                        </h1>
+                        <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                            MODEX delivers cutting-edge computers that maximize your budget without compromising on quality or performance.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                        <Link href="/gaming-pcs" className="bg-black text-white px-4 py-2 rounded-md hover:bg-black/80 transition-colors">Explore Gaming PCs</Link>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                        <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                                <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                                ))}
+                            </div>
+                            <div className="text-sm text-muted-foreground">Trusted by 20+ satisfied customers</div>
+                        </div>
+                    </div>
+                    <div className="flex items-center justify-center ">
+                        <Image
+                            src="/gaming-pc.webp"
+                            width={500}
+                            height={500}
+                            alt="Billboard Image"
+                        />
+                    </div>
                 </div>
-            </div>
-            <div>
-                <Image src="/test2.webp" width={800} height={600} quality={75} priority alt="Billboard image" className="mx-auto aspect-video overflow-hidden rounded-xl object-cover" />
-            </div>
-        </div>
-    </div>
-</section>
-);
-};
-
-export default Billboard;
+            </Container>
+        </section>
+        )
+    }

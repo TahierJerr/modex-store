@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@radix-ui/react-tooltip'
@@ -13,6 +13,7 @@ import { Checkbox } from './ui/checkbox'
 import { TooltipProvider } from './ui/tooltip'
 import { Graphics } from '@/types'
 import { Badge } from './ui/badge'
+import Loader from './ui/loading'
 
 interface GpuTableProps {
     data: Graphics[]
@@ -25,13 +26,21 @@ type Brand = 'NVIDIA' | 'AMD' | 'Intel'
 const GpuTable: React.FC<GpuTableProps> = ({ data }) => {
     const [search, setSearch] = useState('')
     const [sortKey, setSortKey] = useState<SortKey>('pricePerformance')
-    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
-    const [gpus, setGpus] = useState(data)
+        const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc')
+        const [gpus, setGpus] = useState(data)
         const [editingId, setEditingId] = useState<string | null>(null)
             const [selectedResolutions, setSelectedResolutions] = useState<Resolution[]>(['1080p', '1440p', '4k'])
             const [minPrice, setMinPrice] = useState('')
             const [maxPrice, setMaxPrice] = useState('')
             const [selectedBrands, setSelectedBrands] = useState<Brand[]>(['NVIDIA', 'AMD', 'Intel'])
+            const [loading, setLoading] = useState(true); // Loading state
+            
+            useEffect(() => {
+                if (data) {
+                    setGpus(data);
+                    setLoading(false); // Set loading to false once data is received
+                }
+            }, [data]);
             
             
             const sortedAndFilteredGPUs = useMemo(() => {
@@ -99,185 +108,193 @@ const GpuTable: React.FC<GpuTableProps> = ({ data }) => {
             
             return (
             <TooltipProvider>
-                <section className="    my-12 gap-4 flex flex-col">
-                    <div className="flex flex-col md:flex-row gap-4">
+                <section className="my-12 gap-4 flex flex-col">
+                    {loading ? (
+                        <div className='flex items-center justify-center'>
+                            <Loader />
+                        </div>
+                        ) : (
+                        <>
+                        <div className="flex flex-col md:flex-row gap-4">
+                            <Input
+                            placeholder="Search GPUs by name..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                            className="w-full md:w-1/2"
+                            />
+                            <Select
+                            onValueChange={handleResolutionChange}
+                            defaultValue={selectedResolutions.join(',')}
+                            >
+                            <SelectTrigger className="w-full md:w-1/6">
+                                <SelectValue placeholder="Resolutions" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="1080p,1440p,4k">All Resolutions</SelectItem>
+                                <SelectItem value="1080p">1080p</SelectItem>
+                                <SelectItem value="1440p">1440p</SelectItem>
+                                <SelectItem value="4k">4K</SelectItem>
+                            </SelectContent>
+                        </Select>
                         <Input
-                        placeholder="Search GPUs by name..."
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        className="w-full md:w-1/2"
+                        type="number"
+                        placeholder="Min Price"
+                        value={minPrice}
+                        onChange={(e) => setMinPrice(e.target.value)}
+                        className="w-full md:w-1/6"
                         />
-                        <Select
-                        onValueChange={handleResolutionChange}
-                        defaultValue={selectedResolutions.join(',')}
-                        >
-                        <SelectTrigger className="w-full md:w-1/6">
-                            <SelectValue placeholder="Resolutions" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="1080p,1440p,4k">All Resolutions</SelectItem>
-                            <SelectItem value="1080p">1080p</SelectItem>
-                            <SelectItem value="1440p">1440p</SelectItem>
-                            <SelectItem value="4k">4K</SelectItem>
-                        </SelectContent>
-                    </Select>
-                    <Input
-                    type="number"
-                    placeholder="Min Price"
-                    value={minPrice}
-                    onChange={(e) => setMinPrice(e.target.value)}
-                    className="w-full md:w-1/6"
-                    />
-                    <Input
-                    type="number"
-                    placeholder="Max Price"
-                    value={maxPrice}
-                    onChange={(e) => setMaxPrice(e.target.value)}
-                    className="w-full md:w-1/6"
-                    />
-                </div>
-                <div className="flex flex-wrap gap-4">
-                    <Label className="flex items-center space-x-2">
-                        <Checkbox
-                        checked={selectedBrands.includes('NVIDIA')} 
-                        onCheckedChange={() => handleBrandChange('NVIDIA')}
+                        <Input
+                        type="number"
+                        placeholder="Max Price"
+                        value={maxPrice}
+                        onChange={(e) => setMaxPrice(e.target.value)}
+                        className="w-full md:w-1/6"
                         />
-                        <span>NVIDIA</span>
-                    </Label>
-                    <Label className="flex items-center space-x-2">
-                        <Checkbox 
-                        checked={selectedBrands.includes('AMD')} 
-                        onCheckedChange={() => handleBrandChange('AMD')}
-                        />
-                        <span>AMD</span>
-                    </Label>
-                    <Label className="flex items-center space-x-2">
-                        <Checkbox 
-                        checked={selectedBrands.includes('Intel')} 
-                        onCheckedChange={() => handleBrandChange('Intel')}
-                        />
-                        <span>Intel</span>
-                    </Label>
-                </div>
-                <Table>
-                    <TableHeader >
-                        <TableRow>
-                            <TableHead className="w-[30%] cursor-pointer" onClick={() => handleSort('name')}>
-                                <span className='flex items-center'>
-                                    Name {sortKey === 'name' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
-                                </span>
-                            </TableHead>
-                            <TableHead className="w-[10%] cursor-pointer" onClick={() => handleSort('performance')}>
-                                <span className='flex items-center'>
-                                    Score {sortKey === 'performance' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
-                                </span>
-                            </TableHead>
-                            <TableHead className="w-[10%] cursor-pointer" onClick={() => handleSort('price')}>
-                                <span className='flex items-center'>
-                                    Price (€) {sortKey === 'price' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
-                                </span>
-                            </TableHead>
-                            <TableHead className="w-[10%] cursor-pointer" onClick={() => handleSort('pricePerformance')}>
-                                <span className='flex items-center'>
-                                    Price/Perf {sortKey === 'pricePerformance' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
-                                </span>
-                            </TableHead>
-                            <TableHead className="w-[10%]">VRAM</TableHead>
-                            <TableHead className="w-[10%]">Store</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        <AnimatePresence>
-                            {sortedAndFilteredGPUs.map((gpu) => (
-                                <motion.tr
-                                className='hover:bg-gray-100 duration-300 transition-colors'
-                                key={gpu.id}
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 50 }}
-                                transition={{ duration: 0.3 }}
-                                layout
-                                >
-                                <TableCell className="font-medium">
-                                    <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-                                        <span>{gpu.name}</span>
-                                        <div className="hidden sm:flex flex-wrap gap-1 mt-1 sm:mt-0">
-                                            {gpu.performance >= 80 && <Badge variant="secondary">1080p</Badge>}
-                                            {gpu.performance >= 110 && <Badge variant="secondary">1440p</Badge>}
-                                            {gpu.performance >= 200 && <Badge variant="secondary">4K</Badge>}
+                    </div>
+                    <div className="flex flex-wrap gap-4">
+                        <Label className="flex items-center space-x-2">
+                            <Checkbox
+                            checked={selectedBrands.includes('NVIDIA')} 
+                            onCheckedChange={() => handleBrandChange('NVIDIA')}
+                            />
+                            <span>NVIDIA</span>
+                        </Label>
+                        <Label className="flex items-center space-x-2">
+                            <Checkbox 
+                            checked={selectedBrands.includes('AMD')} 
+                            onCheckedChange={() => handleBrandChange('AMD')}
+                            />
+                            <span>AMD</span>
+                        </Label>
+                        <Label className="flex items-center space-x-2">
+                            <Checkbox 
+                            checked={selectedBrands.includes('Intel')} 
+                            onCheckedChange={() => handleBrandChange('Intel')}
+                            />
+                            <span>Intel</span>
+                        </Label>
+                    </div>
+                    <Table>
+                        <TableHeader >
+                            <TableRow>
+                                <TableHead className="w-[30%] cursor-pointer" onClick={() => handleSort('name')}>
+                                    <span className='flex items-center'>
+                                        Name {sortKey === 'name' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
+                                    </span>
+                                </TableHead>
+                                <TableHead className="w-[10%] cursor-pointer" onClick={() => handleSort('performance')}>
+                                    <span className='flex items-center'>
+                                        Score {sortKey === 'performance' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
+                                    </span>
+                                </TableHead>
+                                <TableHead className="w-[10%] cursor-pointer" onClick={() => handleSort('price')}>
+                                    <span className='flex items-center'>
+                                        Price (€) {sortKey === 'price' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
+                                    </span>
+                                </TableHead>
+                                <TableHead className="w-[10%] cursor-pointer" onClick={() => handleSort('pricePerformance')}>
+                                    <span className='flex items-center'>
+                                        Price/Perf {sortKey === 'pricePerformance' && (sortOrder === 'asc' ? <ChevronUp className="ml-2 h-4 w-4" /> : <ChevronDown className="ml-2 h-4 w-4" />)}
+                                    </span>
+                                </TableHead>
+                                <TableHead className="w-[10%]">VRAM</TableHead>
+                                <TableHead className="w-[15%]">Store</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            <AnimatePresence>
+                                {sortedAndFilteredGPUs.map((gpu) => (
+                                    <motion.tr
+                                    className='hover:bg-gray-100 duration-300 transition-colors'
+                                    key={gpu.id}
+                                    initial={{ opacity: 0, x: 50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: 50 }}
+                                    transition={{ duration: 0.3 }}
+                                    layout
+                                    >
+                                    <TableCell className="font-medium">
+                                        <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                                            <span>{gpu.name}</span>
+                                            <div className="hidden sm:flex flex-wrap gap-1 mt-1 sm:mt-0">
+                                                {gpu.performance >= 80 && <Badge variant="secondary">1080p</Badge>}
+                                                {gpu.performance >= 110 && <Badge variant="secondary">1440p</Badge>}
+                                                {gpu.performance >= 200 && <Badge variant="secondary">4K</Badge>}
+                                            </div>
                                         </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell>
-                                    <Tooltip>
-                                        <TooltipTrigger asChild>
+                                    </TableCell>
+                                    <TableCell>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <div className="flex items-center">
+                                                    {gpu.performance}
+                                                    <Info className="h-4 w-4 ml-2 text-muted-foreground" />
+                                                </div>
+                                            </TooltipTrigger>
+                                            <TooltipContent className='bg-white border rounded-md px-4 py-2'>
+                                                <p>Performance score is relative to RTX 3060 12GB (score: 100)</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TableCell>
+                                    <TableCell>
+                                        {editingId === gpu.id ? (
+                                            <Input
+                                            type="number"
+                                            defaultValue={gpu.price}
+                                            onBlur={(e) => handlePriceChange(gpu.id, e.target.value)}
+                                            onKeyPress={(e) => {
+                                                if (e.key === 'Enter') {
+                                                    handlePriceChange(gpu.id, e.currentTarget.value)
+                                                }
+                                            }}
+                                            className="w-20"
+                                            />
+                                            ) : (
                                             <div className="flex items-center">
-                                                {gpu.performance}
-                                                <Info className="h-4 w-4 ml-2 text-muted-foreground" />
-                                            </div>
-                                        </TooltipTrigger>
-                                        <TooltipContent className='bg-white border rounded-md px-4 py-2'>
-                                            <p>Performance score is relative to RTX 3060 12GB (score: 100)</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                </TableCell>
-                                <TableCell>
-                                    {editingId === gpu.id ? (
-                                        <Input
-                                        type="number"
-                                        defaultValue={gpu.price}
-                                        onBlur={(e) => handlePriceChange(gpu.id, e.target.value)}
-                                        onKeyPress={(e) => {
-                                            if (e.key === 'Enter') {
-                                                handlePriceChange(gpu.id, e.currentTarget.value)
-                                            }
-                                        }}
-                                        className="w-20"
-                                        />
-                                        ) : (
-                                        <div className="flex items-center">
-                                            €{gpu.price.toFixed(2)}
-                                            <Button
-                                            variant="ghost"
-                                            size="icon"
-                                            onClick={() => setEditingId(gpu.id)}
-                                            className="ml-2"
-                                            >
-                                            <Edit className="h-4 w-4" />
-                                            <span className="sr-only">Edit price</span>
-                                        </Button>
-                                    </div>
-                                    )}
-                                </TableCell>
-                                <TableCell>
-                                    <Tooltip>
-                                        <TooltipTrigger asChild>
-                                            <div className="flex items-center">
-                                                {(gpu.price / gpu.performance).toFixed(2)}
-                                                <Info className="h-4 w-4 ml-2 text-muted-foreground" />
-                                            </div>
-                                        </TooltipTrigger>
-                                        <TooltipContent className='bg-white border rounded-md px-4 py-2'>
-                                            <p>Calculated as Price / Performance Score</p>
-                                            <p>Lower values indicate better value for money</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                </TableCell>
-                                <TableCell>{gpu.memory + ' ' + gpu.memoryType}</TableCell>
-                                <TableCell>
-                                    <a href={gpu.productUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-2 rounded-md bg-black text-white">
-                                        <span className='hidden sm:flex'>Buy here</span>
-                                        <ShoppingBasketIcon strokeWidth={1.5} size={18} className="sm:ml-2" />
-                                    </a>
-                                </TableCell>
-                            </motion.tr>
-                            ))}
-                        </AnimatePresence>
-                    </TableBody>
-                </Table>
-            </section>
-        </TooltipProvider>
-        )
-    }
-    
-    export default GpuTable
+                                                €{gpu.price.toFixed(2)}
+                                                <Button
+                                                variant="ghost"
+                                                size="icon"
+                                                onClick={() => setEditingId(gpu.id)}
+                                                className="ml-2"
+                                                >
+                                                <Edit className="h-4 w-4" />
+                                                <span className="sr-only">Edit price</span>
+                                            </Button>
+                                        </div>
+                                        )}
+                                    </TableCell>
+                                    <TableCell>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <div className="flex items-center">
+                                                    {(gpu.price / gpu.performance).toFixed(2)}
+                                                    <Info className="h-4 w-4 ml-2 text-muted-foreground" />
+                                                </div>
+                                            </TooltipTrigger>
+                                            <TooltipContent className='bg-white border rounded-md px-4 py-2'>
+                                                <p>Calculated as Price / Performance Score</p>
+                                                <p>Lower values indicate better value for money</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TableCell>
+                                    <TableCell>{gpu.memory + ' ' + gpu.memoryType}</TableCell>
+                                    <TableCell>
+                                        <a href={gpu.productUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-2 rounded-md bg-black text-white">
+                                            <span className='hidden sm:flex'>Buy here</span>
+                                            <ShoppingBasketIcon strokeWidth={1.5} size={18} className="sm:ml-2" />
+                                        </a>
+                                    </TableCell>
+                                </motion.tr>
+                                ))}
+                            </AnimatePresence>
+                        </TableBody>
+                    </Table>
+                    </>
+                    )}
+                </section>
+            </TooltipProvider>
+            )
+        }
+        
+        export default GpuTable

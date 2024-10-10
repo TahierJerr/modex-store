@@ -1,5 +1,6 @@
 import getGraphics from "@/actions/get-graphics"
 import GpuTable from "@/components/gpu-table"
+import Container from "@/components/ui/container"
 import { ClockIcon, MonitorIcon, SlidersHorizontalIcon, TrendingUpIcon } from "lucide-react"
 import { Metadata } from "next"
 
@@ -26,6 +27,7 @@ const GPUComparisonToolPage = async () => {
 
     return (
     <header className="min-h-screen">
+        <Container>
         <div className="w-full max-w-7xl mx-auto p-4 space-y-6 my-12">
             <div className="text-center">
             <h1 className="text-3xl font-bold">MODEX GPU Price to Performance Comparison</h1>
@@ -39,6 +41,7 @@ const GPUComparisonToolPage = async () => {
                 </div>
             <GpuTable data={data} />
         </div>
+        </Container>
     </header>
     )
 }

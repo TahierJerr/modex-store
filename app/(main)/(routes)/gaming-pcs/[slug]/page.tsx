@@ -93,11 +93,9 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
     
     return (
     <div>
-    <Container>
         <ComputerInfo data={computer} />
         <ComputerSpec data={computer} />
         <ComputerList maxItems={3} title="Explore more gaming PCs" description="Check out our other per-builds" id={computer.id}/>
-    </Container>
     </div>
     )
 }

@@ -4,7 +4,7 @@ import Billboard from "@/components/billboard";
 import ComputerList from "@/components/computer-list";
 import BulletSection from "@/components/bulletsection";
 import WhyModex from "@/components/why-modex";
-import Reviews from "@/components/reviews";
+import BuiltByComponent from "@/components/builtby";
 
 export const metadata: Metadata = {
     title: 'MODEX | Pre-built Gaming PCs Built for Performance & Value',
@@ -57,13 +57,11 @@ const HomePage = () => {
 
     return (
         <div>
-            <Container>
             <Billboard />
+            <BuiltByComponent />
             <BulletSection />
-            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={3} viewAllLink={true} />
+            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" />
             <WhyModex />
-            <Reviews />
-            </Container>
         </div>
     )
 }

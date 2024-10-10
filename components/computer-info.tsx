@@ -7,6 +7,7 @@ import useCart from "@/hooks/use-cart";
 import { CheckIcon, ShoppingCart, ShoppingCartIcon } from "lucide-react";
 import Image from "next/image";
 import { track } from "@vercel/analytics";
+import Container from "./ui/container";
 
 interface ComputerInfoProps {
     data: Computer;
@@ -27,7 +28,9 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
     const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'EUR' }).format(Number(data.price));
     
     return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto py-12 px-4 md:px-6 w-full pt-12 md:pt-24 lg:pt-32 my-12">
+    <section className=" py-12 px-4 md:px-6 w-full pt-12 md:pt-24 lg:pt-32 my-12">
+        <Container>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex items-center justify-center">
             <Image
             quality={100}
@@ -75,6 +78,8 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
             </div>
             <Button className="bg-black flex items-center text-white justify-center w-full hover:bg-black/70" onClick={onAddToCart}><ShoppingCartIcon size={24} className="mr-2" />Add to Cart</Button>
         </div>
+        </div>
+        </Container>
     </section>
     );
 }

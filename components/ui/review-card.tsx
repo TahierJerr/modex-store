@@ -1,22 +1,14 @@
 import { Link, StarIcon } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "./avatar"
 import { Computer } from "@/types";
 
 interface ReviewCardProps {
-    imageUrl?: string;
+    className?: string;
     name: string;
-    reviewFrom: string;
-    reviewUrl: string;
-    title: string;
     review: string;
-    productPurchased?: Computer;
-    customProductPurchased?: string;
-    published: string;
     stars: number;
-    avatarFallback?: string;
 }
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ imageUrl, name, reviewFrom, reviewUrl, title, review, productPurchased, customProductPurchased, stars, published, avatarFallback }) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({ name, review, stars, className }) => {
 
     const handleStars = (stars: number) => {
         let starsArray = [];
@@ -29,33 +21,15 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ imageUrl, name, reviewFrom, rev
         return starsArray;
     }
 
-    const product = productPurchased ? (
-        <Link href={`${productPurchased.name.toLowerCase()}*${productPurchased.id}`}>
-            {productPurchased.name}
-        </Link>
-    ) : (
-        customProductPurchased
-    );
-
     return (
-        <div className="rounded-lg bg-card p-6 shadow-sm transition-all duration-300 ease-in-out hover:shadow-lg">
+        <div className={`rounded-lg bg-card p-6 shadow-card-shadow max-w-lg transition-all duration-300 ease-in-out hover:shadow-lg border ${className}`}>
             <div className="mb-4 flex items-center">
-                <Avatar className="mr-4">
-                    <AvatarImage src={imageUrl} />
-                    <AvatarFallback>{avatarFallback}</AvatarFallback>
-                </Avatar>
-                <div>
-                    <p className="text-lg font-semibold">{name}</p>
-                    <a href={`${reviewUrl}`} className="text-sm text-muted-foreground underline-offset-2 underline cursor-pointer">From {reviewFrom}</a>
-                    <div className="text-sm text-muted-foreground">Published {published}</div>
-                </div>
+                <p className="text-md font-semibold">{name}</p>
             </div>
             <div className="mb-4">
-                <p className="text-lg font-semibold">{title}</p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                     {review}
                 </p>
-                <div className="mt-4 text-sm text-muted-foreground">Product Purchased: {product}</div>
             </div>
             <div className="flex items-center gap-2 text-primary">
                 {handleStars(stars)}

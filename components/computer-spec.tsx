@@ -1,5 +1,6 @@
 import { Computer } from "@/types";
 import { CpuIcon, FanIcon, HardDriveIcon, LockIcon, MemoryStickIcon, PcCaseIcon, PowerIcon, ServerIcon } from "lucide-react";
+import Container from "./ui/container";
 
 interface ComputerSpecProps {
     data: Computer;
@@ -8,6 +9,7 @@ interface ComputerSpecProps {
 const ComputerSpec: React.FC<ComputerSpecProps> = ({ data }) => {
     return (
     <section className="py-12 md:py-16 lg:py-20 bg-muted">
+        <Container>
         <div className="container px-4 ">
             <div className="mx-auto max-w-4xl">
                 <div className="mb-8 md:mb-12 lg:mb-16">
@@ -98,6 +100,7 @@ const ComputerSpec: React.FC<ComputerSpecProps> = ({ data }) => {
                 </div>
             </div>
         </div>
+        </Container>
     </section>
     );
 }
