@@ -1,8 +1,9 @@
-import getGraphics from "@/actions/get-graphics"
-import GpuTable from "@/components/gpu-table"
+import GPUTableLoad from "@/components/gpu-table-load"
 import Container from "@/components/ui/container"
+import Loader from "@/components/ui/loading"
 import { ClockIcon, MonitorIcon, SlidersHorizontalIcon, TrendingUpIcon } from "lucide-react"
 import { Metadata } from "next"
+import { Suspense } from "react"
 
 export const metadata: Metadata = {
     title: 'MODEX | GPU Price to Performance Comparison',
@@ -22,8 +23,7 @@ export const metadata: Metadata = {
     ]
 }
 
-const GPUComparisonToolPage = async () => {
-    const data = await getGraphics()
+const GPUComparisonToolPage = () => {
 
     return (
     <header className="min-h-screen">
@@ -39,7 +39,9 @@ const GPUComparisonToolPage = async () => {
                     <span className="text-sm bg-gray-50/10 border border-gray-200 p-6 rounded-md flex gap-4 items-center"><SlidersHorizontalIcon className="text-gray-400" size={32} strokeWidth={1.5} /> Customizable filters to match your exact requirements</span>
                     <span className="text-sm bg-gray-50/10 border border-gray-200 p-6 rounded-md flex gap-4 items-center"><TrendingUpIcon className="text-gray-400" size={32} strokeWidth={1.5} /> Expert insights on price-to-performance ratios</span>
                 </div>
-            <GpuTable data={data} />
+            <Suspense fallback={<Loader />}>
+                <GPUTableLoad />
+            </Suspense>
         </div>
         </Container>
     </header>
