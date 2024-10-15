@@ -48,7 +48,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
         if (data.memory.type === "DDR5") {
             return (
-                <Badge className="absolute top-0 right-0 m-4 font-light bg-emerald-700">Future proof!</Badge>
+                <Badge className="absolute top-0 right-0 m-4 font-light hover:bg-emerald-700 bg-emerald-700">Future proof!</Badge>
             );
         }
     }
