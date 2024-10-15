@@ -7,12 +7,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useState, useEffect } from 'react';
-import { Loader2 } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion"
+import Loader from "../ui/loading"
 
 const messages = [
 "We're finding the best deals for you...",
 "Comparing prices across multiple vendors...",
-"Checking for any special discounts...",
 "Analyzing market trends for better offers...",
 "Finalizing the results for you...",
 ]
@@ -113,21 +113,46 @@ const GPUTableSkeleton = () => {
                     ))}
                 </TableBody>
             </Table>
-            {showPopup && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-                    <div className="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full mx-4 animate-in fade-in duration-300">
-                        <div className="flex flex-col items-center space-y-4">
-                            <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                            <h2 className="text-xl font-semibold text-center">Loading Best Prices</h2>
-                            <p className="text-muted-foreground text-center h-12 flex items-center transition-opacity duration-300 ease-in-out">
-                                {currentMessage}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                )}
-            </section>
-            )
-        }
-        
-        export default GPUTableSkeleton
+            <AnimatePresence>
+                {showPopup && (
+                    <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+                    >
+                    <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.9, opacity: 0 }}
+                    transition={{ type: "spring", damping: 15, stiffness: 300 }}
+                    className="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full mx-4"
+                    >
+                    <div className="flex flex-col items-center space-y-4">
+                        <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                        >
+                        <Loader />
+                    </motion.div>
+                    <h2 className="text-2xl font-semibold text-center">Loading Best Prices</h2>
+                    <motion.p
+                    key={currentMessage}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-muted-foreground text-center h-12 flex items-center"
+                    >
+                    {currentMessage}
+                </motion.p>
+            </div>
+        </motion.div>
+    </motion.div>
+    )}
+</AnimatePresence>
+</section>
+)
+}
+
+export default GPUTableSkeleton
