@@ -1,4 +1,5 @@
 import GPUTableLoad from "@/components/gpu-table-load"
+import GPUTableSkeleton from "@/components/skeleton/gpu-table-skeleton"
 import Container from "@/components/ui/container"
 import Loader from "@/components/ui/loading"
 import { ClockIcon, MonitorIcon, SlidersHorizontalIcon, TrendingUpIcon } from "lucide-react"
@@ -39,7 +40,7 @@ const GPUComparisonToolPage = () => {
                     <span className="text-sm bg-gray-50/10 border border-gray-200 p-6 rounded-md flex gap-4 items-center"><SlidersHorizontalIcon className="text-gray-400" size={32} strokeWidth={1.5} /> Customizable filters to match your exact requirements</span>
                     <span className="text-sm bg-gray-50/10 border border-gray-200 p-6 rounded-md flex gap-4 items-center"><TrendingUpIcon className="text-gray-400" size={32} strokeWidth={1.5} /> Expert insights on price-to-performance ratios</span>
                 </div>
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={<GPUTableSkeleton />}>
                 <GPUTableLoad />
             </Suspense>
         </div>
