@@ -1,11 +1,48 @@
+"use client"
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
+import { useState, useEffect } from 'react';
+import { Loader2 } from "lucide-react"
+
+const messages = [
+"We're finding the best deals for you...",
+"Comparing prices across multiple vendors...",
+"Checking for any special discounts...",
+"Analyzing market trends for better offers...",
+"Finalizing the results for you...",
+]
 
 const GPUTableSkeleton = () => {
+    const [progress, setProgress] = useState(0)
+    const [currentMessage, setCurrentMessage] = useState(messages[0])
+    const [showPopup, setShowPopup] = useState(false)
+    
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentMessage((prevMessage) => {
+                const currentIndex = messages.indexOf(prevMessage)
+                const nextIndex = (currentIndex + 1) % messages.length
+                return messages[nextIndex]
+            })
+        }, 5000) // Change message every 3 seconds
+        
+        return () => clearInterval(intervalId)
+    }, [])
+    
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPopup(true);
+        }, 5000);
+        
+        return () => clearTimeout(timer);
+    }, []);
+    
+    
     return (
     <section className="my-12 gap-4 flex flex-col">
         <div className="flex flex-col md:flex-row gap-4">
@@ -76,8 +113,21 @@ const GPUTableSkeleton = () => {
                     ))}
                 </TableBody>
             </Table>
-        </section>
-        )
-    }
-
-export default GPUTableSkeleton
+            {showPopup && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+                    <div className="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full mx-4 animate-in fade-in duration-300">
+                        <div className="flex flex-col items-center space-y-4">
+                            <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                            <h2 className="text-xl font-semibold text-center">Loading Best Prices</h2>
+                            <p className="text-muted-foreground text-center h-12 flex items-center transition-opacity duration-300 ease-in-out">
+                                {currentMessage}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                )}
+            </section>
+            )
+        }
+        
+        export default GPUTableSkeleton
