@@ -5,6 +5,8 @@ import ComputerList from "@/components/computer-list";
 import BulletSection from "@/components/bulletsection";
 import WhyModex from "@/components/why-modex";
 import BuiltByComponent from "@/components/builtby";
+import { Suspense } from "react";
+import Loader from "@/components/ui/loading";
 
 export const metadata: Metadata = {
     title: 'MODEX | Pre-built Gaming PCs Built for Performance & Value',
@@ -60,7 +62,9 @@ const HomePage = () => {
             <Billboard />
             <BuiltByComponent />
             <BulletSection />
-            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" />
+            <Suspense fallback={<Loader />}>
+                <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" />
+            </Suspense>
             <WhyModex />
         </div>
     )
