@@ -1,4 +1,5 @@
 "use client"
+export const maxDuration = 60;
 
 import { useEffect, useMemo, useState } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table'

@@ -1,7 +1,8 @@
+export const maxDuration = 60;
+
 import GPUTableLoad from "@/components/gpu-table-load"
 import GPUTableSkeleton from "@/components/skeleton/gpu-table-skeleton"
 import Container from "@/components/ui/container"
-import Loader from "@/components/ui/loading"
 import { ClockIcon, MonitorIcon, SlidersHorizontalIcon, TrendingUpIcon } from "lucide-react"
 import { Metadata } from "next"
 import { Suspense } from "react"
