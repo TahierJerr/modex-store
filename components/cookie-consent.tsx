@@ -53,7 +53,7 @@ const CookieConsentComponent = () => {
   >
     <p className='text-black'>
     Our website uses cookies and analytics to improve our services.{' '}
-    <Link href="/cookies" className='text-primary underline'>Click here for more information</Link> about our cookies.</p>
+    <Link href="/cookies" prefetch={false} className='text-primary underline'>Click here for more information</Link> about our cookies.</p>
   </CookieConsent>
   {consentAccepted && <SpeedInsights />}
     {consentAccepted && <Analytics />}
