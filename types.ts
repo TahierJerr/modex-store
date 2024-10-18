@@ -182,6 +182,7 @@ export interface Cooler {
     radiatorLength: number; // Length of the radiator for AIO coolers (if applicable)
     radiatorThickness: number; // Thickness of the radiator for AIO coolers (if applicable)
     newType: CoolerType; // add to prisma schema
+    socket: SocketType; // add to prisma schema
 }
 
 export interface Motherboard {

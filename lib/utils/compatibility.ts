@@ -9,25 +9,25 @@ export function isMemoryCompatible(memory: Memory, motherboard: Motherboard): bo
     if (memory.type !== motherboard.memoryType) {
         return false;
     }
-
+    
     if (memory.modules > motherboard.memorySlots) {
         return false;
     }
-
+    
     if (memory.capacityNumber > motherboard.maxMemoryCapacity) {
         return false;
     }
-
+    
     return true;
 }
 
 export function isGpuCompatibleWithCase(graphics: Graphics, pccase: Pccase) {
     const lengthCompatible = graphics.length <= pccase.maxGpuLength;
-
+    
     const widthCompatible = graphics.width <= pccase.maxGpuWidth;
-
+    
     const slotsCompatible = graphics.slots <= pccase.maxGpuSlots;
-
+    
     return lengthCompatible && widthCompatible && slotsCompatible;
 }
 
@@ -39,22 +39,47 @@ export function isCoolerCompatibleWithCase(cooler: Cooler, pccase: Pccase): bool
     if (cooler.radiatorLength !== undefined) {
         const maxRadiatorLength = pccase.maxGpuLength;
         const maxRadiatorThickness = 60;
-
+        
         return (
             cooler.radiatorLength <= maxRadiatorLength &&
             (cooler.radiatorThickness !== undefined ? cooler.radiatorThickness <= maxRadiatorThickness : true)
-        );
+            );
+        }
+        
+        return false;
+    }
+    
+    export function isPowerCompatibleWithGpu(graphics: Graphics, power: Power): boolean {
+        const wattage = parseInt(power.wattage.replace(/W/i, "").trim());
+        
+        return wattage >= graphics.minWattage;
+    }
+    
+    export function isMotherboardCompatibleWithCase(motherboard: Motherboard, pccase: Pccase): boolean {
+        return motherboard.formFactor === pccase.formFactor;
     }
 
-    return false;
-}
-
-export function isPowerCompatibleWithGpu(graphics: Graphics, power: Power): boolean {
-    const wattage = parseInt(power.wattage.replace(/W/i, "").trim());
-
-    return wattage >= graphics.minWattage;
-}
-
-export function isMotherboardCompatibleWithCase(motherboard: Motherboard, pccase: Pccase): boolean {
-    return motherboard.formFactor === pccase.formFactor;
-}
+    export function isCoolerCompatibleWithProcessor(cooler: Cooler, processor: Processor): boolean {
+        return cooler.socket === processor.socket;
+    }
+    
+    
+    export function isBuildCompatible(
+        processor: Processor,
+        motherboard: Motherboard,
+        memory: Memory,
+        graphics: Graphics,
+        pccase: Pccase,
+        cooler: Cooler,
+        power: Power
+        ): boolean {
+            return (
+                isSocketCompatible(processor, motherboard) &&
+                isMemoryCompatible(memory, motherboard) &&
+                isGpuCompatibleWithCase(graphics, pccase) &&
+                isCoolerCompatibleWithCase(cooler, pccase) &&
+                isPowerCompatibleWithGpu(graphics, power) &&
+                isMotherboardCompatibleWithCase(motherboard, pccase)
+                );
+            }
+            
