@@ -1,15 +1,24 @@
 "use client"
 
 import Link from 'next/link';
-import { BanknoteIcon, FacebookIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
+import { BanknoteIcon, CopyIcon, CopyCheckIcon, FacebookIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon } from 'lucide-react';
 import Image from 'next/image';
 import TiktokLogo from './tiktok-logo';
 import Container from './ui/container';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 
-const Footer = () => {    
+const Footer = () => {
+    const [isCopied, setIsCopied] = useState(false);
+
     const handleCopyToClipboard = () => {
+        setIsCopied(true);
         navigator.clipboard.writeText('NL03REVO8295671783');
+        toast.success('IBAN copied to clipboard');
+        setTimeout(() => {
+            setIsCopied(false);
+        }, 4000);
     };
 
     return (
@@ -38,7 +47,9 @@ const Footer = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <BanknoteIcon className="w-5 h-5" />
-                            <p>IBAN: <span className='underline underline-offset-2 cursor-pointer' onClick={handleCopyToClipboard}>NL13 REVO 6924 8820 56</span></p>
+                            <p className='flex items-center'>IBAN: <span className='underline underline-offset-2 cursor-pointer' onClick={handleCopyToClipboard}>NL13 REVO 6924 8820 56</span>
+                            {isCopied && <CopyCheckIcon className='w-5 h-5 ml-2' />}
+                            </p>
                         </div>
                         <div className="flex items-center gap-2">
                             <LandmarkIcon className="w-5 h-5" />

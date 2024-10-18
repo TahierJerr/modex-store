@@ -1,6 +1,6 @@
 'use client';
 
-import { SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from 'react'
@@ -20,20 +20,25 @@ const menuItems = [
 { title: 'GPU Comparison Tool', href: '/gpu-comparison-tool' }
 ];
 
-const NavbarComponent: React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
+const NavbarComponent: React.FC<NavbarComponentProps> = ({}) => {
     const router = useRouter()
+    const auth = useUser()
+    const isSignedIn = auth.isSignedIn
+    const user = auth.user
+    
+    // fullName can only be one firstname and one lastname
     
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
-
+    
     const handleCartButton = () => {
         router.push('/cart')
     }
     
     const handleUserButton = () => {
-        if (!userSignedIn) {
+        if (!isSignedIn) {
             return (
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 ml-3">
                 <SignInButton
                 forceRedirectUrl="/"
                 fallbackRedirectUrl="/"
@@ -52,7 +57,7 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
             signInForceRedirectUrl="/"
             mode="modal"
             >
-            <Button className="w-24 h-10">
+            <Button className="w-24 h-10 ml-3">
                 <span className="text-sm font-medium">Sign Up</span>
             </Button>
         </SignUpButton>
@@ -61,12 +66,16 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({ userSignedIn }) => {
 }
 
 return (
-<UserButton signInUrl="/sign-in">
-    {/* <UserButton.MenuItems>
-        <UserButton.Link label="Orders" labelIcon={<TruckIcon size={15} />} href="/orders" />
-        <UserButton.Link label="Favourites" labelIcon={<HeartIcon size={15} />} href="/favourites" />
-    </UserButton.MenuItems> */}
-</UserButton>
+<div className="flex items-center gap-2 w-full">
+    <p className="hidden sm:flex items-center">{user?.fullName}</p>
+    <UserButton signInUrl="/sign-in">
+        {/* <UserButton.MenuItems>
+            <UserButton.Link label="Orders" labelIcon={<TruckIcon size={15} />} href="/orders" />
+            <UserButton.Link label="Favourites" labelIcon={<HeartIcon size={15} />} href="/favourites" />
+        </UserButton.MenuItems> */}
+    </UserButton>
+    <p className="flex sm:hidden items-center text-sm">{user?.firstName}</p>
+</div>
 )
 }
 
@@ -102,30 +111,30 @@ return (
                     initial={false}
                     >
                     <ShoppingCart className="h-6 w-6 text-gray-500" />
-                    </motion.div>
-                    <button
-                    onClick={handleUserButton}
-                    className="ml-4 p-1 rounded-full text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
-                    >
-                    {handleUserButton()}
-                </button>
-            </div>
-            <div className="-mr-2 flex items-center sm:hidden">
+                </motion.div>
                 <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+                onClick={handleUserButton}
+                className="ml-4 p-1 rounded-full text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
                 >
-                <span className="sr-only">Open main menu</span>
-                {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
+                {handleUserButton()}
             </button>
         </div>
+        <div className="-mr-2 flex items-center sm:hidden">
+            <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+            >
+            <span className="sr-only">Open main menu</span>
+            {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
+        </button>
     </div>
+</div>
 </div>
 
 <AnimatePresence>
     {isOpen && (
         <motion.div
-        className="sm:hidden"
+        className="sm:hidden bg-white" // Add the desired bg color here
         initial={{ opacity: 0, height: 0 }}
         animate={{ opacity: 1, height: 'auto' }}
         exit={{ opacity: 0, height: 0 }}
@@ -136,35 +145,32 @@ return (
                 <Link
                 key={item.title}
                 href={item.href}
+                onClick={() => setIsOpen(false)}
                 className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
                     pathname === item.href
                     ? 'border-black text-black bg-gray-50'
                     : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'
-                }`}
+                } bg-white`} // Add bg here if needed
                 >
                 {item.title}
             </Link>
+            
             ))}
         </div>
         <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center px-4">
-                <div className="flex-shrink-0 text-gray-400">
-                    <User className="h-10 w-10 ml-auto flex-shrink-0 bg-transparent p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" />
-                </div>
-                <div className="ml-3">
-                    {handleUserButton()}
-                </div>
+                {handleUserButton()}
                 <motion.div
-                    onClick={handleCartButton}
-                    className="relative cursor-pointer"
-                    initial={false}
-                    >
-                    <ShoppingCart className="h-6 w-6 text-gray-500" />
-                </motion.div>
-            </div>
+                onClick={handleCartButton}
+                className="relative cursor-pointer w-full flex items-center justify-end"
+                initial={false}
+                >
+                <ShoppingCart className="h-6 w-6 text-gray-500" />
+            </motion.div>
         </div>
-    </motion.div>
-    )}
+    </div>
+</motion.div>
+)}
 </AnimatePresence>
 </Container>
 </nav>
