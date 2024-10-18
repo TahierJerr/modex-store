@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const GPUComparisonToolPage = () => {
     
     return (
-    <header className="min-h-screen">
+    <header className="min-h-screen w-full py-12 md:py-24 lg:py-24 xl:py-32">
         <Container>
             <div className="w-full max-w-7xl mx-auto p-4 space-y-6 my-12">
                 <div className="text-center">

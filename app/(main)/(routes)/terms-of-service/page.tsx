@@ -1,3 +1,4 @@
+import Container from '@/components/ui/container'
 import type { Metadata } from 'next'
 
 
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function Voorwaarden() {
     return (
     <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32 mt-32 mb-16">
+        <Container>
         <h1 className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-12 mt-12">Terms of Service</h1>
         <div className="space-y-2 md:space-y-4 lg:space-y-6 xl:space-y-8">
             
@@ -66,13 +68,13 @@ export default function Voorwaarden() {
             <p className="text-2xl font-bold mb-4">Article 2 - Identity of the entrepreneur</p>
             
             <p className="text-lg mb-4">MODEX </p>
-            <p className="text-lg mb-4">Draakstraat 7</p>
+            <p className="text-lg mb-4">Asingastraat 98</p>
             
-            <p className="text-lg mb-4">9742TD Groningen</p>
+            <p className="text-lg mb-4">9716ES Groningen</p>
             <p className="text-lg mb-4">The Netherlands</p>
             
             <p className="text-lg mb-4">Phone number: +316 49146060</p>
-            <p className="text-lg mb-4">Email: info@modex-pc.nl</p>
+            <p className="text-lg mb-4">Email: info@modexgaming.com</p>
             <p className="text-lg mb-4">KVK: 89703685</p>
             <p className="text-lg mb-4">BTW number: NL004752554B13</p>
             
@@ -320,6 +322,7 @@ export default function Voorwaarden() {
                 
                 <a href="algemene-voorwaarden-modex.pdf" download><p className="mt-8 text-xl underline text-primary">Download terms and conditions PDF (Dutch)</p></a>
             </div>
+            </Container>
         </div>
         
         )
