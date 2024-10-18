@@ -18,6 +18,8 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
 }) => {
     
     const cart = useCart();
+
+    
     
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();
