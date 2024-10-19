@@ -4,7 +4,7 @@ import { Computer } from "@/types";
 import { Button } from "@/components/ui/button";
 import { MouseEventHandler } from "react";
 import useCart from "@/hooks/use-cart";
-import { CheckIcon, ShoppingCart, ShoppingCartIcon } from "lucide-react";
+import { CheckIcon, ShoppingCartIcon } from "lucide-react";
 import Image from "next/image";
 import { track } from "@vercel/analytics";
 import Container from "./ui/container";
@@ -16,10 +16,8 @@ interface ComputerInfoProps {
 const ComputerInfo: React.FC<ComputerInfoProps> = ({
     data
 }) => {
-    
-    const cart = useCart();
 
-    
+    const cart = useCart()
     
     const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.stopPropagation();

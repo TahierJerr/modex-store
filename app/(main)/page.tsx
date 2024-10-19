@@ -1,4 +1,3 @@
-import Container from "@/components/ui/container";
 import type { Metadata } from 'next'
 import Billboard from "@/components/billboard";
 import ComputerList from "@/components/computer-list";

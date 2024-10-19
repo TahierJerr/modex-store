@@ -18,9 +18,9 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ data }) => {
     const router = useRouter();
+    const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
 
     const handleClick = () => {
-        const slug = `${data?.name.toLowerCase().replace(/\s/g, '-')}*${data?.id}`;
         track('Clicked on product', { product: data.name, }, { flags: ['product_click'] });
         router.push(`/gaming-pcs/${encodeURIComponent(slug)}`);
     };
@@ -54,7 +54,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
     }
     
     return (
-        <div onClick={handleClick} className="relative overflow-hidden transition-transform duration-300 ease-in-out rounded-lg shadow-lg group hover:shadow-xl hover:-translate-y-2 cursor-pointer">
+        <div onClick={handleClick} onMouseEnter={() => (router.prefetch(`/gaming-pcs/${encodeURIComponent(slug)}`))} className="relative overflow-hidden transition-transform duration-300 ease-in-out rounded-lg shadow-lg group hover:shadow-xl hover:-translate-y-2 cursor-pointer">
             <Image src={data.images[0].url} alt={`${data.name} image`} width={500} height={400} quality={75} className=" object-contain w-full h-64 bg-white pt-1" loading="lazy"/>
             <div className="p-4 bg-background flex gap-4 flex-col">
                 <h3 className="text-xl font-bold text-primary">{data.name}</h3>
@@ -75,7 +75,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 <div className="flex items-center justify-between">
                     <p className="font-semibold md:text-xl text-primary text-lg">{formattedPrice}</p>
                     <div className="gap-2 flex items-center ">
-                    <Button onClick={onAddToCart} className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                    <Button onMouseEnter={() => (router.prefetch(`/gaming-pcs/${encodeURIComponent(slug)}`))} onClick={onAddToCart} className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
                         <ShoppingCartIcon className="w-4 h-4 mr-2" />
                         Buy now
                     </Button>

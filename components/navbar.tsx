@@ -26,8 +26,6 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({}) => {
     const isSignedIn = auth.isSignedIn
     const user = auth.user
     
-    // fullName can only be one firstname and one lastname
-    
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
     
@@ -94,6 +92,7 @@ return (
                         <Link
                         key={item.title}
                         href={item.href}
+                        onMouseEnter={() => (router.prefetch(item.href))}
                         className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors duration-200 ease-in-out ${
                             pathname === item.href
                             ? 'border-black text-black'
@@ -105,13 +104,9 @@ return (
                     ))}
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                    <motion.div
-                    onClick={handleCartButton}
-                    className="relative cursor-pointer"
-                    initial={false}
-                    >
-                    <ShoppingCart className="h-6 w-6 text-gray-500" />
-                </motion.div>
+                        <Link className="relative cursor-pointer" href="/cart" prefetch={false} onMouseEnter={() => (router.prefetch("/cart"))}>
+                        <ShoppingCart className="h-6 w-6 text-gray-500" />
+                    </Link>
                 <button
                 onClick={handleUserButton}
                 className="ml-4 p-1 rounded-full text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
@@ -134,7 +129,7 @@ return (
 <AnimatePresence>
     {isOpen && (
         <motion.div
-        className="sm:hidden bg-white" // Add the desired bg color here
+        className="sm:hidden bg-white"
         initial={{ opacity: 0, height: 0 }}
         animate={{ opacity: 1, height: 'auto' }}
         exit={{ opacity: 0, height: 0 }}
@@ -146,11 +141,12 @@ return (
                 key={item.title}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
+                onMouseEnter={() => (router.prefetch(item.href))}
                 className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
                     pathname === item.href
                     ? 'border-black text-black bg-gray-50'
                     : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700'
-                } bg-white`} // Add bg here if needed
+                } bg-white`}
                 >
                 {item.title}
             </Link>
@@ -160,13 +156,9 @@ return (
         <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center px-4">
                 {handleUserButton()}
-                <motion.div
-                onClick={handleCartButton}
-                className="relative cursor-pointer w-full flex items-center justify-end"
-                initial={false}
-                >
-                <ShoppingCart className="h-6 w-6 text-gray-500" />
-            </motion.div>
+                <Link href="/cart" className="relative cursor-pointer w-full flex items-center justify-end" prefetch={false} onMouseEnter={() => (router.prefetch("/cart"))}>
+                    <ShoppingCart className="h-6 w-6 text-gray-500" />
+                </Link>
         </div>
     </div>
 </motion.div>

@@ -1,5 +1,4 @@
 import getComputer from "@/actions/get-computer";
-import Container from "@/components/ui/container";
 import ComputerInfo from "@/components/computer-info";
 import type { Metadata } from 'next'
 import NoResults from "@/components/ui/no-results";

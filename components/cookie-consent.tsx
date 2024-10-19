@@ -1,64 +1,65 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Cookies from 'js-cookie';
-import CookieConsent from 'react-cookie-consent';
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import Cookies from 'js-cookie'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react'
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
-const CookieConsentComponent = () => {
-  const [consentAccepted, setConsentAccepted] = useState(false);
+export default function CookieConsentComponent() {
+  const [consentAccepted, setConsentAccepted] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
-    const cookieConsent = Cookies.get('cookie_consent_is_true');
-    setConsentAccepted(cookieConsent === 'true');
-  }, []);
+    const cookieConsent = Cookies.get('cookie_consent')
+    if (cookieConsent === undefined) {
+      setIsVisible(true)
+    } else {
+      setConsentAccepted(cookieConsent === 'true')
+    }
+  }, [])
 
-  const handleAcceptCookies = () => {
-    Cookies.set('cookie_consent_is_true', 'true', { expires: 365 });
-    setConsentAccepted(true);
-  };
+  const handleConsent = (accepted: boolean) => {
+    Cookies.set('cookie_consent', accepted.toString(), { expires: 365 })
+    setConsentAccepted(accepted)
+    setIsVisible(false)
+  }
 
-  const handleRejectCookies = () => {
-    Cookies.remove('cookie_consent_is_true');
-    setConsentAccepted(false);
-  };
-   return (
-    <div>
-    <CookieConsent
-    location="bottom"
-    buttonText="Accept"
-    declineButtonText="Decline"
-    style={{
-        background: '#ffffff',
-        borderTop: "1px solid #000000",
-        boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-    }}
-    buttonStyle={{ 
-        background: "#007600", 
-        color: "#fff",
-        fontSize: "14px",
-        borderRadius: "4px",
-    }}
-    declineButtonStyle={{ 
-        color: "#fffffff", 
-        fontSize: "14px", 
-        borderRadius: "4px",
-    }}
-    expires={150}
-    enableDeclineButton
-    onAccept={handleAcceptCookies}
-    onDecline={handleRejectCookies}
-  >
-    <p className='text-black'>
-    Our website uses cookies and analytics to improve our services.{' '}
-    <Link href="/cookies" prefetch={false} className='text-primary underline'>Click here for more information</Link> about our cookies.</p>
-  </CookieConsent>
-  {consentAccepted && <SpeedInsights />}
-    {consentAccepted && <Analytics />}
-  </div>
-   );
-};
+  if (!isVisible) {
+    return (
+      <>
+        {consentAccepted && <SpeedInsights />}
+        {consentAccepted && <Analytics />}
+      </>
+    )
+  }
 
-export default CookieConsentComponent;
+  return (
+    <div className="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-xl">
+      <Card className="bg-background/80 backdrop-blur-sm">
+        <CardContent className="pt-6">
+          <p className="text-sm text-muted-foreground">
+            We use cookies and analytics to improve our services. By using our site, you agree to our use of cookies.
+          </p>
+        </CardContent>
+        <CardFooter className="flex justify-between">
+          <Button variant="outline" size="sm" onClick={() => handleConsent(false)}>
+            Decline
+          </Button>
+          <div className="space-x-2">
+            <Button variant="outline" size="sm" onClick={() => router.push('/cookies')}>
+              Learn More
+            </Button>
+            <Button size="sm" onClick={() => handleConsent(true)}>
+              Accept
+            </Button>
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
+  )
+}
