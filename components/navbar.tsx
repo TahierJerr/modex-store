@@ -29,10 +29,6 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({}) => {
     const [isOpen, setIsOpen] = useState(false)
     const pathname = usePathname()
     
-    const handleCartButton = () => {
-        router.push('/cart')
-    }
-    
     const handleUserButton = () => {
         if (!isSignedIn) {
             return (
