@@ -49,7 +49,7 @@ const Summary = () => {
     const checkOutButton = () => {
         if (!isSignedIn) {
             return (
-            <div className="my-6 p-6 border rounded-lg shadow-lg bg-gray-50">
+            <div className="my-6 p-6">
                 <p className="text-lg font-semibold text-gray-700 mb-4">
                     Sign in or sign up to checkout
                 </p>
