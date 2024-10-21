@@ -5,7 +5,8 @@ import ToastProvider from '@/providers/toast-provider'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs'
 import Head from 'next/head'
-import Container from '@/components/ui/container'
+import { Metadata } from 'next'
+import Script from 'next/script'
 
 const font = Poppins({
     subsets: ['latin'],
@@ -21,6 +22,11 @@ const font = Poppins({
         <title>MODEX</title>
 </Head> */
 
+export const metadata: Metadata = {
+    title: 'MODEX | Custom Gaming PCs Built for Performance & Value',
+    description: 'MODEX is the best place to buy your new gaming PC. Our pre-built PCs deliver exceptional performance and reliability. Order your MODEX Gaming PC today!',
+}
+
 
 export default function RootLayout({
     children,
@@ -30,7 +36,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <Head>
-                <script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async />
+                <Script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async />
                 <link rel="apple-touch-icon" href="/icon.png" type='image/png' sizes='32x32' />
             </Head>
         <body className={font.className + " bg-white overflow-x-hidden"}>
