@@ -5,14 +5,11 @@ import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { toast } from "react-hot-toast";
 
-import Button from "@/components/ui/button";
-import Currency from "@/components/ui/currency";
+import { Button } from "@/components/ui/button";
 import useCart from "@/hooks/use-cart";
-<<<<<<< Updated upstream
-=======
-import Image from "next/image";
 import { SignInButton, SignUpButton, useUser } from "@clerk/nextjs";
->>>>>>> Stashed changes
+import Currency from "@/components/ui/currency";
+import Image from "next/image";
 
 const Summary = () => {
     const searchParams = useSearchParams();
@@ -20,6 +17,7 @@ const Summary = () => {
     const removeAll = useCart((state) => state.removeAll);
     const auth = useUser();
     const isSignedIn = auth.isSignedIn;
+    const user = auth.user;
     
     useEffect(() => {
         if (searchParams.get("success")) {
@@ -37,7 +35,11 @@ const Summary = () => {
     }, 0);
     
     const onCheckout = async () => {
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
+        if (!user) {
+            return;
+        }
+
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout?userId=${user.id}`, {
             computerIds: items.map((item) => item.id),
         });
         
@@ -64,11 +66,6 @@ const Summary = () => {
                     </SignUpButton>
                 </div>
             </div>
-<<<<<<< Updated upstream
-            <Button disabled={items.length === 0} title="Checkout" onClick={onCheckout} className="bg-white w-full mt-6 text-black border border-black">
-                Order now
-            </Button>
-=======
             
             )
         }
@@ -94,13 +91,12 @@ const Summary = () => {
                 <p className="text-lg font-medium">Total including VAT:</p>
                 <Currency value={totalPrice} />
             </div>
->>>>>>> Stashed changes
         </div>
         {checkOutButton()}
         {searchParams.get("success") && (
             <div className="trustpilot-widget mt-10 text-xl border-2 border-green-500 text-center font-semibold py-2">
                 <a href="https://www.trustpilot.com/review/modexgaming.com" className="flex items-center justify-center text-green-600 hover:text-green-800" target="_blank" rel="noopener">
-                    Review us on 
+                    Review us on
                     <Image src='https://cdn.trustpilot.net/brand-assets/4.3.0/logo-black.svg' className="ml-2" alt="Trustpilot Logo" height={125} width={125} loading="lazy"/>
                 </a>
             </div>
