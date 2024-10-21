@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import NoResults from "@/components/ui/no-results";
 import ComputerSpec from "@/components/computer-spec";
 import ComputerList from "@/components/computer-list";
+import SpecGrid from "./components/spec-grid";
 
 interface ComputerPageProps {
     params: {
@@ -93,6 +94,7 @@ const ComputerPage: React.FC<ComputerPageProps> = async ({ params }) => {
     return (
     <div>
         <ComputerInfo data={computer} />
+        <SpecGrid data={computer} />
         <ComputerSpec data={computer} />
         <ComputerList maxItems={3} title="Explore more gaming PCs" description="Check out our other per-builds" id={computer.id}/>
     </div>
