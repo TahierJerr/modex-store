@@ -52,7 +52,7 @@ const GpuTable: React.FC<GpuTableProps> = ({ data }) => {
                 (selectedResolutions.length === 0 || // Show all if no resolutions are selected
                 (selectedResolutions.includes('4k') && gpu.performance >= 200) ||
                 (selectedResolutions.includes('1440p') && gpu.performance >= 110) ||
-                (selectedResolutions.includes('1080p') && gpu.performance >= 80)) &&
+                (selectedResolutions.includes('1080p') && gpu.performance >= 60)) &&
                 (minPrice === '' || gpu.price >= parseInt(minPrice)) &&
                 (maxPrice === '' || gpu.price <= parseInt(maxPrice)) &&
                 selectedBrands.includes(gpu.brand as Brand)
