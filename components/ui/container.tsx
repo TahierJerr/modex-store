@@ -6,7 +6,7 @@ const Container: React.FC<ContainerProps> = ({
     children
 }) => {
     return (
-        <div className="mx-auto max-w-screen-xl px-4 lg:px-[9rem]">
+        <div className="mx-auto max-w-screen-lg px-4 sm:px-0">
             {children}
         </div>
     )
