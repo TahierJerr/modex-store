@@ -341,7 +341,7 @@ className={`ml-2 text-gray-400 overflow-hidden`}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
                         <span>{gpu.name}</span>
                         <div className="hidden sm:flex flex-wrap gap-1 mt-1 sm:mt-0">
-                            {gpu.performance >= 80 && <Badge variant="secondary">1080p</Badge>}
+                            {gpu.performance >= 60 && <Badge variant="secondary">1080p</Badge>}
                             {gpu.performance >= 110 && <Badge variant="secondary">1440p</Badge>}
                             {gpu.performance >= 200 && <Badge variant="secondary">4K</Badge>}
                         </div>
