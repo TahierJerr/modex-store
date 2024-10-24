@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import ComputerList from "@/components/computer-list";
 import GamingPcHero from "./components/gaming-pc-hero";
+import Loader from '@/components/ui/loading';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
@@ -24,7 +26,9 @@ const CategoryPage =  () => {
     return (
     <>
         <GamingPcHero />
-        <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={6} />
+        <Suspense fallback={<Loader />}>
+            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" />
+        </Suspense>
     </>
     )
 }
