@@ -152,8 +152,8 @@ return (
         <div className="pt-4 pb-3 border-t border-gray-200">
             <div className="flex items-center px-4">
                 {handleUserButton()}
-                <Link href="/cart" className="relative cursor-pointer w-full flex items-center justify-end" prefetch={false} onMouseEnter={() => (router.prefetch("/cart"))}>
-                    <ShoppingCart className="h-6 w-6 text-gray-500" />
+                <Link href="/cart" aria-label="cart" className="relative cursor-pointer w-full flex items-center justify-end" prefetch={false} onMouseEnter={() => (router.prefetch("/cart"))}>
+                    <ShoppingCart aria-label="cart" className="h-6 w-6 text-gray-500" />
                 </Link>
         </div>
     </div>

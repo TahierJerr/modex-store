@@ -47,7 +47,7 @@ const Footer = () => {
                         </div>
                         <div className="flex items-center gap-2">
                             <BanknoteIcon className="w-5 h-5" />
-                            <p className='flex items-center'>IBAN: <span className='underline underline-offset-2 cursor-pointer' onClick={handleCopyToClipboard}>NL13 REVO 6924 8820 56</span>
+                            <p className='flex items-center'>IBAN: <span className='underline underline-offset-2 cursor-pointer' onClick={handleCopyToClipboard}> NL13 REVO 6924 8820 56</span>
                             {isCopied && <CopyCheckIcon className='w-5 h-5 ml-2' />}
                             </p>
                         </div>

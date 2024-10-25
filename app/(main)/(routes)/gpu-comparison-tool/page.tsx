@@ -32,8 +32,8 @@ const GPUComparisonToolPage = () => {
         <Container>
             <div className="w-full max-w-7xl mx-auto p-4 space-y-6 my-12">
                 <div className="text-center">
-                    <h1 className="text-3xl font-bold">MODEX GPU Price to Performance Comparison</h1>
-                    <p className="text-gray-500 mt-2">Find the perfect graphics card for your gaming and creative needs</p>
+                    <h1 className="text-3xl font-bold">GPU Price to Performance Comparison</h1>
+                    <p className="text-gray-500 mt-2">MODEX helps you find the perfect graphics card for your gaming needs</p>
                 </div>
                 <div className="text-left justify-around gap-4 py-10 grid sm:grid-cols-4 w-full">
                     <span className="text-sm bg-gray-50/10 border border-gray-200 p-6 rounded-md flex gap-4 items-center">

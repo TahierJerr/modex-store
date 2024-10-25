@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeadsetIcon, WrenchIcon, TruckIcon } from "lucide-react";
+import { TruckIcon, ShieldIcon, EuroIcon } from "lucide-react";
 import Image from 'next/image';
 import Container from './ui/container';
 
@@ -9,38 +9,44 @@ const BulletSection = () => {
         <Container>
         <div className="gap-6 lg:gap-12">
             <div className="flex flex-col items-center justify-center text-center gap-4">
-                    <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary">Why Choose Modex</div>
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
-                        MODEX computers tailored for your needs
-                    </h2>
+                    <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary">Why Choose MODEX</div>
+                    <h3 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
+                        Clean, Powerful, and Affordable PCs Built for Gamers
+                    </h3>
                     <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        MODEX offers a wide range of pre-built PCs, each designed to meet your unique computing needs. From
-                        powerful gaming rigs to versatile workstations, we have the perfect solution for you.
+                    MODEX delivers high-performance pre-built PCs designed for your unique needs. From powerful gaming systems to versatile workstations, each build offers a clean, optimized setup ready for anything you throw at it
                     </p>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-                <div className="grid gap-6">
-                    <div className="grid gap-2">
-                        <p className="text-xl font-bold text-primary flex items-center"><WrenchIcon size={22} className='mr-2' />Customizable Configurations</p>
-                        <p className="text-muted-foreground">
-                            Choose one of our well thought-out configurations, that suits your needs.
-                        </p>
-                    </div>
-                    <div className="grid gap-2">
-                        <p className="text-xl font-bold text-primary flex items-center"><TruckIcon size={22} className='mr-2' />Fast Delivery</p>
-                        <p className="text-muted-foreground">
-                            Get your new PC delivered to your doorstep quickly, with our efficient delivery and handling
-                            process.
-                        </p>
-                    </div>
-                    <div className="grid gap-2">
-                        <p className="text-xl font-bold text-primary flex items-center"><HeadsetIcon size={22} className='mr-2' />Excellent Support</p>
-                        <p className="text-muted-foreground">
-                            Our knowledgeable support team is always here to assist you with any questions or issues you may
-                            have.
-                        </p>
-                    </div>
-                </div>
+            <div className="grid gap-6">
+            <div className="grid gap-2">
+                <h4 className="text-xl font-bold text-primary flex items-center">
+                    <ShieldIcon aria-label='Shield Icon' size={22} className="mr-2" />No Unwanted Software
+                </h4>
+                <p className="text-muted-foreground">
+                    Every MODEX PC is delivered without unnecessary pre-installed software, giving you a clean and optimized
+                    system right out of the box.
+                </p>
+            </div>
+            <div className="grid gap-2">
+                <h5 className="text-xl font-bold text-primary flex items-center">
+                    <TruckIcon aria-label='Truck Icon' size={22} className="mr-2" />Fast & Insured Shipping
+                </h5>
+                <p className="text-muted-foreground">
+                    Enjoy peace of mind with fast delivery, fully insured by MODEX to ensure your PC arrives safely and on
+                    time—usually within a week.
+                </p>
+            </div>
+            <div className="grid gap-2">
+                <h6 className="text-xl font-bold text-primary flex items-center">
+                    <EuroIcon aria-label='Euro Icon' size={22} className="mr-2" />Best Value for Money
+                </h6>
+                <p className="text-muted-foreground">
+                    MODEX builds are designed to provide maximum value, ensuring you get the best gaming and computing power
+                    for your investment.
+                </p>
+            </div>
+        </div>
                 <Image
                 src="/ramimage.webp"
                 alt="Modex Benefits"

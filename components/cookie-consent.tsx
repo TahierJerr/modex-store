@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react'
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Script from 'next/script'
 
 export default function CookieConsentComponent() {
   const [consentAccepted, setConsentAccepted] = useState(false)
@@ -34,6 +35,8 @@ export default function CookieConsentComponent() {
       <>
         {consentAccepted && <SpeedInsights />}
         {consentAccepted && <Analytics />}
+        {consentAccepted && <Script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async />
+}
       </>
     )
   }

@@ -6,7 +6,6 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs'
 import Head from 'next/head'
 import { Metadata } from 'next'
-import Script from 'next/script'
 
 const font = Poppins({
     subsets: ['latin'],
@@ -38,7 +37,6 @@ export default function RootLayout({
             <Head>
                 <link rel="apple-touch-icon" href="/icon.png" type='image/png' sizes='32x32' />
             </Head>
-            <Script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async />
         <body className={font.className + " bg-white overflow-x-hidden"}>
             <ClerkProvider>
             <GoogleOneTap />
