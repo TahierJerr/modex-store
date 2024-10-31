@@ -63,7 +63,7 @@ const HomePage = () => {
             <BuiltByComponent />
             <BulletSection />
             <Suspense fallback={<Loader />}>
-                <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" />
+                <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={6} />
             </Suspense>
             <WhyModex />
         </div>
