@@ -48,9 +48,9 @@ const getRandomizedImages = (images: any, times = 5) => {
     const randomizedImages = getRandomizedImages(BRANDS_IMAGES);
 
     return (
-        <section className="w-full bg-muted py-8">
+        <section className="w-full py-8">
             <Container>
-                <div className="w-full overflow-hidden bg-gray-100 py-10">
+                <div className="w-full overflow-hidden  py-10">
                     <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6">
                         Trusted Brands We Build With
                     </h2>

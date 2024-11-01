@@ -5,11 +5,11 @@ import Container from './ui/container';
 
 const BulletSection = () => {
     return (
-    <section className="w-full my-12">
+    <section className="w-full py-12 bg-muted">
         <Container>
         <div className="gap-6 lg:gap-12">
             <div className="flex flex-col items-center justify-center text-center gap-4">
-                    <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary">Why Choose MODEX</div>
+                    <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-primary bg-white">Why Choose MODEX</div>
                     <h3 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
                         Clean, Powerful, and Affordable PCs Built for Gamers
                     </h3>

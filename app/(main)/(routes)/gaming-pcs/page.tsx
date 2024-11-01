@@ -24,12 +24,9 @@ export const metadata: Metadata = {
 const CategoryPage =  () => {
     
     return (
-    <>
-        <GamingPcHero />
         <Suspense fallback={<Loader />}>
-            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" />
+            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" />
         </Suspense>
-    </>
     )
 }
 

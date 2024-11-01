@@ -60,11 +60,11 @@ const HomePage = () => {
     return (
         <div>
             <Billboard />
+            <Suspense fallback={<Loader />}>
+                <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" maxItems={6} />
+            </Suspense>
             <BuiltByComponent />
             <BulletSection />
-            <Suspense fallback={<Loader />}>
-                <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="desc" maxItems={6} />
-            </Suspense>
             <WhyModex />
         </div>
     )

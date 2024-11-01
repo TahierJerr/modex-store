@@ -40,21 +40,10 @@ const NavbarComponent: React.FC<NavbarComponentProps> = ({}) => {
                 signUpForceRedirectUrl="/"
                 mode="modal"
                 >
-                <Button variant="outline" className="w-24 h-10">
+                <Button className="w-24 h-10">
                     <span className="text-sm font-medium">Sign In</span>
                 </Button>
             </SignInButton>
-            <SignUpButton
-            forceRedirectUrl="/"
-            fallbackRedirectUrl="/"
-            signInFallbackRedirectUrl="/"
-            signInForceRedirectUrl="/"
-            mode="modal"
-            >
-            <Button className="w-24 h-10 ml-3">
-                <span className="text-sm font-medium">Sign Up</span>
-            </Button>
-        </SignUpButton>
     </div>
     )
 }
