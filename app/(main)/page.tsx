@@ -7,6 +7,7 @@ import BuiltByComponent from "@/components/builtby";
 import { Suspense } from "react";
 import Loader from "@/components/ui/loading";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Container from '@/components/ui/container';
 
 export const metadata: Metadata = {
     title: 'MODEX | Pre-built Gaming PCs Built for Performance & Value',
@@ -104,6 +105,7 @@ const HomePage = () => {
         <BulletSection />
         <WhyModex />
         <div className="p-6 my-12">
+            <Container>
             <h4 className="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h4>
             <p className="text-gray-600 mb-6">Here you will find the most frequently asked questions about MODEX.</p>
             <Accordion type="single" collapsible className="w-full">
@@ -118,6 +120,7 @@ const HomePage = () => {
                     </AccordionItem>
                 ))}
             </Accordion>
+            </Container>
         </div>
     </div>
     )

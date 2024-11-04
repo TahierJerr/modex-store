@@ -3,6 +3,7 @@ import ComputerList from "@/components/computer-list";
 import Loader from '@/components/ui/loading';
 import { Suspense } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import Container from '@/components/ui/container';
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
@@ -63,6 +64,7 @@ const GamingPCsPage =  () => {
         <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" />
     </Suspense>
     <div className="p-6 my-12">
+        <Container>
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
         <p className="text-gray-600 mb-6">Here you will find the most frequently asked questions about MODEX.</p>
         <Accordion type="single" collapsible className="w-full">
@@ -77,6 +79,7 @@ const GamingPCsPage =  () => {
                 </AccordionItem>
                 ))}
             </Accordion>
+            </Container>
         </div>
     </div>
     )
