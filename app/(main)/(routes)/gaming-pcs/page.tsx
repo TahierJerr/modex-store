@@ -59,9 +59,6 @@ const data = [
 const GamingPCsPage =  () => {
     return (
     <div>
-        <h1 className="text-4xl font-bold mb-8 text-center">
-            Prebuilt Gaming PCs
-        </h1>
         <Suspense fallback={<Loader />}>
         <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" />
     </Suspense>
@@ -71,10 +68,10 @@ const GamingPCsPage =  () => {
         <Accordion type="single" collapsible className="w-full">
             {data.map((item, index) => (
                 <AccordionItem key={index} className="mb-4" value={index.toString()}>
-                    <AccordionTrigger className="p-4 font-semibold text-xl hover:bg-gray-100 rounded-lg transition duration-200">
+                    <AccordionTrigger className="p-4 font-semibold text-lg sm:text-xl hover:bg-gray-100 rounded-lg transition duration-200">
                         {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="p-4 text-lg bg-white">
+                    <AccordionContent className="p-4 sm:text-lg bg-white">
                         {item.answers}
                     </AccordionContent>
                 </AccordionItem>

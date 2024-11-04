@@ -109,10 +109,10 @@ const HomePage = () => {
             <Accordion type="single" collapsible className="w-full">
                 {data.map((item, index) => (
                     <AccordionItem key={index} className="mb-4" value={index.toString()}>
-                        <AccordionTrigger className="p-4 font-semibold text-xl hover:bg-gray-100 rounded-lg transition duration-200">
+                        <AccordionTrigger className="p-4 font-semibold text-lg sm:text-xl hover:bg-gray-100 rounded-lg transition duration-200">
                             {item.question}
                         </AccordionTrigger>
-                        <AccordionContent className="p-4 text-lg bg-white">
+                        <AccordionContent className="p-4 sm:text-lg bg-white">
                             {item.answers}
                         </AccordionContent>
                     </AccordionItem>

@@ -55,7 +55,7 @@ const ComputerList: React.FC<ComputerListProps> = async ({
             <Container>
             <div className="mb-8 flex items-center justify-center flex-col gap-4">
                 <p className="rounded-lg bg-white px-4 mb-1">MODEX PCs</p>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">{title}</h2>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">{title}</h1>
                 <p className="max-w-[900px] text-muted-foreground text-center px-4 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">{description}</p>
             </div>
             {filteredItems.length === 0 && <NoResults />}
