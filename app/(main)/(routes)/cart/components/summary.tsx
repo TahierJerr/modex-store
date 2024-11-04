@@ -81,8 +81,8 @@ return (
     <h2 className="text-xl font-semibold text-foreground mb-4">Order Summary</h2>
     <div className="space-y-2">
         <div className="flex justify-between text-sm">
-            <span>Shipping</span>
-            <span>Free</span>
+            <span>Premium Shipping (Track & Trace)</span>
+            <span className="font-bold">Free</span>
         </div>
         <div className="flex justify-between text-sm font-medium">
             <span>Total (incl. VAT)</span>
