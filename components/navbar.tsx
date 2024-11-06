@@ -3,7 +3,7 @@
 import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { Button } from "./ui/button";
 import { usePathname } from 'next/navigation'
 import { Menu, X, ShoppingCart, User } from 'lucide-react'

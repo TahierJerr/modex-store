@@ -76,7 +76,7 @@ const ComputerInfo: React.FC<ComputerInfoProps> = ({
             <div className="flex items-center justify-between">
                 <p className="text-4xl font-bold">{formattedPrice}</p>
             </div>
-            <Button className="bg-black flex items-center text-white justify-center w-full hover:bg-black/70" onClick={onAddToCart}><ShoppingCartIcon size={24} className="mr-2" />Add to Cart</Button>
+            <Button className="bg-primary flex items-center text-white justify-center w-full hover:bg-primary/90" onClick={onAddToCart}><ShoppingCartIcon size={24} className="mr-2" />Add to Cart</Button>
         </div>
         </div>
         </Container>

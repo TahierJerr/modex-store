@@ -4,6 +4,7 @@ import Loader from '@/components/ui/loading';
 import { Suspense } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import Container from '@/components/ui/container';
+import SkeletonComputerList from '@/components/skeleton/computer-list-skeleton';
 
 export const metadata: Metadata = {
     title: 'MODEX Prebuilt Gaming PCs | MODEX',
@@ -60,7 +61,7 @@ const data = [
 const GamingPCsPage =  () => {
     return (
     <div>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<SkeletonComputerList />}>
         <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" />
     </Suspense>
     <div className="p-6 my-12">
