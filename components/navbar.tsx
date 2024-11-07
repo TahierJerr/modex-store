@@ -1,9 +1,13 @@
 'use client';
 
-import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< Updated upstream
 import { useState, useEffect, Suspense } from 'react'
+=======
+import { useState } from 'react'
+>>>>>>> Stashed changes
 import { Button } from "./ui/button";
 import { usePathname } from 'next/navigation'
 import { Menu, X, ShoppingCart, User } from 'lucide-react'
