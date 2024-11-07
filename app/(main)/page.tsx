@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
 import Billboard from "@/components/billboard";
-import ComputerList from "@/components/computer-list";
 import BulletSection from "@/components/bulletsection";
 import WhyModex from "@/components/why-modex";
 import BuiltByComponent from "@/components/builtby";
 import { Suspense } from "react";
-import Loader from "@/components/ui/loading";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Container from '@/components/ui/container';
 import SkeletonComputerList from '@/components/skeleton/computer-list-skeleton';
+import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
     title: 'MODEX | Pre-built Gaming PCs Built for Performance & Value',
@@ -93,15 +92,14 @@ const data = [
 ];
 
 
+const ComputerList = dynamic(() => import('@/components/computer-list'), { ssr: false, loading: () => <SkeletonComputerList /> });
+
 
 const HomePage = () => {
-    
     return (
     <div>
         <Billboard />
-        <Suspense fallback={<SkeletonComputerList />}>
-            <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" maxItems={6} />
-        </Suspense>
+        <ComputerList description="Explore our selection of pre-built PCs, each designed to deliver exceptional performance and reliability." title="Our Pre-Built PC Models" sortOrder="asc" maxItems={6} />
         <BuiltByComponent />
         <BulletSection />
         <WhyModex />
