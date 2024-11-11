@@ -3,7 +3,6 @@ import Billboard from "@/components/billboard";
 import BulletSection from "@/components/bulletsection";
 import WhyModex from "@/components/why-modex";
 import BuiltByComponent from "@/components/builtby";
-import { Suspense } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Container from '@/components/ui/container';
 import SkeletonComputerList from '@/components/skeleton/computer-list-skeleton';

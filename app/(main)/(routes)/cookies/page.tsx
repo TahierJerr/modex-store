@@ -3,7 +3,27 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'MODEX Cookies | MODEX',
-    description: 'Here you will find the cookie policy of MODEX.'
+    description: 'Here you will find the cookie policy of MODEX.',
+    keywords: [
+    'Cookies', 'Cookie Policy', 'Cookie Policy of MODEX', 'Cookie Policy of MODEX Gaming', 'Cookie Policy of MODEX Computers',
+    'Cookie Policy of MODEX Gaming PC', 'Cookie Policy of MODEX Gaming Computer', 'Cookie Policy of MODEX PC',
+    'Cookie Policy of MODEX Computer', 'Cookie Policy of MODEX Netherlands', 'Cookie Policy of MODEX Belgium',
+    'Cookie Policy of MODEX France', 'Cookie Policy of MODEX Germany', 'Cookie Policy of MODEX Europe',
+    'Cookie Policy of MODEX Gaming PC Netherlands', 'Cookie Policy of MODEX Gaming PC Belgium',
+    'Cookie Policy of MODEX Gaming PC France', 'Cookie Policy of MODEX Gaming PC Germany',
+    'Cookie Policy of MODEX Gaming PC Europe', 'Cookie Policy of MODEX Gaming Computer Netherlands',
+    'Cookie Policy of MODEX Gaming Computer Belgium', 'Cookie Policy of MODEX Gaming Computer France',
+    'Cookie Policy of MODEX Gaming Computer Germany', 'Cookie Policy of MODEX Gaming Computer Europe',
+    'Cookie Policy of MODEX Computers Netherlands', 'Cookie Policy of MODEX Computers Belgium',
+    'Cookie Policy of MODEX Computers France', 'Cookie Policy of MODEX Computers Germany',
+    'Cookie Policy of MODEX Computers Europe', 'Cookie Policy of MODEX PC Netherlands',
+    'Cookie Policy of MODEX PC Belgium', 'Cookie Policy of MODEX PC France', 'Cookie Policy of MODEX PC Germany',
+    'Cookie Policy of MODEX PC Europe', 'Cookie Policy of MODEX Computer Netherlands',
+    'Cookie Policy of MODEX Computer Belgium', 'Cookie Policy of MODEX Computer France',
+    'Cookie Policy of MODEX Computer Germany', 'Cookie Policy of MODEX Computer Europe',
+    'Cookie Policy of MODEX Netherlands Gaming PC', 'Cookie Policy of MODEX Belgium Gaming PC',
+    'Cookie Policy of MODEX France Gaming PC', 'Cookie Policy of MODEX Germany Gaming PC',
+    ]
 }
 
 export default function Cookies() { 
