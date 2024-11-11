@@ -3,8 +3,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Cpu, EuroIcon, Zap } from "lucide-react"
 import Container from "./ui/container"
+import { useRouter } from "next/navigation"
 
 const AboutUsSection = () => {
+    const router = useRouter()
+
     return (
         <section className="py-16 bg-background">
             <Container>
@@ -12,7 +15,7 @@ const AboutUsSection = () => {
                     <h2 className="text-3xl font-bold text-center mb-8">About MODEX: Quality Custom Computers at Fair Prices</h2>
                     <div className="max-w-2xl mx-auto mb-12">
                         <p className="text-center text-muted-foreground mb-4">
-                            I'm Taher Jerjissi, the founder of MODEX. I created this company to offer high-quality, affordable custom-built PCs without the bloatware.
+                            I&apos;m Taher Jerjissi, the founder of MODEX. I created this company to offer high-quality, affordable custom-built PCs without the bloatware.
                         </p>
                     </div>
 
@@ -47,7 +50,7 @@ const AboutUsSection = () => {
                     </div>
 
                     <div className="text-center">
-                        <Button size="lg" className="bg-slate-800 hover:bg-slate-700 text-white">
+                        <Button onClick={() => router.push("/gaming-pcs")} size="lg" className="bg-slate-800 hover:bg-slate-700 text-white">
                             Explore Our Computers
                         </Button>
                     </div>
