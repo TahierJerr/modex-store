@@ -1,0 +1,12 @@
+{
+    "crons": [
+        {
+            "path": "https://www.modex-admin.nl/api/clrgi1xkm0000gawknqwc2rl4/updatePrices?productModel=all",
+            "schedule": "0 3 * * *"
+        },
+        {
+            "path": "https://www.modex-admin.nl/api/clrgi1xkm0000gawknqwc2rl4/updatePrices?productModel=all",
+            "schedule": "0 4 * * *"
+        }
+    ]
+    }
