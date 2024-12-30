@@ -8,7 +8,7 @@ import { Metadata } from "next"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-    title: 'MODEX | GPU Price to Performance Comparison',
+    title: 'Compare GPUs by Price and Performance | MODEX',
     description: 'Find the perfect graphics card for your gaming and creative needs. Compare real-time price updates and performance scores across multiple resolutions.',
     keywords: [
     'Graphics Card', 'GPU', 'Graphics Processing Unit', 'GPU Comparison', 'GPU Price to Performance', 'GPU Price Comparison', 

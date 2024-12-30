@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import Container from '@/components/ui/container'
 
 export const metadata: Metadata = {
-    title: 'Cart | MODEX',
+    title: 'Your Shopping Cart | MODEX',
     description: 'Checkout your items in the cart and proceed to payment.',
     keywords: 'cart, winkelwagen, panier, Warenkorb, checkout, afrekenen, caisse, zur Kasse gehen, payment, betaling, paiement, Zahlung, gaming pc, gaming computer, gaming laptop, gaming setup, gaming desktop, high-performance computer, high-end pc, powerful computer, krachtige computer, ordinateur puissant, leistungsstarker Computer, online shopping, online winkelen, achats en ligne, Online-Einkauf, secure payment, veilige betaling, paiement sécurisé, sichere Zahlung, add to cart, toevoegen aan winkelwagen, ajouter au panier, in den Warenkorb, shop, winkel, magasin, Geschäft, custom pc, aangepaste pc, pc personnalisé, benutzerdefinierter PC, computers, accessoires, accessoires, Zubehör, free shipping, gratis verzending, livraison gratuite, kostenloser Versand, discount, korting, remise, Rabatt, fast delivery, snelle levering, livraison rapide, schnelle Lieferung'
 }

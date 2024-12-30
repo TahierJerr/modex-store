@@ -20,7 +20,7 @@ export async function generateMetadata(
     
     if (!id) {
         return {
-            title: 'MODEX Prebuilt Gaming PCs | MODEX',
+            title: 'High-Performance Prebuilt Gaming PCs | MODEX',
             description: 'MODEX is the best place to buy your new gaming PC. We have computers for every budget.',
             keywords: ['Computer', 'Gaming PC', 'PC', 'Gaming', 'Gaming Computer', 'Buy Gaming PC',
             'Buy Gaming Computer', 'Order Gaming PC', 'Order Gaming Computer', 'Buy Gaming PC Netherlands',

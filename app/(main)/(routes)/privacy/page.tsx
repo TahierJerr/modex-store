@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX Privacy | MODEX',
-    description: 'This is the privacy page of MODEX.',
+    title: 'MODEX Privacy Policy | Your Data, Our Responsibility',
+    description: 'Read our comprehensive privacy policy to understand how MODEX protects your personal data and ensures a secure browsing experience.',
     keywords: ['MODEX Privacy', 'MODEX Privacy Policy', 'MODEX Privacy Statement']
 }
 

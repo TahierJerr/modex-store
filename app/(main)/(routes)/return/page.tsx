@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-    title: 'MODEX Return | MODEX',
-    description: 'This is the return page of MODEX.',
+    title: 'Returns & Refund Policy | MODEX',
+    description: 'Learn about MODEX hassle-free return policy. Easily return or exchange gaming PCs and accessories within our clear guidelines to ensure customer satisfaction.',
     keywords: ['MODEX return', 'MODEX returning', 'MODEX Return conditions', 'MODEX Return conditions', 'MODEX Returning', 'MODEX Returning Netherlands', 'MODEX Return Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Returning Netherlands', 'MODEX Returning Netherlands', 'MODEX Return conditions Netherlands', 'MODEX Return conditions Netherlands',]
 }
 
