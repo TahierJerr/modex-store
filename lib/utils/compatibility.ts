@@ -1,70 +1,67 @@
 import { Processor, Motherboard, Memory, Pccase, Graphics, Cooler, Power } from "@/types";
 
-export function isSocketCompatible(processor: Processor, motherboard: Motherboard): boolean {
-    return processor.socket === motherboard.socket;
-}
+class CompatibilityChecker {
+    static isSocketCompatible(processor: Processor, motherboard: Motherboard): boolean {
+        return processor.socket === motherboard.socket;
+    }
 
-export function isMemoryCompatible(memory: Memory, motherboard: Motherboard): boolean {
-    
-    if (memory.type !== motherboard.memoryType) {
-        return false;
-    }
-    
-    if (memory.modules > motherboard.memorySlots) {
-        return false;
-    }
-    
-    if (memory.capacityNumber > motherboard.maxMemoryCapacity) {
-        return false;
-    }
-    
-    return true;
-}
+    static isMemoryCompatible(memory: Memory, motherboard: Motherboard): boolean {
+        if (memory.type !== motherboard.memoryType) {
+            return false;
+        }
 
-export function isGpuCompatibleWithCase(graphics: Graphics, pccase: Pccase) {
-    const lengthCompatible = graphics.length <= pccase.maxGpuLength;
-    
-    const widthCompatible = graphics.width <= pccase.maxGpuWidth;
-    
-    const slotsCompatible = graphics.slots <= pccase.maxGpuSlots;
-    
-    return lengthCompatible && widthCompatible && slotsCompatible;
-}
+        if (memory.modules > motherboard.memorySlots) {
+            return false;
+        }
 
-export function isCoolerCompatibleWithCase(cooler: Cooler, pccase: Pccase): boolean {
-    if (cooler.height !== undefined) {
-        return cooler.height <= pccase.maxCoolerHeight;
+        if (memory.capacityNumber > motherboard.maxMemoryCapacity) {
+            return false;
+        }
+
+        return true;
     }
-    
-    if (cooler.radiatorLength !== undefined) {
-        const maxRadiatorLength = pccase.maxGpuLength;
-        const maxRadiatorThickness = 60;
-        
-        return (
-            cooler.radiatorLength <= maxRadiatorLength &&
-            (cooler.radiatorThickness !== undefined ? cooler.radiatorThickness <= maxRadiatorThickness : true)
+
+    static isGpuCompatibleWithCase(graphics: Graphics, pccase: Pccase): boolean {
+        const lengthCompatible = graphics.length <= pccase.maxGpuLength;
+        const widthCompatible = graphics.width <= pccase.maxGpuWidth;
+        const slotsCompatible = graphics.slots <= pccase.maxGpuSlots;
+
+        return lengthCompatible && widthCompatible && slotsCompatible;
+    }
+
+    static isCoolerCompatibleWithCase(cooler: Cooler, pccase: Pccase): boolean {
+        if (cooler.height !== undefined) {
+            return cooler.height <= pccase.maxCoolerHeight;
+        }
+
+        if (cooler.radiatorLength !== undefined) {
+            const maxRadiatorLength = pccase.maxGpuLength;
+            const maxRadiatorThickness = 60;
+
+            return (
+                cooler.radiatorLength <= maxRadiatorLength &&
+                (cooler.radiatorThickness !== undefined ? cooler.radiatorThickness <= maxRadiatorThickness : true)
             );
         }
-        
+
         return false;
     }
-    
-    export function isPowerCompatibleWithGpu(graphics: Graphics, power: Power): boolean {
+
+    static isPowerCompatibleWithGpu(graphics: Graphics, power: Power): boolean {
         const wattage = parseInt(power.wattage.replace(/W/i, "").trim());
-        
+
         return wattage >= graphics.minWattage;
     }
-    
-    export function isMotherboardCompatibleWithCase(motherboard: Motherboard, pccase: Pccase): boolean {
+
+    static isMotherboardCompatibleWithCase(motherboard: Motherboard, pccase: Pccase): boolean {
         return motherboard.formFactor === pccase.formFactor;
     }
 
-    export function isCoolerCompatibleWithProcessor(cooler: Cooler, processor: Processor): boolean {
+    static isCoolerCompatibleWithProcessor(cooler: Cooler, processor: Processor): boolean {
         return cooler.socket === processor.socket;
     }
-    
-    
-    export function isBuildCompatible(
+
+    static isBuildCompatible(
         processor: Processor,
         motherboard: Motherboard,
         memory: Memory,
@@ -72,14 +69,16 @@ export function isCoolerCompatibleWithCase(cooler: Cooler, pccase: Pccase): bool
         pccase: Pccase,
         cooler: Cooler,
         power: Power
-        ): boolean {
-            return (
-                isSocketCompatible(processor, motherboard) &&
-                isMemoryCompatible(memory, motherboard) &&
-                isGpuCompatibleWithCase(graphics, pccase) &&
-                isCoolerCompatibleWithCase(cooler, pccase) &&
-                isPowerCompatibleWithGpu(graphics, power) &&
-                isMotherboardCompatibleWithCase(motherboard, pccase)
-                );
-            }
-            
+    ): boolean {
+        return (
+            this.isSocketCompatible(processor, motherboard) &&
+            this.isMemoryCompatible(memory, motherboard) &&
+            this.isGpuCompatibleWithCase(graphics, pccase) &&
+            this.isCoolerCompatibleWithCase(cooler, pccase) &&
+            this.isPowerCompatibleWithGpu(graphics, power) &&
+            this.isMotherboardCompatibleWithCase(motherboard, pccase)
+        );
+    }
+}
+
+export default CompatibilityChecker;
