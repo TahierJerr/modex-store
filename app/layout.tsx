@@ -15,6 +15,13 @@ const font = Poppins({
 export const metadata: Metadata = {
     title: 'MODEX | Custom Gaming PCs Built for Performance & Value',
     description: 'MODEX is the best place to buy your new gaming PC. Our pre-built PCs deliver exceptional performance and reliability. Order your MODEX Gaming PC today!',
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://x.com/MODEX_GAMING',
+        title: 'MODEX | Custom Gaming PCs Built for Performance & Value',
+        description: 'Get your custom-built gaming PCs from MODEX. Designed for performance and style.',
+        images: ['https://res.cloudinary.com/dgbhzvy6k/image/upload/v1726565120/sgamyceqmgiuz5q9fzwm.webp'],
+    },
 }
 
 
