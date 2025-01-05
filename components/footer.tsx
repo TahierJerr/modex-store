@@ -1,12 +1,13 @@
 "use client"
 
 import Link from 'next/link';
-import { BanknoteIcon, CopyIcon, CopyCheckIcon, FacebookIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon, XIcon } from 'lucide-react';
+import { BanknoteIcon, CopyCheckIcon, FacebookIcon, InstagramIcon, LandmarkIcon, MailIcon, PhoneIcon} from 'lucide-react';
 import Image from 'next/image';
 import TiktokLogo from './tiktok-logo';
 import Container from './ui/container';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import XLogo from './xlogo';
 
 
 const Footer = () => {
@@ -64,13 +65,13 @@ const Footer = () => {
                             <InstagramIcon className="w-6 h-6" />
                         </a>
                         <a href="https://www.tiktok.com/@modexgaming" title='TikTok' className="hover:text-primary transition-colors">
-                            <TiktokLogo width={24} height={24} />
+                            <TiktokLogo width={24} height={24} /> 
                         </a>
                         <a href="https://www.facebook.com/people/MODEX/61566822210338/" title='Facebook' className='hover:text-primary transition-colors'>
                             <FacebookIcon className="w-6 h-6" />
                         </a>
-                        <a href="https://x.com/MODEX_GAMING" title='X' className='hover:text-primary transition-colors'>
-                            <XIcon className="w-6 h-6" />
+                        <a href="https://x.com/MODEX_GAMING" title='X (Twitter)' className='hover:text-primary transition-colors'>
+                            <XLogo width={24} height={24} />
                         </a>
                     </div>
                 </div>
