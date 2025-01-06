@@ -216,3 +216,15 @@ export interface Answers {
     question: string;
     answers: string;
 }
+
+export interface Blog {
+    id: string;
+    title: string;
+    description: string;
+    slug: string;
+    content: Array<{ type: string; value?: string; url?: string; alt?: string; width?: number; height?: number }>;
+    tags?: string[];
+    computer?: Computer["id"][];
+    createdAt: string;
+    updatedAt: string;
+}  
