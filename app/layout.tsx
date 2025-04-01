@@ -1,4 +1,4 @@
-import { Bricolage_Grotesque } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 import CookieConsentComponent from '@/components/cookie-consent'
 import ToastProvider from '@/providers/toast-provider'
@@ -7,7 +7,7 @@ import { ClerkProvider, GoogleOneTap } from '@clerk/nextjs'
 import Head from 'next/head'
 import { Metadata } from 'next'
 
-const font = Bricolage_Grotesque({
+const font = Poppins({
     subsets: ['latin'],
     weight: '400'
 })
